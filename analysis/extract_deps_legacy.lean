@@ -1,12 +1,11 @@
-/- Kernel-grain dependency extraction.
+/- Kernel-grain dependency extraction for pre-module-system toolchains
+(Lean 4.28–4.31: no `importAll` field, no public/private olean split).
 
 Run from a built project root:
-    lake env lean --run ../../analysis/extract_deps.lean PFR > kernel_deps.jsonl
+    ... module list ... | xargs lake env lean --run analysis/extract_deps_legacy.lean <Root>
 
-For every constant declared in modules under the given root (e.g. `PFR`),
-prints one JSON line: name, module, and the project-internal constants used
-by its type and value (proof term), plus a count of external (mathlib/core)
-constants used. This is the ground-truth analogue of extract_lean.py.
+Same output format as extract_deps.lean. "+"-prefixed module args are accepted
+(and the prefix ignored) so the same driver works for both script variants.
 -/
 import Lean
 open Lean
@@ -23,26 +22,23 @@ def esc (s : String) : String :=
   s.foldl (fun acc c =>
     acc ++ if c == '"' then "\\\"" else if c == '\\' then "\\\\" else toString c) ""
 
+def valueOf (ci : ConstantInfo) : Option Expr :=
+  match ci with
+  | .thmInfo v => some v.value
+  | .defnInfo v => some v.value
+  | .opaqueInfo v => some v.value
+  | _ => none
+
 unsafe def main (args : List String) : IO Unit := do
-  let rootStr := args.headD "PFR"
+  let rootStr := args.headD "Main"
   let root := rootStr.toName
   initSearchPath (← findSysroot)
-  -- Under the module system, proof terms live in private olean parts. They are
-  -- loaded only for modules imported with `importAll := true` (per module, not
-  -- transitively), and are visible only with `setExporting false`.
   let toN (s : String) : Name := (s.splitOn ".").foldl .str .anonymous
-  -- args after the root: module names; a "+" prefix marks modules that have a
-  -- .private.olean part (new module system) and are imported with importAll.
-  let imports : Array Import :=
-    if args.length > 1 then
-      ((args.tail.filter (· ≠ "")).map fun s =>
-        if s.startsWith "+" then
-          { module := toN (s.drop 1).toString, importAll := true }
-        else
-          { module := toN s }).toArray
-    else #[{module := root, importAll := true}]
+  let clean (s : String) : String := if s.startsWith "+" then (s.drop 1).toString else s
+  let mods := if args.length > 1 then
+    (args.tail.filter (· ≠ "")).map (fun s => toN (clean s)) else [root]
+  let imports := mods.toArray.map fun m => { module := m : Import }
   let env ← importModules imports {} (trustLevel := 1024)
-  let env := env.setExporting false
   let modNames := env.header.moduleNames
   let inProject (n : Name) : Bool :=
     match env.getModuleIdxFor? n with
@@ -54,7 +50,7 @@ unsafe def main (args : List String) : IO Unit := do
     let some idx := env.getModuleIdxFor? n | continue
     let modName := modNames[idx.toNat]!
     let used := ci.type.getUsedConstants
-      ++ (match (ci.value? (allowOpaque := true)) with | some v => v.getUsedConstants | none => #[])
+      ++ (match valueOf ci with | some v => v.getUsedConstants | none => #[])
     let mut internal : List Name := []
     let mut external : List Name := []
     let mut seen : NameSet := {}
