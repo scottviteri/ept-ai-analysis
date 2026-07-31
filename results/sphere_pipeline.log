@@ -1,0 +1,34 @@
+=== [sphere] cache get + build (14:15) ===
+Decompressed 8542 file(s)
+Already decompressed 8542 file(s)
+✔ [3490/3492] Built SpherePacking.MagicFunction.g.Basic (2.1s)
+✔ [3491/3492] Built SpherePacking (1.3s)
+Build completed successfully (3492 jobs).
+=== [sphere] extract kernel graph ===
+using extract_deps.lean (84 modules, 84 with private parts)
+wrote 1483 declarations
+=== [sphere] compare vs textual + tracking ===
+external (mathlib/core) dep references from project decls: 109018
+{"graph": "kernel-grain", "N": 1483, "E": 4535, "N_lwcc": 1059, "mean_out": 3.3, "max_out": 99, "alpha": 2.486, "alpha_sigma": 0.192, "fit": {"xmin": 11, "ntail": 60, "ks": 0.08852282182451787}, "Q": 0.676}
+{"graph": "textual-grain", "N": 1187, "E": 2685, "N_lwcc": 1013, "mean_out": 2.65, "max_out": 249, "alpha": 1.979, "alpha_sigma": 0.113, "fit": {"xmin": 5, "ntail": 75, "ks": 0.09874835701803458}, "Q": 0.59}
+decl-name overlap: 626 shared (kernel 1483, textual 816)
+edges on shared nodes: kernel 1267, textual 1260, both 813
+textual recall of kernel edges: 0.642
+textual precision: 0.645
+missed kernel edges realized as textual paths <=3 hops: 93/454
+--- tracking (kernel grain) ---
+{
+ "project": "sphere-kernel",
+ "bp_nodes": 139,
+ "bp_edges": 241,
+ "lean_decls": 1483,
+ "resolution_ratio": 10.67,
+ "bp_nodes_with_lean_tag": 72,
+ "tag_coverage": 0.518,
+ "testable_edges": 90,
+ "direct_realized": 0.544,
+ "path3_realized": 0.622,
+ "path6_realized": 0.656
+}
+=== [sphere] done; saved results/sphere_kernel_deps.jsonl, graphs/sphere_kernel.json, results/sphere_kernel_validation.txt ===
+/dev/nvme0n1p3  400G  378G  2.0G 100% /

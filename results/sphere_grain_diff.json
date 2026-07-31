@@ -1,0 +1,186 @@
+{
+ "project": "sphere",
+ "shared_decls": 626,
+ "kernel_edges": 1267,
+ "textual_edges": 1260,
+ "both": 813,
+ "recall": 0.642,
+ "precision": 0.645,
+ "missed_by_dep_kind": {
+  "theorem": 217,
+  "def": 198,
+  "inductive": 39
+ },
+ "missed_checked": 454,
+ "missed_invisible_in_source": 111,
+ "frac_missed_invisible": 0.244,
+ "textual_only_edges": 447,
+ "top10_kernel_hubs": [
+  [
+   "Function.resToImagAxis",
+   63
+  ],
+  [
+   "PeriodicSpherePacking",
+   60
+  ],
+  [
+   "D",
+   47
+  ],
+  [
+   "ResToImagAxis.Real",
+   43
+  ],
+  [
+   "PeriodicSpherePacking.instLatticeDiscrete",
+   32
+  ],
+  [
+   "PeriodicSpherePacking.instIsZLattice",
+   31
+  ],
+  [
+   "SpherePacking",
+   24
+  ],
+  [
+   "serre_D",
+   23
+  ],
+  [
+   "E8Matrix",
+   21
+  ],
+  [
+   "F",
+   18
+  ]
+ ],
+ "top10_textual_hubs": [
+  [
+   "F",
+   96
+  ],
+  [
+   "h",
+   94
+  ],
+  [
+   "D",
+   63
+  ],
+  [
+   "g",
+   59
+  ],
+  [
+   "E",
+   45
+  ],
+  [
+   "G",
+   36
+  ],
+  [
+   "Function.resToImagAxis",
+   35
+  ],
+  [
+   "ResToImagAxis",
+   34
+  ],
+  [
+   "PeriodicSpherePacking",
+   31
+  ],
+  [
+   "ResToImagAxis.Real",
+   30
+  ]
+ ],
+ "n_distinct_external": 3774,
+ "total_external_refs": 109018,
+ "top20_external": [
+  [
+   "OfNat.ofNat",
+   1224
+  ],
+  [
+   "Real",
+   1084
+  ],
+  [
+   "Complex",
+   1034
+  ],
+  [
+   "Eq",
+   1021
+  ],
+  [
+   "Nat",
+   984
+  ],
+  [
+   "instOfNatNat",
+   845
+  ],
+  [
+   "HMul.hMul",
+   712
+  ],
+  [
+   "instHMul",
+   708
+  ],
+  [
+   "Zero.toOfNat0",
+   680
+  ],
+  [
+   "congrArg",
+   666
+  ],
+  [
+   "Eq.refl",
+   622
+  ],
+  [
+   "id",
+   613
+  ],
+  [
+   "One.toOfNat1",
+   603
+  ],
+  [
+   "Int",
+   598
+  ],
+  [
+   "instOfNatAtLeastTwo",
+   581
+  ],
+  [
+   "Fin",
+   576
+  ],
+  [
+   "Eq.mpr",
+   570
+  ],
+  [
+   "Complex.instMul",
+   524
+  ],
+  [
+   "Fin.fintype",
+   507
+  ],
+  [
+   "Semiring.toMonoid",
+   505
+  ]
+ ]
+}
