@@ -1,0 +1,186 @@
+{
+ "project": "pfr",
+ "shared_decls": 973,
+ "kernel_edges": 4047,
+ "textual_edges": 2399,
+ "both": 2147,
+ "recall": 0.531,
+ "precision": 0.895,
+ "missed_by_dep_kind": {
+  "def": 1287,
+  "theorem": 482,
+  "inductive": 131
+ },
+ "missed_checked": 1900,
+ "missed_invisible_in_source": 478,
+ "frac_missed_invisible": 0.252,
+ "textual_only_edges": 252,
+ "top10_kernel_hubs": [
+  [
+   "ProbabilityTheory.entropy",
+   225
+  ],
+  [
+   "FiniteRange",
+   182
+  ],
+  [
+   "rdist",
+   173
+  ],
+  [
+   "prod",
+   128
+  ],
+  [
+   "ProbabilityTheory.Kernel.entropy",
+   88
+  ],
+  [
+   "ProbabilityTheory.measureEntropy",
+   85
+  ],
+  [
+   "ProbabilityTheory.condEntropy",
+   81
+  ],
+  [
+   "ProbabilityTheory.FiniteSupport",
+   81
+  ],
+  [
+   "ProbabilityTheory.Kernel.AEFiniteKernelSupport",
+   62
+  ],
+  [
+   "ProbabilityTheory.condMutualInfo",
+   60
+  ]
+ ],
+ "top10_textual_hubs": [
+  [
+   "FiniteRange",
+   143
+  ],
+  [
+   "ProbabilityTheory.FiniteSupport",
+   79
+  ],
+  [
+   "ProbabilityTheory.Kernel.AEFiniteKernelSupport",
+   61
+  ],
+  [
+   "prod",
+   56
+  ],
+  [
+   "ProbabilityTheory.IsUniform",
+   51
+  ],
+  [
+   "rdist_symm",
+   30
+  ],
+  [
+   "ProbabilityTheory.Kernel.FiniteKernelSupport.comap",
+   29
+  ],
+  [
+   "ProbabilityTheory.IsUniform.comp",
+   28
+  ],
+  [
+   "FiniteRange.toFinset",
+   25
+  ],
+  [
+   "ProbabilityTheory.Kernel.FiniteKernelSupport",
+   24
+  ]
+ ],
+ "n_distinct_external": 3855,
+ "total_external_refs": 88790,
+ "top20_external": [
+  [
+   "Eq",
+   1020
+  ],
+  [
+   "MeasurableSpace",
+   977
+  ],
+  [
+   "MeasureTheory.Measure",
+   842
+  ],
+  [
+   "congrArg",
+   758
+  ],
+  [
+   "Real",
+   738
+  ],
+  [
+   "OfNat.ofNat",
+   702
+  ],
+  [
+   "id",
+   695
+  ],
+  [
+   "Eq.mpr",
+   688
+  ],
+  [
+   "Eq.refl",
+   615
+  ],
+  [
+   "MeasurableSingletonClass",
+   543
+  ],
+  [
+   "Measurable",
+   515
+  ],
+  [
+   "Zero.toOfNat0",
+   506
+  ],
+  [
+   "Eq.trans",
+   501
+  ],
+  [
+   "Set",
+   496
+  ],
+  [
+   "Prod",
+   483
+  ],
+  [
+   "Eq.symm",
+   465
+  ],
+  [
+   "Nat",
+   460
+  ],
+  [
+   "of_eq_true",
+   442
+  ],
+  [
+   "True",
+   440
+  ],
+  [
+   "congrFun'",
+   438
+  ]
+ ]
+}
