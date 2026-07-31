@@ -8,3 +8,4 @@ Build completed successfully (4729 jobs).
 using extract_deps_legacy.lean (1294 modules, 0 with private parts)
 wrote 48505 declarations
 === [et] compare vs textual + tracking ===
+Terminated                 python3 analysis/kernel_compare.py "results/${PREFIX}_kernel_deps.jsonl" "$TEXTUAL" "graphs/${PREFIX}_kernel.json"

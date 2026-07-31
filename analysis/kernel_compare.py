@@ -37,7 +37,10 @@ def battery(data, label):
     outdeg = [d for _, d in L.out_degree()]
     alpha, sigma, fit = powerlaw_alpha(outdeg)
     U = L.to_undirected()
-    coms = list(nxcom.greedy_modularity_communities(U))
+    if U.number_of_nodes() > 5000:
+        coms = list(nxcom.louvain_communities(U, seed=1))
+    else:
+        coms = list(nxcom.greedy_modularity_communities(U))
     print(json.dumps({"graph": label, "N": G.number_of_nodes(),
                       "E": G.number_of_edges(), "N_lwcc": L.number_of_nodes(),
                       "mean_out": round(float(np.mean(outdeg)), 2),

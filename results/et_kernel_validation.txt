@@ -1,0 +1,22 @@
+external (mathlib/core) dep references from project decls: 272961
+{"graph": "kernel-grain", "N": 48505, "E": 336491, "N_lwcc": 48115, "mean_out": 6.97, "max_out": 34032, "alpha": 2.875, "alpha_sigma": 0.073, "fit": {"xmin": 68, "ntail": 665, "ks": 0.07659209755209184}, "Q": 0.559}
+{"graph": "textual-grain", "N": 16380, "E": 22062, "N_lwcc": 15552, "mean_out": 1.41, "max_out": 13725, "alpha": 2.142, "alpha_sigma": 0.098, "fit": {"xmin": 8, "ntail": 135, "ks": 0.07682384704303996}, "Q": 0.529}
+decl-name overlap: 16156 shared (kernel 48505, textual 16380)
+edges on shared nodes: kernel 31152, textual 20782, both 18803
+textual recall of kernel edges: 0.604
+textual precision: 0.905
+missed kernel edges realized as textual paths <=3 hops: 768/12349
+--- tracking (kernel grain) ---
+{
+ "project": "et-kernel",
+ "bp_nodes": 206,
+ "bp_edges": 192,
+ "lean_decls": 48505,
+ "resolution_ratio": 235.46,
+ "bp_nodes_with_lean_tag": 136,
+ "tag_coverage": 0.66,
+ "testable_edges": 136,
+ "direct_realized": 0.434,
+ "path3_realized": 0.441,
+ "path6_realized": 0.441
+}

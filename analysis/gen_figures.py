@@ -41,10 +41,10 @@ def ccdf(degs):
 
 # ---------- F1: CCDF ----------
 series_f1 = [
-    ("ET human stratum (α≈2.08)", outdegs("graphs/et_lean.json", lambda x: not x["file"].startswith("Generated/"))),
+    ("ET human stratum (α≈2.52)", outdegs("graphs/et_lean.json", lambda x: not x["file"].startswith("Generated/"))),
     ("ET machine stratum (no power law)", outdegs("graphs/et_lean.json", lambda x: x["file"].startswith("Generated/"))),
-    ("Sphere Packing, AI-completed (α≈1.94)", outdegs("graphs/mathinc_sphere_lean.json")),
-    ("PFR Lean (α≈2.26)", outdegs("graphs/pfr_lean.json")),
+    ("Sphere Packing, AI-completed (α≈2.51)", outdegs("graphs/mathinc_sphere_lean.json")),
+    ("PFR Lean (α≈2.52)", outdegs("graphs/pfr_lean.json")),
 ]
 for mode, th in THEMES.items():
     fig, ax = plt.subplots(figsize=(7.2, 4.6), dpi=150)
@@ -67,9 +67,9 @@ for mode, th in THEMES.items():
 # ---------- F2: certainty curves ----------
 R = {r["name"]: r for r in json.load(open("results_all.json"))}
 picks = [("pfr_blueprint", "PFR blueprint (informal grain, N=217)"),
-         ("pfr_lean", "PFR Lean (formal grain, N=921)"),
+         ("pfr_lean", "PFR Lean (formal grain, N=916)"),
          ("et_blueprint", "Equational Theories blueprint (N=115)"),
-         ("sphere_lean", "Sphere Packing Lean, human-led (N=1013)")]
+         ("sphere_lean", "Sphere Packing Lean, human-led (N=1062)")]
 for mode, th in THEMES.items():
     fig, ax = plt.subplots(figsize=(7.2, 4.6), dpi=150)
     fig.patch.set_alpha(0)
@@ -112,6 +112,7 @@ rows = [  # (label, alpha, err, group)
     ("FLT kernel", 2.99, 0.29, 4),
     ("Sphere kernel (human-led)", 2.49, 0.19, 4),
     ("Sphere kernel (Gauss)", 2.56, 0.12, 4),
+    ("ET kernel (whole project)", 2.88, 0.07, 4),
 ]
 gnames = ["2022 baselines", "Human-led Lean (2023-26)", "Blueprints (informal)",
           "AI/machine-generated", "Kernel ground truth"]
