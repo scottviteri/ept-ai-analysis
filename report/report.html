@@ -181,6 +181,15 @@ absolute edge counts are lower bounds and cross-corpus <i>comparisons</i> are th
 Statistics are computed on largest weakly-connected components; α by discrete Clauset–Shalizi–Newman MLE;
 belief dynamics by the paper's asymmetric-Ising Glauber model (p<sub>prior</sub> = 0.75, 10 sweeps);
 ΔL₁ firewall statistic per the 2022 appendix at β = 1.</p>
+<p class="note"><b>Kernel-grain validation (post-publication update).</b> PFR was subsequently compiled
+and its ground-truth dependency graph extracted from the kernel environment
+(<code>Expr.getUsedConstants</code> over every project constant's type and proof term). Verdict:
+textual edges are 89.5% precise against kernel truth with 53% recall (the missing half is instance
+resolution, notation, and tactic-mediated uses); kernel α = 2.46 ± 0.23 and Q = 0.55 agree with the
+textual 2.27 ± 0.22 and 0.59 — the network-level claims are robust. Tracking fidelity <i>rises</i> at
+kernel grain: 86% of PFR blueprint edges are realized (vs 74% textual), confirming the reported levels
+as lower bounds. PFR's declarations make 88,790 distinct references into mathlib/core (≈68 per
+declaration) — a direct measure of the library dependence discussed in §7C.</p>
 
 <h2><span class="secno">3</span>Result: the signature persists — and where it doesn't</h2>
 </div>
@@ -307,7 +316,9 @@ steps — becomes measurable with blueprints: for each blueprint edge whose endp
 
 <div class="prose">
 <p class="note">Bars: share of testable informal dependency edges realized as formal paths (≤ 6 hops,
-project-internal). Textual extraction under-counts, so read the gradient, not the levels.</p>
+project-internal). Textual extraction under-counts, so read the gradient, not the levels — kernel-grain
+validation on compiled PFR raises its level from 74% to 86% (direct edges 50% → 65%), leaving the
+gradient intact.</p>
 <p>The gradient tracks machine involvement. PFR — the disciplined human speedrun where the blueprint
 <i>was</i> the coordination instrument — realizes three-quarters of its informal edges formally, at a
 resolution ratio of 4.6 formal declarations per informal statement. ET realizes barely a third, at a ratio
@@ -422,8 +433,10 @@ flips?</li>
 
 <h2><span class="secno">10</span>Limitations</h2>
 <ul>
-<li>Textual Lean extraction misses tactic-mediated and mathlib-routed edges; α and Q are robust to this
-(confirmed by agreement with compiled mathlib studies), but tracking-fidelity levels are lower bounds.</li>
+<li>Textual Lean extraction misses tactic-mediated and mathlib-routed edges; kernel-grain validation on
+compiled PFR confirms α and Q are robust (2.46 vs 2.27; 0.55 vs 0.59), textual edges are 89.5% precise
+with 53% recall, and tracking-fidelity levels are lower bounds (86% vs 74% for PFR). The other three
+projects remain textual-grain pending builds.</li>
 <li>ET's machine stratum proves ~22M mostly-independent implications; some structurelessness is the task's,
 not the method's. The Dim24/Nexus corpora control for this: same task class as human work, structure
 retained.</li>

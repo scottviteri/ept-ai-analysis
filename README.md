@@ -70,6 +70,36 @@ mkdir -p figs && python3 analysis/gen_figures.py
 The committed `graphs/*.json` are the exact extractions behind `results/` and the
 report, so every downstream number is reproducible without network access.
 
+## Kernel-grain validation (added after initial release)
+
+Textual extraction was validated against ground truth for PFR: the project was
+built (`lake exe cache get && lake build`), and `analysis/extract_deps.lean`
+loads the compiled environment and records, per project-internal constant, the
+constants its type and proof term actually use (`Expr.getUsedConstants`).
+Two Lean 4.33 gotchas encoded there: module-system private olean parts require
+per-module `importAll := true`, and `ConstantInfo.value?` returns theorem
+proofs only with `(allowOpaque := true)`.
+
+Run (zsh-safe; from `repos/pfr` after building):
+```bash
+(cd .lake/build/lib/lean && find PFR -name '*.olean' | sed 's/\.olean$//' |   while read m; do if [ -f "$m.olean.private" ]; then echo "+${m//\//.}";   else echo "${m//\//.}"; fi; done; echo "+PFR") |   xargs lake env lean --run ../../analysis/extract_deps.lean PFR > kernel_deps.jsonl
+python3 ../../analysis/kernel_compare.py kernel_deps.jsonl ../../graphs/pfr_lean.json ../../graphs/pfr_kernel.json
+```
+
+Results (`results/pfr_kernel_deps.jsonl`, `graphs/pfr_kernel.json`):
+| metric | kernel grain | textual grain |
+|---|---|---|
+| N / E (LWCC) | 1304 / 5607 | 1011 / 2690 |
+| α (out-degree) | 2.46 ± 0.23 | 2.27 ± 0.22 |
+| modularity Q | 0.55 | 0.59 |
+| tracking: blueprint edges realized (≤6 hops) | **86%** | 74% |
+
+Textual edge precision vs kernel truth: 0.895; recall 0.531 (missing edges are
+instance resolution, notation, and tactic-mediated uses). Conclusion: textual
+graphs are a high-precision subsample; α/Q conclusions are robust; tracking
+levels are lower bounds (gradient unchanged). PFR declarations make 88,790
+distinct references into mathlib/core (~68 per declaration).
+
 ## Headline numbers
 
 | finding | value |
