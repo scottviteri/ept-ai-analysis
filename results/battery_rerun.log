@@ -301,3 +301,20 @@ per-method decl counts and internal edge density:
  "path3_realized": 0.419,
  "path6_realized": 0.419
 }
+human decls 1373, mathinc decls 7419, shared names 825
+mathinc new decls: 6594
+{"repo": "human_led", "N": 1373, "E": 2515, "N_lwcc": 1062, "n_wcc": 197, "mean_out": 2.22, "max_out": 55, "alpha": 2.968961626869765, "alpha_sigma": 0.4019126090792641, "fit": {"xmin": 14, "ntail": 24, "ks": 0.06293271428786507}, "modularity_Q": 0.751, "DeltaL1": 6.466476156458923, "n_modules_used": 15}
+{"repo": "mathinc", "N": 7419, "E": 21558, "N_lwcc": 6978, "n_wcc": 395, "mean_out": 3.08, "max_out": 483, "alpha": 2.5128082609725837, "alpha_sigma": 0.1130725982855938, "fit": {"xmin": 17, "ntail": 179, "ks": 0.05279603500139313}, "modularity_Q": 0.753, "DeltaL1": 9.037677471499977, "n_modules_used": 33}
+
+per-topdir decl counts (human -> mathinc):
+  Dim24                                   0 ->  4679
+  Dim8                                    0 ->  1115
+  ModularForms                          586 ->   893
+  ForMathlib                            106 ->   168
+  Basic                                 157 ->   154
+  CohnElkies                             23 ->   122
+  Contour                                 0 ->   106
+  MagicFunction                         464 ->   100
+  Integration                             0 ->    58
+  Tactic                                 36 ->    24
+  MainTheorem.lean                        1 ->     0

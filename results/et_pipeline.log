@@ -1,3 +1,10 @@
 === [et] cache get + build (16:12) ===
 Decompressed 8232 file(s)
 Already decompressed 8232 file(s)
+✔ [4727/4729] Built equational_theories.Generated (1.6s)
+✔ [4728/4729] Built equational_theories (1.7s)
+Build completed successfully (4729 jobs).
+=== [et] extract kernel graph ===
+using extract_deps_legacy.lean (1294 modules, 0 with private parts)
+wrote 48505 declarations
+=== [et] compare vs textual + tracking ===

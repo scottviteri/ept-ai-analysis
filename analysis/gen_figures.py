@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 
 THEMES = {
     "light": {"text": "#0b0b0b", "sub": "#52514e", "grid": "#d8d7d2",
-              "series": ["#2a78d6", "#eb6834", "#1baf7a", "#eda100"]},
+              "series": ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#9061c9"]},
     "dark":  {"text": "#ffffff", "sub": "#c3c2b7", "grid": "#3a3a38",
-              "series": ["#3987e5", "#d95926", "#199e70", "#c98500"]},
+              "series": ["#3987e5", "#d95926", "#199e70", "#c98500", "#a37fd6"]},
 }
 
 def style_ax(ax, th):
@@ -97,20 +97,24 @@ rows = [  # (label, alpha, err, group)
     ("48 machine proofs mean (2022)", 2.15, 0.13, 0),
     ("Euclid original text (2022)", 1.97, 0.07, 0),
     ("Wiles FLT text (2022)", 3.39, 0.72, 0),
-    ("PFR Lean", 2.26, 0.07, 1),
-    ("FLT Lean", 2.33, 0.05, 1),
-    ("Sphere Lean (human-led)", 1.98, 0.11, 1),
-    ("ET human stratum", 2.08, 0.10, 1),
-    ("PFR blueprint", 3.43, 0.30, 2),
-    ("FLT blueprint", 3.28, 0.45, 2),
-    ("Sphere blueprint", 4.64, 0.60, 2),
-    ("ET blueprint", 2.41, 0.35, 2),
-    ("Sphere AI-completed (Gauss)", 1.94, 0.12, 3),
-    ("Dim24 pure-AI (Gauss)", 2.10, 0.31, 3),
-    ("ET machine stratum", 1.44, 0.12, 3),
-    ("ET whole graph", 1.50, 0.09, 3),
+    ("PFR Lean", 2.52, 0.28, 1),
+    ("FLT Lean", 2.47, 0.22, 1),
+    ("Sphere Lean (human-led)", 2.97, 0.40, 1),
+    ("ET human stratum", 2.52, 0.17, 1),
+    ("PFR blueprint", 3.43, 0.54, 2),
+    ("FLT blueprint", 3.28, 0.72, 2),
+    ("Sphere blueprint", 4.64, 1.15, 2),
+    ("ET blueprint", 2.41, 0.31, 2),
+    ("Sphere AI-completed (Gauss)", 2.51, 0.11, 3),
+    ("Dim24 pure-AI (Gauss)", 2.55, 0.14, 3),
+    ("ET whole graph", 2.14, 0.10, 3),
+    ("PFR kernel", 2.46, 0.23, 4),
+    ("FLT kernel", 2.99, 0.29, 4),
+    ("Sphere kernel (human-led)", 2.49, 0.19, 4),
+    ("Sphere kernel (Gauss)", 2.56, 0.12, 4),
 ]
-gnames = ["2022 baselines", "Human-led Lean (2023-26)", "Blueprints (informal)", "AI/machine-generated"]
+gnames = ["2022 baselines", "Human-led Lean (2023-26)", "Blueprints (informal)",
+          "AI/machine-generated", "Kernel ground truth"]
 for mode, th in THEMES.items():
     fig, ax = plt.subplots(figsize=(7.2, 6.4), dpi=150)
     fig.patch.set_alpha(0)
@@ -131,7 +135,7 @@ for mode, th in THEMES.items():
     ax.set_title("The α≈2 re-use signature: who has it, who lost it")
     # group legend
     handles = [plt.Line2D([], [], marker="o", ls="none", color=th["series"][i],
-                          label=gnames[i]) for i in range(4)]
+                          label=gnames[i]) for i in range(len(gnames))]
     leg = ax.legend(handles=handles, frameon=False, fontsize=8.5, loc="lower right")
     for t in leg.get_texts(): t.set_color(th["text"])
     fig.tight_layout()
