@@ -1,0 +1,41 @@
+[
+ {
+  "corpus": "AlphaProof-2024 (IMO, raw)",
+  "n_theorems": 3,
+  "total_lines": 230,
+  "mean_lines_per_thm": 76.7,
+  "named_claims_per_100_lines": 0.0,
+  "anon_claims_per_100_lines": 13.91,
+  "named_frac": 0.0,
+  "claim_edges_per_named": 0.0,
+  "case_splits_per_100_lines": 8.26,
+  "mean_max_indent": 10.3,
+  "max_claim_reuse": 0
+ },
+ {
+  "corpus": "Human IMO 2024 (Myers/mathlib)",
+  "n_theorems": 55,
+  "total_lines": 609,
+  "mean_lines_per_thm": 11.1,
+  "named_claims_per_100_lines": 5.09,
+  "anon_claims_per_100_lines": 0.0,
+  "named_frac": 1.0,
+  "claim_edges_per_named": 0.45,
+  "case_splits_per_100_lines": 3.94,
+  "mean_max_indent": 4.2,
+  "max_claim_reuse": 2
+ },
+ {
+  "corpus": "AlphaProof-Nexus 2026 (research)",
+  "n_theorems": 2494,
+  "total_lines": 40857,
+  "mean_lines_per_thm": 16.4,
+  "named_claims_per_100_lines": 17.71,
+  "anon_claims_per_100_lines": 0.52,
+  "named_frac": 0.971,
+  "claim_edges_per_named": 0.72,
+  "case_splits_per_100_lines": 3.99,
+  "mean_max_indent": 8.5,
+  "max_claim_reuse": 17
+ }
+]

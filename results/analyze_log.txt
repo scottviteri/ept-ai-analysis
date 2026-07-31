@@ -1,0 +1,193 @@
+analyzing pfr_blueprint: 218 nodes ...
+{
+ "name": "pfr_blueprint",
+ "N_total": 218,
+ "E_total": 497,
+ "N_lwcc": 217,
+ "E_lwcc": 497,
+ "mean_in": 2.2903225806451615,
+ "mean_out": 2.2903225806451615,
+ "max_out": 14,
+ "alpha": 3.4268661690020408,
+ "alpha_sigma": 0.5426637726183056,
+ "alpha_fit": {
+  "xmin": 6,
+  "ntail": 20,
+  "ks": 0.14720633924000198
+ },
+ "dag_depth": 22,
+ "n_modules": 7,
+ "modularity_Q": 0.5940613499912959,
+ "DeltaL1": 5.579170363000732,
+ "DeltaL1_nmods": 6,
+ "f2_eps01": 0.9904761904761905
+}
+analyzing flt_blueprint: 265 nodes ...
+{
+ "name": "flt_blueprint",
+ "N_total": 265,
+ "E_total": 320,
+ "N_lwcc": 72,
+ "E_lwcc": 78,
+ "mean_in": 1.0833333333333333,
+ "mean_out": 1.0833333333333333,
+ "max_out": 4,
+ "alpha": 3.282636966925421,
+ "alpha_sigma": 0.7218331886782767,
+ "alpha_fit": {
+  "xmin": 2,
+  "ntail": 10,
+  "ks": 0.3814266177182344
+ },
+ "dag_depth": 8,
+ "n_modules": 8,
+ "modularity_Q": 0.7493425378040762,
+ "DeltaL1": 2.79875,
+ "DeltaL1_nmods": 2,
+ "f2_eps01": 1.0
+}
+analyzing sphere_blueprint: 139 nodes ...
+{
+ "name": "sphere_blueprint",
+ "N_total": 139,
+ "E_total": 241,
+ "N_lwcc": 139,
+ "E_lwcc": 241,
+ "mean_in": 1.7338129496402879,
+ "mean_out": 1.7338129496402879,
+ "max_out": 8,
+ "alpha": 4.644955220690308,
+ "alpha_sigma": 1.1526360466703065,
+ "alpha_fit": {
+  "xmin": 5,
+  "ntail": 10,
+  "ks": 0.21889197718509443
+ },
+ "dag_depth": 17,
+ "n_modules": 9,
+ "modularity_Q": 0.6704085673456036,
+ "DeltaL1": 3.8522724726254136,
+ "DeltaL1_nmods": 8,
+ "f2_eps01": 0.9714285714285714
+}
+analyzing et_blueprint: 206 nodes ...
+{
+ "name": "et_blueprint",
+ "N_total": 206,
+ "E_total": 192,
+ "N_lwcc": 115,
+ "E_lwcc": 157,
+ "mean_in": 1.3652173913043477,
+ "mean_out": 1.3652173913043477,
+ "max_out": 57,
+ "alpha": 2.4091464699857887,
+ "alpha_sigma": 0.307500969713795,
+ "alpha_fit": {
+  "xmin": 2,
+  "ntail": 21,
+  "ks": 0.28576690861408127
+ },
+ "dag_depth": 9,
+ "n_modules": 13,
+ "modularity_Q": 0.5949734269138708,
+ "DeltaL1": 3.062457495089074,
+ "DeltaL1_nmods": 3,
+ "f2_eps01": 0.8476190476190476
+}
+analyzing pfr_lean: 1011 nodes ...
+{
+ "name": "pfr_lean",
+ "N_total": 1011,
+ "E_total": 2690,
+ "N_lwcc": 921,
+ "E_lwcc": 2684,
+ "mean_in": 2.9142236699239956,
+ "mean_out": 2.9142236699239956,
+ "max_out": 149,
+ "alpha": 2.264572242300184,
+ "alpha_sigma": 0.22013377172625684,
+ "alpha_fit": {
+  "xmin": 11,
+  "ntail": 33,
+  "ks": 0.07962228594850668
+ },
+ "dag_depth": null,
+ "n_modules": 11,
+ "modularity_Q": 0.5935843619404017,
+ "DeltaL1": 7.4941183697292315,
+ "DeltaL1_nmods": 10,
+ "f2_eps01": 1.0
+}
+analyzing sphere_lean: 1187 nodes ...
+{
+ "name": "sphere_lean",
+ "N_total": 1187,
+ "E_total": 2685,
+ "N_lwcc": 1013,
+ "E_lwcc": 2681,
+ "mean_in": 2.646594274432379,
+ "mean_out": 2.646594274432379,
+ "max_out": 249,
+ "alpha": 1.9788144903103664,
+ "alpha_sigma": 0.11302376189347926,
+ "alpha_fit": {
+  "xmin": 5,
+  "ntail": 75,
+  "ks": 0.09874835701803458
+ },
+ "dag_depth": 20,
+ "n_modules": 13,
+ "modularity_Q": 0.5895746950962893,
+ "DeltaL1": 7.316738457011224,
+ "DeltaL1_nmods": 9,
+ "f2_eps01": 0.9333333333333332
+}
+analyzing flt_lean: 3124 nodes ...
+{
+ "name": "flt_lean",
+ "N_total": 3124,
+ "E_total": 6895,
+ "N_lwcc": 2795,
+ "E_lwcc": 6868,
+ "mean_in": 2.4572450805008943,
+ "mean_out": 2.4572450805008943,
+ "max_out": 389,
+ "alpha": 2.32811784223021,
+ "alpha_sigma": 0.14756864913669,
+ "alpha_fit": {
+  "xmin": 11,
+  "ntail": 81,
+  "ks": 0.06515944423156134
+ },
+ "dag_depth": null,
+ "n_modules": 36,
+ "modularity_Q": 0.7668652713504529,
+ "DeltaL1": 6.951404118319119,
+ "DeltaL1_nmods": 22,
+ "f2_eps01": 1.0
+}
+analyzing et_lean: 16567 nodes ...
+{
+ "name": "et_lean",
+ "N_total": 16567,
+ "E_total": 45313,
+ "N_lwcc": 16179,
+ "E_lwcc": 45307,
+ "mean_in": 2.8003584893998394,
+ "mean_out": 2.8003584893998394,
+ "max_out": 13816,
+ "alpha": 1.501672480835472,
+ "alpha_sigma": 0.0901030374389764,
+ "alpha_fit": {
+  "xmin": 30,
+  "ntail": 31,
+  "ks": 0.09054259748323029
+ },
+ "dag_depth": null,
+ "n_modules": 37,
+ "modularity_Q": 0.389734013644508,
+ "DeltaL1": 7.871343692957257,
+ "DeltaL1_nmods": 29,
+ "f2_eps01": 1.0
+}
+saved results_all.json

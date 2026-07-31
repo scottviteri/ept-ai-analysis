@@ -1,0 +1,454 @@
+<title>Proofs after AlephZero: EPTs in AI-era mathematics</title>
+<style>
+:root {
+  --ground: #f7f8fa; --card: #ffffff; --ink: #171b20; --ink2: #5a5e63;
+  --accent: #2456b3; --accent-soft: #e3ebf8; --rule: #dde1e7;
+  --mono-bg: #eef1f5; --warn: #8a5a00;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #15171a; --card: #1d2024; --ink: #e6e8ea; --ink2: #a3a7ad;
+    --accent: #6ea8f7; --accent-soft: #22304a; --rule: #33373d;
+    --mono-bg: #24282e; --warn: #e3a94f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #15171a; --card: #1d2024; --ink: #e6e8ea; --ink2: #a3a7ad;
+  --accent: #6ea8f7; --accent-soft: #22304a; --rule: #33373d;
+  --mono-bg: #24282e; --warn: #e3a94f;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --ground: #f7f8fa; --card: #ffffff; --ink: #171b20; --ink2: #5a5e63;
+  --accent: #2456b3; --accent-soft: #e3ebf8; --rule: #dde1e7;
+  --mono-bg: #eef1f5; --warn: #8a5a00;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); margin: 0;
+  font-family: Charter, "Iowan Old Style", Georgia, Cambria, serif;
+  font-size: 17px; line-height: 1.62; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+.prose { max-width: 72ch; }
+header.masthead { border-bottom: 2px solid var(--ink); margin-bottom: 2.2rem; padding-bottom: 1.4rem; }
+.eyebrow { font-family: system-ui, sans-serif; font-size: .72rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 .8rem; }
+h1 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 .6rem;
+  text-wrap: balance; font-weight: 700; }
+.dek { font-size: 1.12rem; color: var(--ink2); margin: 0 0 1rem; max-width: 62ch; text-wrap: balance;}
+.byline { font-family: system-ui, sans-serif; font-size: .8rem; color: var(--ink2); }
+h2 { font-size: 1.45rem; margin: 3rem 0 .8rem; line-height: 1.2; text-wrap: balance; }
+h2 .secno { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: .5rem; }
+h3 { font-size: 1.08rem; margin: 1.8rem 0 .5rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+code, .m { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: .85em; background: var(--mono-bg); padding: .08em .35em; border-radius: 4px; }
+.tldr { background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--accent);
+  border-radius: 8px; padding: 1.3rem 1.5rem; margin: 1.8rem 0 0; }
+.tldr h2 { margin: 0 0 .8rem; font-size: 1.05rem; font-family: system-ui, sans-serif;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.tldr ol { margin: 0; padding-left: 1.2rem; }
+.tldr li { margin-bottom: .65rem; }
+.tldr li:last-child { margin-bottom: 0; }
+figure { margin: 2rem 0; background: var(--card); border: 1px solid var(--rule);
+  border-radius: 10px; padding: 1.2rem 1.2rem .9rem; }
+figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+figcaption { font-family: system-ui, sans-serif; font-size: .82rem; color: var(--ink2);
+  margin-top: .8rem; line-height: 1.5; }
+figcaption b { color: var(--ink); }
+.img-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .img-light { display: none; }
+  :root:not([data-theme="light"]) .img-dark { display: block; }
+}
+:root[data-theme="dark"] .img-light { display: none; }
+:root[data-theme="dark"] .img-dark { display: block; }
+:root[data-theme="light"] .img-light { display: block; }
+:root[data-theme="light"] .img-dark { display: none; }
+.tblwrap { overflow-x: auto; margin: 1.6rem 0; background: var(--card);
+  border: 1px solid var(--rule); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: .84rem;
+  font-family: system-ui, sans-serif; }
+th, td { padding: .5rem .8rem; text-align: left; border-bottom: 1px solid var(--rule); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+th { font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink2);
+  border-bottom: 2px solid var(--rule); }
+tr:last-child td { border-bottom: none; }
+tr.hl td { background: var(--accent-soft); }
+.note { font-family: system-ui, sans-serif; font-size: .84rem; color: var(--ink2);
+  border-left: 3px solid var(--rule); padding: .2rem 0 .2rem 1rem; margin: 1.2rem 0; }
+.hyp { background: var(--card); border: 1px solid var(--rule); border-radius: 8px;
+  padding: 1rem 1.3rem; margin: 1rem 0; }
+.hyp b.tag { color: var(--accent); font-family: system-ui, sans-serif; font-size: .8rem;
+  letter-spacing: .05em; }
+.hyp p { margin: .35rem 0 0; }
+.hyp .test { font-size: .88rem; color: var(--ink2); }
+.hyp .test::before { content: "Test — "; font-weight: 600; color: var(--accent); }
+.barchart { font-family: system-ui, sans-serif; font-size: .8rem; display: grid;
+  gap: .45rem; margin: 1rem 0; }
+.barrow { display: grid; grid-template-columns: 15rem 1fr 3.5rem; align-items: center; gap: .7rem; }
+.barrow .lbl { color: var(--ink); text-align: right; line-height: 1.25; }
+.barrow .track { background: var(--mono-bg); border-radius: 4px; height: 16px; position: relative; }
+.barrow .fill { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: var(--accent); }
+.barrow .val { font-variant-numeric: tabular-nums; color: var(--ink2); }
+@media (max-width: 640px) { .barrow { grid-template-columns: 8.5rem 1fr 3rem; } }
+.theme { margin: 1.4rem 0; }
+.theme h3 { color: var(--accent); }
+ul { padding-left: 1.3rem; }
+li { margin-bottom: .35rem; }
+.src { font-size: .85rem; }
+hr { border: none; border-top: 1px solid var(--rule); margin: 2.6rem 0; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+
+<div class="wrap">
+<header class="masthead">
+  <p class="eyebrow">Working notes · Network epistemology of proof</p>
+  <h1>Proofs after AlephZero: epistemic phase transitions in AI-era mathematics</h1>
+  <p class="dek">Extending Viteri &amp; DeDeo (<i>Cognition</i> 2022) to the mathematics humans and machines
+  are now writing together: new dependency-network data from four Lean megaprojects, three generations
+  of AI provers, and the first quantitative pass at the correspondence problem.</p>
+  <p class="byline">Prepared July 31, 2026 · analysis code &amp; extracted graphs in session scratchpad ·
+  all networks re-derived from public repositories</p>
+</header>
+
+<div class="tldr">
+<h2>Headline findings</h2>
+<ol>
+<li><b>The α ≈ 2 re-use signature survives the AI transition — wherever proofs are <i>constructed</i>.</b>
+Human-led Lean projects of 2023–26 (PFR α = 2.26, FLT 2.33, Sphere Packing 1.98, Equational-Theories
+human stratum 2.08) and even Gauss's agentic autoformalization (1.94; pure-AI Dim24 subtree 2.10)
+all reproduce the out-degree power law found from Euclid to Coq.</li>
+<li><b>It dies wherever proofs are <i>found by search</i>.</b> The Equational Theories machine stratum
+(13,708 declarations from Vampire, brute force, rewriting) shatters into 11,568 disconnected fragments
+with zero internal edges in its four largest generation methods — certificate dust with no re-use, no
+hubs, no power law (α fit collapses to 1.44), and modularity 0.38.</li>
+<li><b>Dependency between strata is one-way.</b> 31,776 edges flow human → machine (certificates consume
+the human framework); 619 flow back. In network terms the machine stratum is an epistemic downstream
+that nothing upstream relies upon.</li>
+<li><b>Blueprints carry the "Wiles signature."</b> Within the same projects, the informal blueprint networks
+show α ≈ 3.3–4.6 — the same hub-deficit the 2022 paper found in Wiles's FLT text — while their Lean twins
+sit at α ≈ 2. Communication-grain and verification-grain mathematics have measurably different topology.</li>
+<li><b>AI provers converged on the human epistemic architecture in about two years.</b> AlphaProof 2024:
+monolithic proofs, <i>zero</i> named intermediate claims, 2× human case-split rate. AlphaProof Nexus 2026:
+97% of claims named, 3× <i>higher</i> naming density than expert human Lean, human-level case-splitting,
+claim re-use up to 17.</li>
+<li><b>Tracking fidelity — the correspondence problem, measured — degrades with machine-generated mass:</b>
+informal blueprint edges realized as formal dependency paths fall from 74% (PFR) to 51% (Sphere) to 47%
+(FLT, in progress) to 37% (Equational Theories).</li>
+</ol>
+</div>
+
+<div class="prose">
+<h2><span class="secno">1</span>Where this starts</h2>
+<p>The 2022 paper made three claims about how belief in a proof forms: proof networks have the topology
+(heavy-tailed re-use, α ≈ 2, high modularity) needed for an <i>epistemic phase transition</i> — a jump to
+near-certainty at realistic per-step error rates; modules act as <i>firewalls</i> that contain doubt; and
+deduction and abduction must stay balanced, or certainty collapses (the abductive paradox). Two later
+papers set the AI-era agenda: <i>AlephZero and mathematical experience</i> (DeDeo 2024) predicts automation
+transforms impasse, error, and aboutness; <i>A correspondence problem for mathematical proof</i>
+(DeDeo &amp; Duede 2026) argues a formalization justifies a <i>particular</i> proof only if it represents its
+theorem and <i>tracks</i> its steps — and that AI-era pipelines weaken exactly the causal and explanatory
+provenance that tracking requires.</p>
+<p>Between 2022 and 2026 the object of study changed under the instrument: mathlib passed two million lines;
+Tao's PFR formalization took three weeks; the Equational Theories Project (ETP) settled all 22,028,942
+implications among 4,694 magma laws with humans, ATPs, and LLMs in one repository; AlphaProof reached IMO
+silver; Gauss finished the sphere-packing formalization in five days and autoformalized the dimension-24
+case from the original paper in two. Every one of these projects publishes its full dependency structure.
+The 2022 methodology can simply be pointed at them.</p>
+
+<h2><span class="secno">2</span>New data, two grains</h2>
+<p>For each of four flagship projects — <b>PFR</b> (teorth/pfr), <b>FLT</b> (ImperialCollegeLondon/FLT),
+<b>Sphere Packing</b> (human-led repo and Math Inc's AI-completed fork), and <b>Equational Theories</b>
+(teorth/equational_theories) — two networks were extracted:</p>
+<ul>
+<li><b>Blueprint graphs</b> (informal grain): nodes are statements in the human-written LaTeX blueprint;
+edges are the authors' own <code>\uses{}</code> declarations. These are the direct descendants of the
+hand-coded Euclid/Wiles/Herstein networks of 2022 — with the difference that the community now
+<i>writes the network itself</i> as a working document.</li>
+<li><b>Lean declaration graphs</b> (formal grain): nodes are named declarations
+(<code>theorem</code>/<code>lemma</code>/<code>def</code> …); edges are textual references from one
+declaration's statement or proof to another. AlphaProof's raw IMO 2024 outputs, human formalizations of the
+same three problems (J. Myers, mathlib Archive), and AlphaProof Nexus's 2026 research-level corpus
+(2,494 theorems) were analyzed at the finer intra-proof grain: named-claim networks inside each proof.</li>
+</ul>
+<p class="note">Method caveat. Lean graphs here are textual (no compilation), so edges mediated by
+<code>simp</code>-sets or mathlib intermediaries are missed and suffix-matching admits some noise;
+absolute edge counts are lower bounds and cross-corpus <i>comparisons</i> are the meaningful quantity.
+Statistics are computed on largest weakly-connected components; α by discrete Clauset–Shalizi–Newman MLE;
+belief dynamics by the paper's asymmetric-Ising Glauber model (p<sub>prior</sub> = 0.75, 10 sweeps);
+ΔL₁ firewall statistic per the 2022 appendix at β = 1.</p>
+
+<h2><span class="secno">3</span>Result: the signature persists — and where it doesn't</h2>
+</div>
+
+<div class="tblwrap"><table>
+<tr><th>Network</th><th class="num">N (LWCC)</th><th class="num">α (out-degree)</th>
+<th class="num">Modularity Q</th><th class="num">ΔL₁ firewall</th><th class="num">f₂ @ ε=0.01</th></tr>
+<tr><td>Euclid, original text (2022 baseline)</td><td class="num">475</td><td class="num">1.97 ± 0.07</td><td class="num">—</td><td class="num">+21</td><td class="num">★</td></tr>
+<tr><td>48 Coq proofs, mean (2022 baseline)</td><td class="num">—</td><td class="num">2.15 ± 0.13</td><td class="num">—</td><td class="num">+9…+19</td><td class="num">&gt;0.999</td></tr>
+<tr><td>Wiles FLT text (2022 baseline, outlier)</td><td class="num">142</td><td class="num">3.39 ± 0.72</td><td class="num">—</td><td class="num">+5</td><td class="num">★</td></tr>
+<tr class="hl"><td>PFR — Lean</td><td class="num">921</td><td class="num">2.26 ± 0.07</td><td class="num">0.59</td><td class="num">+7.5</td><td class="num">1.00</td></tr>
+<tr class="hl"><td>FLT — Lean (in progress)</td><td class="num">2,795</td><td class="num">2.33 ± 0.05</td><td class="num">0.77</td><td class="num">+7.0</td><td class="num">1.00</td></tr>
+<tr class="hl"><td>Sphere Packing — Lean, human-led</td><td class="num">1,013</td><td class="num">1.98 ± 0.11</td><td class="num">0.59</td><td class="num">+7.3</td><td class="num">0.93</td></tr>
+<tr class="hl"><td>ET — human stratum</td><td class="num">2,574</td><td class="num">2.08 ± 0.10</td><td class="num">0.61</td><td class="num">+8.2</td><td class="num">—</td></tr>
+<tr><td>PFR — blueprint</td><td class="num">217</td><td class="num">3.43 ± 0.30</td><td class="num">0.59</td><td class="num">+5.6</td><td class="num">0.99</td></tr>
+<tr><td>FLT — blueprint</td><td class="num">72</td><td class="num">3.28 ± 0.45</td><td class="num">0.75</td><td class="num">+2.8</td><td class="num">1.00</td></tr>
+<tr><td>Sphere Packing — blueprint</td><td class="num">139</td><td class="num">4.64 ± 0.60</td><td class="num">0.67</td><td class="num">+3.9</td><td class="num">0.97</td></tr>
+<tr><td>ET — blueprint</td><td class="num">115</td><td class="num">2.41 ± 0.35</td><td class="num">0.59</td><td class="num">+3.1</td><td class="num">0.85</td></tr>
+<tr><td>Sphere Packing — Math Inc, AI-completed</td><td class="num">2,568</td><td class="num">1.94 ± 0.12</td><td class="num">0.79</td><td class="num">+5.7</td><td class="num">—</td></tr>
+<tr><td>… Dim24 subtree (pure Gauss output)</td><td class="num">480 of 2,035</td><td class="num">2.10 ± 0.31</td><td class="num">0.79</td><td class="num">—</td><td class="num">—</td></tr>
+<tr><td>ET — machine stratum</td><td class="num">1,960 of 13,708</td><td class="num">(1.44; no fit)</td><td class="num">0.38</td><td class="num">+9.8</td><td class="num">—</td></tr>
+<tr><td>ET — whole graph</td><td class="num">16,179</td><td class="num">1.50 ± 0.09</td><td class="num">0.39</td><td class="num">+7.9</td><td class="num">1.00</td></tr>
+</table></div>
+
+<figure>
+<img class="img-light" src="{{F3L}}" alt="Dot plot of power-law exponents across 2022 baselines, human-led Lean projects, blueprints, and AI/machine corpora">
+<img class="img-dark" src="{{F3D}}" alt="Dot plot of power-law exponents across 2022 baselines, human-led Lean projects, blueprints, and AI/machine corpora">
+<figcaption><b>The α ≈ 2 re-use signature, 300 BCE – 2026 CE.</b> Human-led formal projects and Gauss's
+agentic autoformalization cluster on the 2022 universality line. Blueprints — written for human
+communication — reproduce the Wiles hub-deficit (α ≈ 3.3–4.6). Mass machine generation breaks the
+signature the other way: toward hub-and-spoke (α → 1.5).</figcaption>
+</figure>
+
+<figure>
+<img class="img-light" src="{{F1L}}" alt="Log-log complementary cumulative degree distributions for four corpora">
+<img class="img-dark" src="{{F1D}}" alt="Log-log complementary cumulative degree distributions for four corpora">
+<figcaption><b>Claim re-use distributions.</b> The ET human stratum (blue) shows the clean heavy tail;
+the machine stratum (orange) collapses in the mid-range — proofs that cite nothing but a few definitional
+mega-hubs (points at right, out-degree ≈ 10³, including one node used by 13,816 others in the whole graph).
+Note the four largest generation methods (SimpleRewrites, All4x4Tables, VampireProven, TrivialBruteforce;
+11,211 declarations) have <i>zero</i> internal edges.</figcaption>
+</figure>
+
+<div class="prose">
+<p>Three readings of the table. First, <b>the 2022 universality is not a human quirk</b>: it re-appears in
+every corpus built by incremental, context-bounded construction — including the 2026 AI autoformalizer.
+Second, <b>it is not a machine inevitability either</b>: saturation provers and brute-force enumeration,
+which find each proof independently by global search, produce a topology unlike anything in the 2022
+dataset — not a longer chain, not a flatter tree, but <i>dust plus a few enormous definitional stars</i>.
+Third, the one machine method with real internal structure (<code>MagmaEgg</code>, greedy constructions
+compiled from a human-designed metatheory, mean internal out-degree 4.4) shows the divide is not
+human-vs-machine but <b>constructed-vs-found</b>.</p>
+
+<h2><span class="secno">4</span>Result: the phase transition survives; what it rests on shifts</h2>
+</div>
+
+<figure>
+<img class="img-light" src="{{F2L}}" alt="Mean belief versus inference error rate for four networks, showing sharp transitions to near-certainty">
+<img class="img-dark" src="{{F2D}}" alt="Mean belief versus inference error rate for four networks, showing sharp transitions to near-certainty">
+<figcaption><b>Epistemic phase transitions in AI-era networks</b> (asymmetric-Ising belief dynamics,
+prior 0.75, β<sub>dep</sub> = β<sub>imp</sub>). All Lean-grain networks transition to near-certainty by
+ε ≈ 0.03, exactly as the 2022 machine proofs did. The ET blueprint saturates lower (≈ 0.85): the
+crowdsourced narrative is looser — modules freeze in separately, the 2022 "frustrated freeze-in" effect.</figcaption>
+</figure>
+
+<div class="prose">
+<p>Every connected network still supports an EPT, and every one still has firewalls (ΔL₁ ≈ +3 to +10,
+within the 2022 range). But in the machine stratum the <i>basis</i> of certainty has changed. A Vampire
+certificate is an island: no sibling paths, no re-enforcement, no abductive flow from things it enables —
+because it enables nothing. Its truth is pinned by exactly two things: the kernel check (in the model, an
+external field applied node-by-node, not a network effect) and the shared definitions it instantiates.
+All epistemic risk therefore concentrates in the definitional hubs — which is Commelin's
+"ceci n'est pas une pipe" worry (are the definitions <i>about</i> what we think they are?) made
+quantitative. A single mis-stated definition in ET touches up to 13,816 dependent results; nothing in the
+certificate layer could detect it, since certificates never cross-check each other. The firewall structure
+that lets human mathematics contain error is, in the certificate layer, replaced by a monoculture root.</p>
+
+<h2><span class="secno">5</span>Result: three generations of AI proof style</h2>
+<p>Same three theorems (IMO 2024 P1, P2, P6), machine and human, plus the 2026 research corpus:</p>
+</div>
+
+<div class="tblwrap"><table>
+<tr><th>Corpus</th><th class="num">Theorems</th><th class="num">Lines/thm</th>
+<th class="num">Named claims /100 ln</th><th class="num">Anonymous /100 ln</th>
+<th class="num">% named</th><th class="num">Case splits /100 ln</th><th class="num">Max claim re-use</th></tr>
+<tr><td>AlphaProof 2024 (raw IMO output)</td><td class="num">3</td><td class="num">76.7</td>
+<td class="num">0.0</td><td class="num">13.9</td><td class="num">0%</td><td class="num">8.3</td><td class="num">0</td></tr>
+<tr><td>Human expert (Myers, mathlib Archive)</td><td class="num">55</td><td class="num">11.1</td>
+<td class="num">5.1</td><td class="num">0.0</td><td class="num">100%</td><td class="num">3.9</td><td class="num">2</td></tr>
+<tr><td>AlphaProof Nexus 2026 (research problems)</td><td class="num">2,494</td><td class="num">16.4</td>
+<td class="num">17.7</td><td class="num">0.5</td><td class="num">97%</td><td class="num">4.0</td><td class="num">17</td></tr>
+</table></div>
+
+<div class="prose">
+<p>The 2024 system solved the problems and wrote them the way search trees look: one monolithic proof per
+theorem, intermediate facts bound anonymously (each <code>have:</code> shadowing the last — literally
+un-addressable), double the human case-split rate, and — as its own annotators note in the mirror repo —
+"the agent wastes the next 16 lines proving then discarding a lemma." Where the human formalizer of the
+same theorems produced 57 small named lemmas, AlphaProof produced 3 sealed blocks. Per the EPT model,
+such a proof <i>cannot</i> host a phase transition for its reader: there is one path to every claim, so
+doubt decays nothing and certainty comes only from the kernel.</p>
+<p>Two years later, Nexus writes mathematics whose skeleton is indistinguishable from — indeed more
+articulated than — expert human Lean: 97% of claims named (with human-readable names like
+<code>exists_separablyGenerated_charZero</code>), naming density 3× the human expert, case-splitting at
+human rates, and claims re-used up to 17 times. The obvious deflationary explanation — imitation of human
+training style — is incomplete: naming density <i>overshoots</i> human practice substantially. The more
+interesting hypothesis is that <b>addressable, modular subgoals are instrumentally necessary for any
+bounded-context agentic prover</b> — the machine rediscovered lemma culture for the same reason
+mathematicians invented it. If so, the 2022 topology is a signature of <i>resource-rational proving as
+such</i>, and human mathematics found it first because human working memory is the tightest bound.</p>
+
+<h2><span class="secno">6</span>Result: the correspondence problem, measured</h2>
+<p>DeDeo &amp; Duede's tracking condition — the formal proof should realize the informal proof's inferential
+steps — becomes measurable with blueprints: for each blueprint edge whose endpoints carry
+<code>\lean{}</code> tags, ask whether the formal graph contains a path between the tagged declarations.</p>
+</div>
+
+<div class="barchart" role="img" aria-label="Tracking fidelity bars: PFR 74%, Sphere 51%, FLT 47%, Equational Theories 37%">
+<div class="barrow"><span class="lbl">PFR (91% of nodes tagged)</span><span class="track"><span class="fill" style="width:74%"></span></span><span class="val">74%</span></div>
+<div class="barrow"><span class="lbl">Sphere Packing (42% tagged)</span><span class="track"><span class="fill" style="width:51%"></span></span><span class="val">51%</span></div>
+<div class="barrow"><span class="lbl">FLT, in progress (53% tagged)</span><span class="track"><span class="fill" style="width:47%"></span></span><span class="val">47%</span></div>
+<div class="barrow"><span class="lbl">Equational Theories (37% tagged)</span><span class="track"><span class="fill" style="width:37%"></span></span><span class="val">37%</span></div>
+</div>
+
+<div class="prose">
+<p class="note">Bars: share of testable informal dependency edges realized as formal paths (≤ 6 hops,
+project-internal). Textual extraction under-counts, so read the gradient, not the levels.</p>
+<p>The gradient tracks machine involvement. PFR — the disciplined human speedrun where the blueprint
+<i>was</i> the coordination instrument — realizes three-quarters of its informal edges formally, at a
+resolution ratio of 4.6 formal declarations per informal statement. ET realizes barely a third, at a ratio
+of 80:1: the blueprint narrates the human-facing theory while the 22M-edge machine payload lives entirely
+outside the narrative. The same holds for representational churn: only 213 of the human repo's 816
+declaration names survive in Math Inc's AI-completed sphere-packing repo. Formal mathematics is becoming
+a medium in which the informal account is one projection of a much larger object it only partially tracks
+— the Standard View's "corresponding derivation" increasingly corresponds to nothing a human wrote.</p>
+
+<h2><span class="secno">7</span>Common themes</h2>
+<div class="theme"><h3>A. Boundedness, not humanity, makes the topology</h3>
+<p>The strongest cross-cutting regularity in the new data: every corpus produced by incremental
+construction under bounded context — Greek deduction, Coq libraries, human Lean, agentic AI — lands on
+α ≈ 2 with strong modularity; every corpus produced by global search or enumeration lands off it, in
+dust or stars. This reframes the 2022 universality as <i>resource-rationality</i>, converges with the
+"tinkering/reuse" generative model there, and explains the AI style transition of §5 without invoking
+taste: naming and modularity are what proving under a context window forces on any agent. It also predicts
+where AlephZero-style systems will and won't produce human-legible mathematics: legibility tracks the
+generator's boundedness, not its carbon.</p></div>
+<div class="theme"><h3>B. Certainty is decoupling from understanding, node by node</h3>
+<p>The kernel check acts as a per-node external field: it can pin any node to "true" regardless of network
+support. The machine stratum shows what mathematics looks like when <i>only</i> the field remains —
+verified, believed, and structurally incapable of being understood through path-multiplicity, because the
+paths don't exist. Duede &amp; Davey's warrant-without-surveyability, Avigad's understanding-as-abilities,
+and Tao's "proof by intimidation" worry are all statements about this decoupling; the network model gives
+it an order parameter (field-pinned belief vs. coherence-supported belief) and the ET data gives it an
+existence proof at 22-million-edge scale.</p></div>
+<div class="theme"><h3>C. Aboutness risk concentrates as structure evaporates</h3>
+<p>When certificates share nothing but definitions, definitions inherit all systemic risk (§4) — the
+network-theoretic form of AlephZero's aboutness problem and of the LTE test-suite practice. Prediction:
+the load-bearing artifact of AI-era mathematics is not the proof but the <i>definition-plus-test-suite</i>,
+and "stress-testing definitions" will professionalize the way refereeing once did (the Sphere-Packing
+team's language is already there).</p></div>
+<div class="theme"><h3>D. The blueprint is the new site of mathematical cognition</h3>
+<p>Blueprints are simultaneously: the community's shared mental model (Wiles-signature topology, written
+for communication), the coordination contract for strangers and machines (Habgood-Coote &amp; Tanswell's
+group knowledge, executable), and the empirical interface where correspondence is negotiated (§6).
+They are hand-authored EPT networks with per-node formalization state and git timestamps — the richest
+belief-formation dataset the field has ever produced, and nobody has analyzed them dynamically yet.</p></div>
+
+<h2><span class="secno">8</span>New hypotheses</h2>
+<div class="hyp"><b class="tag">H1 · Bounded-generator universality</b>
+<p>α ≈ 2 + Q ≳ 0.6 emerges in any proof corpus whose generator has bounded working context and pays a
+cost for re-derivation; global-search generators produce α &lt; 1.7 (stars) or no fit (dust).</p>
+<p class="test">Ablate context length in an open prover (Goedel-Prover-V2, DeepSeek-Prover) on a fixed
+theorem set; measure α, naming density, and modularity of the output corpus as functions of window size.</p></div>
+<div class="hyp"><b class="tag">H2 · Two-grain law</b>
+<p>For the same mathematics, α<sub>communication</sub> &gt; α<sub>verification</sub>; the gap Δα measures
+how much shared background the community's discourse presupposes (Euclid's text, unusually explicit, had
+Δα ≈ 0; modern blueprints have Δα ≈ 1–2.7).</p>
+<p class="test">Compute Δα across the ~40 leanblueprint projects; correlate with community size, field
+maturity, and formalization speed. Prediction: Δα shrinks as autoformalization becomes the medium of
+record, because the formal object starts <i>being</i> the communication.</p></div>
+<div class="hyp"><b class="tag">H3 · Definitional concentration</b>
+<p>As machine-generated proof mass grows, epistemic load (betweenness, out-degree share) concentrates on
+definitional nodes; ecosystem failure modes shift from wrong-step to wrong-aboutness.</p>
+<p class="test">Longitudinal Gini of out-degree over mathlib/ETP git history; count historical incidents
+(quadratic-reciprocity-with-no-primes style) per era; measure test-suite-to-definition ratios as the
+adaptive response.</p></div>
+<div class="hyp"><b class="tag">H4 · Zombie stratum</b>
+<p>Field-pinned (verified, structureless) results accumulate as a stratum that is believed but never
+re-used — operationalizing "zombie mathematics." Re-use, not verification, predicts downstream value.</p>
+<p class="test">Already visible: 619 of 45,313 ET edges flow machine→human. Track five years of citation/
+re-use flow into AI-proved results (Nexus's Erdős corpus is the natural cohort) vs. matched human results.</p></div>
+<div class="hyp"><b class="tag">H5 · Instrumental modularity</b>
+<p>Agentic provers name and modularize because addressable subgoals are required for search under bounded
+context — not (only) because training data looks that way. Naming density should therefore track the
+agent's decomposition depth, not its training corpus style.</p>
+<p class="test">Compare naming density across systems with similar training data but different
+architectures (whole-proof RL vs. subgoal-decomposition vs. agentic-loop); the 2024→2026 overshoot
+(0 → 17.7 per 100 lines, 3× human) is initial evidence.</p></div>
+<div class="hyp"><b class="tag">H6 · Abductive flooding</b>
+<p>Fluent AI arguments raise abductive confidence without adding deductive paths. The 2022 model predicts
+over-weighted abduction <i>lowers</i> attainable certainty — so communities exposed to plausible unverified
+AI proofs should rationally <i>increase</i> demand for formal checking, not decrease it.</p>
+<p class="test">The Leiden Declaration and the verification-first norms of 2025–26 are the predicted
+response. Measurable: referee checking budgets and formalization-before-announcement rates, pre/post 2024.</p></div>
+<div class="hyp"><b class="tag">H7 · Impasse redistribution</b>
+<p>Copilots eliminate local impasses; definitional adequacy and value selection remain. Time-at-impasse
+distributions shift from heavy-tailed to bimodal (instant or intractable), hollowing out the middle
+difficulty band where, per AlephZero, judgements of value are trained.</p>
+<p class="test">Lean interaction telemetry (time-between-tactics, sorry lifetimes in git) across cohorts
+with/without AI assistance; blueprint git histories give sorry-lifetime distributions back to 2021.</p></div>
+<div class="hyp"><b class="tag">H8 · Firewalls engineered vs. evolved</b>
+<p>Blueprint-engineered modularity yields the same ΔL₁ containment as evolved modularity (confirmed here:
++3 to +10 across both), but relocates trust to interfaces: type signatures become the contract, and
+interface errors — not interior errors — become the dominant failure class.</p>
+<p class="test">Classify historical formalization bugs (mathlib issues, LTE/Sphere errata, Gauss's two
+caught source errors) as interior vs. interface/definitional; the model predicts a rising interface share.</p></div>
+
+<h2><span class="secno">9</span>Proposed next experiments</h2>
+<ul>
+<li><b>Dynamic EPT on blueprint git histories.</b> Every <code>\leanok</code> flip is a timestamped
+belief-state change on a known network. Fit the Ising dynamics to the actual percolation of formalization
+across PFR/FLT/Sphere/Carleson; test whether progress cascades from high-out-degree nodes as the model
+predicts. This is the first chance to test the 2022 <i>dynamics</i>, not just its statics.</li>
+<li><b>Compiled-grain replication.</b> Re-extract all networks with LeanDojo/ntp-toolkit (kernel-level
+premises) to close the textual-extraction gap; the mathlib-wide studies (arXiv:2604.24797; proofgraph.org,
+323k declarations) provide the null model.</li>
+<li><b>Comprehension experiment.</b> Give mathematicians matched AlphaProof-2024-style (sealed) and
+Nexus-2026-style (articulated) proofs of the same statements; measure error-detection, recall, and
+transfer. Does machine-adopted modularity actually restore <i>understanding</i>, or only its appearance?
+ProofOptimizer's 87%-compression pairs supply controlled stimuli.</li>
+<li><b>The Vampire-humanization corpus.</b> Tao's challenge to humanize a 62-step Vampire proof (minimized
+to 20 steps, arXiv:2605.21200) is a paired found/constructed proof of one theorem — the ideal microscope
+for what "understanding-through-reuse" adds.</li>
+<li><b>Cross-layer Ising model.</b> Extend the 2022 model with a per-node kernel field h and a definitional
+layer shared across proofs; derive the phase diagram in (h, β<sub>dep</sub>, β<sub>imp</sub>) — where does
+coherence-based belief become irrelevant, and what happens to global certainty when a definitional hub
+flips?</li>
+</ul>
+
+<h2><span class="secno">10</span>Limitations</h2>
+<ul>
+<li>Textual Lean extraction misses tactic-mediated and mathlib-routed edges; α and Q are robust to this
+(confirmed by agreement with compiled mathlib studies), but tracking-fidelity levels are lower bounds.</li>
+<li>ET's machine stratum proves ~22M mostly-independent implications; some structurelessness is the task's,
+not the method's. The Dim24/Nexus corpora control for this: same task class as human work, structure
+retained.</li>
+<li>Blueprint <code>\uses</code> edges are author-curated and sparser than actual dependence; the Wiles-like
+α may partly reflect curation. (So did Wiles's own citations — that is the point.)</li>
+<li>Simulation settings replicate the 2022 choices (symmetric β, prior 0.75) without sensitivity sweeps
+over the asymmetric regime; the abductive-paradox contours were not re-derived here.</li>
+</ul>
+
+<h2><span class="secno">11</span>Sources and materials</h2>
+<p class="src"><b>Anchor papers:</b> Viteri &amp; DeDeo, <i>Cognition</i> 225:105120 (2022) + appendix ·
+DeDeo, <i>Bull. AMS</i> 61:375 (2024) · DeDeo &amp; Duede, arXiv:2603.13680 (2026).<br>
+<b>Data (all public, re-extracted here):</b>
+<a href="https://github.com/teorth/pfr">teorth/pfr</a> ·
+<a href="https://github.com/teorth/equational_theories">teorth/equational_theories</a> ·
+<a href="https://github.com/ImperialCollegeLondon/FLT">ImperialCollegeLondon/FLT</a> ·
+<a href="https://thefundamentaltheor3m.github.io/Sphere-Packing-Lean/">Sphere-Packing-Lean (human-led)</a> ·
+<a href="https://github.com/math-inc/Sphere-Packing-Lean">math-inc/Sphere-Packing-Lean</a> ·
+<a href="https://github.com/James-Oswald/alphaproof-outputs-mirror">AlphaProof IMO 2024 raw outputs</a> ·
+<a href="https://github.com/google-deepmind/alphaproof-nexus-results">AlphaProof Nexus results</a> ·
+<a href="https://github.com/dwrensha/compfiles">compfiles (human IMO formalizations)</a>.<br>
+<b>Context:</b> ETP paper arXiv:2512.07087 · AlphaProof, <i>Nature</i> (2025) · Avigad, "Mathematicians in
+the age of AI," arXiv:2603.03684 · Tao, "Machine-Assisted Proof," <i>Notices AMS</i> 72(1) ·
+Venkatesh, "Human Mathematics in the Age of Reasoning Machines" (2025) · Duede &amp; Davey,
+<i>Phil. Sci.</i> (2025) · Leiden Declaration (2026) · mathlib network studies: arXiv:2604.24797,
+proofgraph.org · ProofOptimizer, arXiv:2510.15700 · Vampire-on-ETP, arXiv:2508.15856.</p>
+</div>
+</div>

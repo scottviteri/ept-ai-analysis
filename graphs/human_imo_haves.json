@@ -1,0 +1,1222 @@
+[
+ {
+  "name": "condition_two_mul_int",
+  "n_lines": 12,
+  "n_tokens": 55,
+  "tactics": {
+   "simp": 1,
+   "rw": 2,
+   "norm_num": 1,
+   "refine": 1,
+   "suffices": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 11,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P1.lean"
+ },
+ {
+  "name": "condition_sub_two_mul_int_iff",
+  "n_lines": 13,
+  "n_tokens": 35,
+  "tactics": {
+   "simp": 1,
+   "rw": 1,
+   "refine": 1,
+   "convert": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P1.lean"
+ },
+ {
+  "name": "condition_toIcoMod_iff",
+  "n_lines": 12,
+  "n_tokens": 21,
+  "tactics": {
+   "rw": 1,
+   "norm_num": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P1.lean"
+ },
+ {
+  "name": "mem_Ico_one_of_mem_Ioo",
+  "n_lines": 32,
+  "n_tokens": 134,
+  "tactics": {
+   "simp": 2,
+   "rw": 6,
+   "field_simp": 1,
+   "exact": 3,
+   "refine": 6,
+   "intro": 1,
+   "rcases": 1,
+   "positivity": 1,
+   "gcongr": 4,
+   "calc": 3,
+   "have": 1,
+   "suffices": 1,
+   "by_contra": 1,
+   "convert": 2
+  },
+  "case_splits": 1,
+  "anon_claims": 0,
+  "n_claims": 1,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 8,
+  "edges": [],
+  "claims": [
+   "hr"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P1.lean"
+ },
+ {
+  "name": "mem_Ico_n_of_mem_Ioo",
+  "n_lines": 53,
+  "n_tokens": 226,
+  "tactics": {
+   "simp": 1,
+   "rw": 10,
+   "linarith": 1,
+   "ring": 4,
+   "field_simp": 1,
+   "exact": 1,
+   "refine": 1,
+   "rcases": 2,
+   "obtain": 1,
+   "constructor": 2,
+   "positivity": 1,
+   "gcongr": 3,
+   "calc": 1,
+   "have": 7,
+   "suffices": 1,
+   "convert": 2
+  },
+  "case_splits": 3,
+  "anon_claims": 0,
+  "n_claims": 9,
+  "n_claim_edges": 4,
+  "claim_out_degrees": [
+   2,
+   1,
+   1
+  ],
+  "max_claim_reuse": 2,
+  "max_indent": 15,
+  "edges": [
+   [
+    "hk",
+    "hc'"
+   ],
+   [
+    "hk",
+    "hk'"
+   ],
+   [
+    "hk'",
+    "hc'"
+   ],
+   [
+    "hs",
+    "hn11"
+   ]
+  ],
+  "claims": [
+   "h1",
+   "h2",
+   "hs",
+   "hn11",
+   "hkl'",
+   "hk2'",
+   "hk",
+   "hk'",
+   "hc'"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P1.lean"
+ },
+ {
+  "name": "not_condition_of_mem_Ioo",
+  "n_lines": 15,
+  "n_tokens": 56,
+  "tactics": {
+   "rw": 2,
+   "linarith": 1,
+   "field_simp": 1,
+   "apply": 1,
+   "intro": 1,
+   "rcases": 1,
+   "have": 3,
+   "convert": 1
+  },
+  "case_splits": 1,
+  "anon_claims": 0,
+  "n_claims": 3,
+  "n_claim_edges": 3,
+  "claim_out_degrees": [
+   2,
+   1
+  ],
+  "max_claim_reuse": 2,
+  "max_indent": 4,
+  "edges": [
+   [
+    "hn",
+    "hna"
+   ],
+   [
+    "hn",
+    "hna'"
+   ],
+   [
+    "hna",
+    "hna'"
+   ]
+  ],
+  "claims": [
+   "hn",
+   "hna",
+   "hna'"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P1.lean"
+ },
+ {
+  "name": "condition_iff_of_mem_Ico",
+  "n_lines": 31,
+  "n_tokens": 93,
+  "tactics": {
+   "simp": 1,
+   "rw": 2,
+   "norm_num": 1,
+   "exact": 2,
+   "refine": 2,
+   "intro": 1,
+   "rcases": 2,
+   "convert": 1
+  },
+  "case_splits": 2,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 8,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P1.lean"
+ },
+ {
+  "name": "dvd_pow_iff_of_dvd_sub",
+  "n_lines": 16,
+  "n_tokens": 60,
+  "tactics": {
+   "simp": 1,
+   "rw": 2,
+   "obtain": 1
+  },
+  "case_splits": 1,
+  "anon_claims": 0,
+  "n_claims": 2,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [
+   "k",
+   "hk"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "a_pos",
+  "n_lines": 3,
+  "n_tokens": 4,
+  "tactics": {},
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 0,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "b_pos",
+  "n_lines": 6,
+  "n_tokens": 9,
+  "tactics": {},
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 0,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "g_spec",
+  "n_lines": 7,
+  "n_tokens": 27,
+  "tactics": {},
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "N_spec",
+  "n_lines": 4,
+  "n_tokens": 23,
+  "tactics": {},
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "g_pos",
+  "n_lines": 3,
+  "n_tokens": 6,
+  "tactics": {},
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 0,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "N_pos",
+  "n_lines": 3,
+  "n_tokens": 6,
+  "tactics": {},
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 0,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "gcd_eq_g",
+  "n_lines": 8,
+  "n_tokens": 52,
+  "tactics": {
+   "rw": 1,
+   "exact": 1,
+   "refine": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "dvd_g_of_le_N_of_dvd",
+  "n_lines": 8,
+  "n_tokens": 32,
+  "tactics": {
+   "rw": 1,
+   "exact": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "a_coprime_ab_add_one",
+  "n_lines": 7,
+  "n_tokens": 19,
+  "tactics": {
+   "simp": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "symm_large_n",
+  "n_lines": 7,
+  "n_tokens": 15,
+  "tactics": {
+   "rw": 2
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "N_le_large_n",
+  "n_lines": 10,
+  "n_tokens": 49,
+  "tactics": {
+   "simp": 1,
+   "rw": 1,
+   "exact": 1,
+   "refine": 1,
+   "gcongr": 1,
+   "have": 1,
+   "suffices": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 1,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [
+   "hp"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "dvd_large_n_sub_neg_one",
+  "n_lines": 7,
+  "n_tokens": 20,
+  "tactics": {
+   "simp": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "symm_large_n_0",
+  "n_lines": 7,
+  "n_tokens": 15,
+  "tactics": {
+   "rw": 2
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "N_le_large_n_0",
+  "n_lines": 10,
+  "n_tokens": 38,
+  "tactics": {
+   "simp": 1,
+   "rw": 1,
+   "exact": 1,
+   "refine": 1,
+   "gcongr": 1,
+   "have": 1,
+   "suffices": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 1,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [
+   "hp"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "dvd_large_n_0_sub_zero",
+  "n_lines": 4,
+  "n_tokens": 9,
+  "tactics": {
+   "simp": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "ab_add_one_dvd_a_pow_large_n_add_b",
+  "n_lines": 14,
+  "n_tokens": 71,
+  "tactics": {
+   "simp": 1,
+   "rw": 2,
+   "exact": 1,
+   "suffices": 1,
+   "convert": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 6,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "ab_add_one_dvd_b_pow_large_n_add_a",
+  "n_lines": 6,
+  "n_tokens": 19,
+  "tactics": {
+   "rw": 2,
+   "convert": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "ab_add_one_dvd_g",
+  "n_lines": 5,
+  "n_tokens": 14,
+  "tactics": {},
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "ab_add_one_dvd_a_pow_large_n_0_add_b",
+  "n_lines": 8,
+  "n_tokens": 26,
+  "tactics": {
+   "rw": 1,
+   "exact": 1,
+   "refine": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "ab_add_one_dvd_b_add_one",
+  "n_lines": 10,
+  "n_tokens": 35,
+  "tactics": {
+   "rw": 3,
+   "exact": 1,
+   "suffices": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "a_eq_one",
+  "n_lines": 11,
+  "n_tokens": 42,
+  "tactics": {
+   "rw": 1,
+   "exact": 1,
+   "have": 3,
+   "suffices": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 3,
+  "n_claim_edges": 1,
+  "claim_out_degrees": [
+   1
+  ],
+  "max_claim_reuse": 1,
+  "max_indent": 4,
+  "edges": [
+   [
+    "hle",
+    "hle'"
+   ]
+  ],
+  "claims": [
+   "hle",
+   "hp",
+   "hle'"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "b_eq_one",
+  "n_lines": 33,
+  "n_tokens": 122,
+  "tactics": {
+   "simp": 3,
+   "exact": 3,
+   "refine": 4,
+   "rcases": 1,
+   "obtain": 3,
+   "constructor": 1,
+   "use": 1,
+   "have": 1
+  },
+  "case_splits": 4,
+  "anon_claims": 0,
+  "n_claims": 8,
+  "n_claim_edges": 6,
+  "claim_out_degrees": [
+   2,
+   1,
+   1,
+   1,
+   1
+  ],
+  "max_claim_reuse": 2,
+  "max_indent": 6,
+  "edges": [
+   [
+    "a",
+    "HCm"
+   ],
+   [
+    "a",
+    "hc"
+   ],
+   [
+    "b",
+    "hc"
+   ],
+   [
+    "ha",
+    "hc"
+   ],
+   [
+    "hb",
+    "hc"
+   ],
+   [
+    "hc",
+    "HCm"
+   ]
+  ],
+  "claims": [
+   "a",
+   "ha",
+   "b",
+   "hb",
+   "hc",
+   "g",
+   "N",
+   "HCm"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P2.lean"
+ },
+ {
+  "name": "Aquaesulian.apply_apply_add",
+  "n_lines": 4,
+  "n_tokens": 22,
+  "tactics": {
+   "exact": 1,
+   "rcases": 1
+  },
+  "case_splits": 1,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.eq_of_apply_eq_inl",
+  "n_lines": 6,
+  "n_tokens": 32,
+  "tactics": {
+   "rw": 1,
+   "exact": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.injective",
+  "n_lines": 7,
+  "n_tokens": 30,
+  "tactics": {
+   "exact": 2,
+   "intro": 1,
+   "rcases": 1
+  },
+  "case_splits": 1,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.apply_zero",
+  "n_lines": 5,
+  "n_tokens": 14,
+  "tactics": {
+   "simp": 1,
+   "refine": 1,
+   "convert": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.apply_neg_apply_add",
+  "n_lines": 8,
+  "n_tokens": 37,
+  "tactics": {
+   "rw": 2,
+   "exact": 2,
+   "rcases": 1
+  },
+  "case_splits": 1,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.apply_neg_apply",
+  "n_lines": 5,
+  "n_tokens": 16,
+  "tactics": {
+   "rw": 1,
+   "exact": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.apply_neg_apply_neg",
+  "n_lines": 4,
+  "n_tokens": 14,
+  "tactics": {
+   "simp": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.apply_neg_of_apply_eq",
+  "n_lines": 5,
+  "n_tokens": 20,
+  "tactics": {
+   "rw": 1,
+   "exact": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.apply_neg_eq_neg_iff",
+  "n_lines": 5,
+  "n_tokens": 25,
+  "tactics": {
+   "rw": 1,
+   "refine": 1,
+   "convert": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.pair_lemma",
+  "n_lines": 9,
+  "n_tokens": 64,
+  "tactics": {
+   "exact": 4,
+   "rcases": 2
+  },
+  "case_splits": 2,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.g_two",
+  "n_lines": 21,
+  "n_tokens": 86,
+  "tactics": {
+   "simp": 1,
+   "rw": 8,
+   "refine": 1,
+   "convert": 2
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 6,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.u_eq_zero",
+  "n_lines": 15,
+  "n_tokens": 93,
+  "tactics": {
+   "simp": 1,
+   "rw": 4,
+   "rcases": 1,
+   "have": 1
+  },
+  "case_splits": 1,
+  "anon_claims": 0,
+  "n_claims": 1,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [
+   "hc"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.u_eq_zero_or_v_eq_zero",
+  "n_lines": 8,
+  "n_tokens": 63,
+  "tactics": {
+   "rw": 1,
+   "exact": 2,
+   "rcases": 1
+  },
+  "case_splits": 1,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.card_le_two",
+  "n_lines": 27,
+  "n_tokens": 124,
+  "tactics": {
+   "simp": 4,
+   "rw": 2,
+   "refine": 2,
+   "intro": 2,
+   "rcases": 2,
+   "have": 1,
+   "suffices": 1,
+   "by_contra": 1
+  },
+  "case_splits": 2,
+  "anon_claims": 0,
+  "n_claims": 1,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 15,
+  "edges": [],
+  "claims": [
+   "huv"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "aquaesulian_iff_general",
+  "n_lines": 6,
+  "n_tokens": 24,
+  "tactics": {
+   "rw": 2,
+   "refine": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "Aquaesulian.card_le_two",
+  "n_lines": 9,
+  "n_tokens": 30,
+  "tactics": {
+   "rw": 1,
+   "exact": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "fExample_add",
+  "n_lines": 6,
+  "n_tokens": 23,
+  "tactics": {
+   "rw": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "add_fExample",
+  "n_lines": 5,
+  "n_tokens": 20,
+  "tactics": {
+   "rw": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "fExample_int_add",
+  "n_lines": 5,
+  "n_tokens": 20,
+  "tactics": {},
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "fExample_of_mem_Ico",
+  "n_lines": 5,
+  "n_tokens": 20,
+  "tactics": {
+   "simp": 1,
+   "rw": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 2,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "apply_fExample_add_apply_of_fract_le",
+  "n_lines": 10,
+  "n_tokens": 52,
+  "tactics": {
+   "rw": 2,
+   "have": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 6,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "aquaesulian_fExample",
+  "n_lines": 8,
+  "n_tokens": 34,
+  "tactics": {
+   "rw": 1,
+   "exact": 2,
+   "intro": 1,
+   "rcases": 1
+  },
+  "case_splits": 1,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "fract_fExample",
+  "n_lines": 7,
+  "n_tokens": 31,
+  "tactics": {
+   "simp": 2
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 4,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "floor_fExample",
+  "n_lines": 13,
+  "n_tokens": 67,
+  "tactics": {
+   "simp": 3,
+   "rw": 2,
+   "exact": 1,
+   "suffices": 1
+  },
+  "case_splits": 0,
+  "anon_claims": 0,
+  "n_claims": 0,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 15,
+  "edges": [],
+  "claims": [],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ },
+ {
+  "name": "card_range_fExample",
+  "n_lines": 41,
+  "n_tokens": 169,
+  "tactics": {
+   "simp": 6,
+   "rw": 5,
+   "norm_num": 4,
+   "refine": 5,
+   "rcases": 2,
+   "have": 1
+  },
+  "case_splits": 2,
+  "anon_claims": 0,
+  "n_claims": 1,
+  "n_claim_edges": 0,
+  "claim_out_degrees": [],
+  "max_claim_reuse": 0,
+  "max_indent": 19,
+  "edges": [],
+  "claims": [
+   "h"
+  ],
+  "file": "repos/compfiles/Compfiles/Imo2024P6.lean"
+ }
+]
