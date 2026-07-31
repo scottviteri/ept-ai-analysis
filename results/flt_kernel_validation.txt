@@ -1,13 +1,3 @@
-=== [flt] cache get + build (14:08) ===
-Decompressed 8648 file(s)
-Already decompressed 8648 file(s)
-✔ [8922/8924] Built FLT (2.4s)
-✔ [8923/8924] Built FermatsLastTheorem (9.6s)
-Build completed successfully (8924 jobs).
-=== [flt] extract kernel graph ===
-using extract_deps.lean (259 modules, 259 with private parts)
-wrote 4723 declarations
-=== [flt] compare vs textual + tracking ===
 external (mathlib/core) dep references from project decls: 263742
 {"graph": "kernel-grain", "N": 4723, "E": 17147, "N_lwcc": 3069, "mean_out": 4.07, "max_out": 268, "alpha": 2.988, "alpha_sigma": 0.287, "fit": {"xmin": 45, "ntail": 48, "ks": 0.05206104694294439}, "Q": 0.759}
 {"graph": "textual-grain", "N": 3124, "E": 6895, "N_lwcc": 2795, "mean_out": 2.46, "max_out": 389, "alpha": 2.328, "alpha_sigma": 0.148, "fit": {"xmin": 11, "ntail": 81, "ks": 0.06515944423156134}, "Q": 0.767}
@@ -30,5 +20,3 @@ missed kernel edges realized as textual paths <=3 hops: 754/3206
  "path3_realized": 0.782,
  "path6_realized": 0.787
 }
-=== [flt] done; saved results/flt_kernel_deps.jsonl, graphs/flt_kernel.json, results/flt_kernel_validation.txt ===
-/dev/nvme0n1p3  400G  376G  4.0G  99% /

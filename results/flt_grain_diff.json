@@ -1,0 +1,186 @@
+{
+ "project": "flt",
+ "shared_decls": 2653,
+ "kernel_edges": 7032,
+ "textual_edges": 5006,
+ "both": 3826,
+ "recall": 0.544,
+ "precision": 0.764,
+ "missed_by_dep_kind": {
+  "def": 2206,
+  "inductive": 662,
+  "theorem": 338
+ },
+ "missed_checked": 3206,
+ "missed_invisible_in_source": 434,
+ "frac_missed_invisible": 0.135,
+ "textual_only_edges": 1180,
+ "top10_kernel_hubs": [
+  [
+   "Dickson.K",
+   206
+  ],
+  [
+   "Dickson.PGLOf",
+   164
+  ],
+  [
+   "IsQuaternionAlgebra.NumberField.WithRigidification",
+   132
+  ],
+  [
+   "Dickson.ProjectiveLine",
+   127
+  ],
+  [
+   "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm",
+   107
+  ],
+  [
+   "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.addCommGroup",
+   89
+  ],
+  [
+   "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.module",
+   83
+  ],
+  [
+   "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.LevelStruct.form",
+   82
+  ],
+  [
+   "Hurwitz",
+   76
+  ],
+  [
+   "SemialgHom",
+   60
+  ]
+ ],
+ "top10_textual_hubs": [
+  [
+   "Dickson.PGLOf",
+   159
+  ],
+  [
+   "SemialgHom.comp",
+   110
+  ],
+  [
+   "AbstractHeckeOperator.heckeOperator.toFun",
+   99
+  ],
+  [
+   "Hurwitz.ring",
+   82
+  ],
+  [
+   "IsDedekindDomain.FiniteAdeleRing.ComapFiberwiseSMul.map_smul'",
+   58
+  ],
+  [
+   "Dickson.infinity",
+   52
+  ],
+  [
+   "SemialgHom.map_smul",
+   44
+  ],
+  [
+   "Dickson.ProjectiveLine",
+   40
+  ],
+  [
+   "GaloisRep",
+   40
+  ],
+  [
+   "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.LevelStruct",
+   38
+  ]
+ ],
+ "n_distinct_external": 10244,
+ "total_external_refs": 263742,
+ "top20_external": [
+  [
+   "Eq",
+   3059
+  ],
+  [
+   "CommSemiring.toSemiring",
+   2528
+  ],
+  [
+   "CommRing.toCommSemiring",
+   2259
+  ],
+  [
+   "DFunLike.coe",
+   2025
+  ],
+  [
+   "OfNat.ofNat",
+   1906
+  ],
+  [
+   "Field.toSemifield",
+   1859
+  ],
+  [
+   "Nat",
+   1852
+  ],
+  [
+   "Semiring.toMonoid",
+   1782
+  ],
+  [
+   "Semiring.toNonAssocSemiring",
+   1769
+  ],
+  [
+   "DivisionSemiring.toSemiring",
+   1686
+  ],
+  [
+   "Membership.mem",
+   1629
+  ],
+  [
+   "Field",
+   1615
+  ],
+  [
+   "CommRing",
+   1580
+  ],
+  [
+   "Eq.refl",
+   1534
+  ],
+  [
+   "Semifield.toDivisionSemiring",
+   1523
+  ],
+  [
+   "Algebra",
+   1478
+  ],
+  [
+   "congrArg",
+   1474
+  ],
+  [
+   "SetLike.instMembership",
+   1350
+  ],
+  [
+   "id",
+   1297
+  ],
+  [
+   "Semifield.toCommSemiring",
+   1285
+  ]
+ ]
+}
