@@ -57,7 +57,11 @@ def extract_decls(path, rel):
     return decls
 
 def main(root, out_json, subdir_filter=None):
+    if not os.path.isdir(root):
+        sys.exit(f"error: {root} does not exist — run fetch_repos.sh first")
     files = sorted(glob.glob(os.path.join(root, '**', '*.lean'), recursive=True))
+    if not files:
+        sys.exit(f"error: no .lean files under {root}")
     if subdir_filter:
         files = [f for f in files if subdir_filter in f]
     all_decls = []

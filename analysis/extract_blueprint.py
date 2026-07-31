@@ -48,8 +48,12 @@ def parse_tex(tex, nodes, edges):
             cur_label = label
 
 def main(bp_dir, out_json):
+    if not os.path.isdir(bp_dir):
+        sys.exit(f"error: {bp_dir} does not exist — run fetch_repos.sh first")
     nodes, edges = {}, set()
     texs = sorted(glob.glob(os.path.join(bp_dir, '**', '*.tex'), recursive=True))
+    if not texs:
+        sys.exit(f"error: no .tex files under {bp_dir}")
     for t in texs:
         try:
             tex = strip_comments(open(t, encoding='utf-8', errors='replace').read())
