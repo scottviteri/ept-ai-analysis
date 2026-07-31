@@ -1,0 +1,186 @@
+{
+ "project": "mathinc",
+ "shared_decls": 4081,
+ "kernel_edges": 15675,
+ "textual_edges": 10588,
+ "both": 9310,
+ "recall": 0.594,
+ "precision": 0.879,
+ "missed_by_dep_kind": {
+  "def": 5427,
+  "theorem": 796,
+  "inductive": 142
+ },
+ "missed_checked": 6365,
+ "missed_invisible_in_source": 656,
+ "frac_missed_invisible": 0.103,
+ "textual_only_edges": 1278,
+ "top10_kernel_hubs": [
+  [
+   "SpherePacking.Dim24.Uniqueness.BS81.CodingTheory.BinWord",
+   176
+  ],
+  [
+   "SpherePacking.Dim24.Uniqueness.BS81.CodingTheory.Code",
+   155
+  ],
+  [
+   "Function.resToImagAxis",
+   142
+  ],
+  [
+   "SpherePacking.Dim24.it",
+   126
+  ],
+  [
+   "\u0394",
+   121
+  ],
+  [
+   "PeriodicSpherePacking",
+   107
+  ],
+  [
+   "SpherePacking.Dim24.Uniqueness.BS81.CodingTheory.Biplane.Block",
+   104
+  ],
+  [
+   "E\u2084",
+   96
+  ],
+  [
+   "SpherePacking.Dim24.varphi",
+   87
+  ],
+  [
+   "E\u2086",
+   86
+  ]
+ ],
+ "top10_textual_hubs": [
+  [
+   "SpherePacking.Dim24.Uniqueness.BS81.CodingTheory.Biplane.IsIso.symm",
+   283
+  ],
+  [
+   "hsum",
+   112
+  ],
+  [
+   "SpherePacking.Dim24.Uniqueness.BS81.CodingTheory.BinWord",
+   111
+  ],
+  [
+   "PeriodicSpherePacking",
+   88
+  ],
+  [
+   "SpherePacking.Dim24.Uniqueness.BS81.CodingTheory.Biplane.IsIso.trans",
+   76
+  ],
+  [
+   "SpherePacking.Dim24.Uniqueness.BS81.CodingTheory.Code",
+   76
+  ],
+  [
+   "CauchySeq.congr",
+   75
+  ],
+  [
+   "SpherePacking.Dim24.varphi",
+   69
+  ],
+  [
+   "SpherePacking.Dim24.Uniqueness.BS81.CodingTheory.support",
+   69
+  ],
+  [
+   "ResToImagAxis",
+   69
+  ]
+ ],
+ "n_distinct_external": 5689,
+ "total_external_refs": 370435,
+ "top20_external": [
+  [
+   "OfNat.ofNat",
+   4585
+  ],
+  [
+   "Nat",
+   4050
+  ],
+  [
+   "Eq",
+   3866
+  ],
+  [
+   "Real",
+   3551
+  ],
+  [
+   "instOfNatNat",
+   3338
+  ],
+  [
+   "Complex",
+   2583
+  ],
+  [
+   "instHMul",
+   2517
+  ],
+  [
+   "HMul.hMul",
+   2517
+  ],
+  [
+   "Eq.refl",
+   2235
+  ],
+  [
+   "congrArg",
+   2216
+  ],
+  [
+   "instOfNatAtLeastTwo",
+   2104
+  ],
+  [
+   "Fin",
+   2062
+  ],
+  [
+   "Zero.toOfNat0",
+   2044
+  ],
+  [
+   "One.toOfNat1",
+   1964
+  ],
+  [
+   "Eq.trans",
+   1920
+  ],
+  [
+   "id",
+   1855
+  ],
+  [
+   "congrFun'",
+   1854
+  ],
+  [
+   "instHAdd",
+   1767
+  ],
+  [
+   "HAdd.hAdd",
+   1767
+  ],
+  [
+   "Int",
+   1692
+  ]
+ ]
+}

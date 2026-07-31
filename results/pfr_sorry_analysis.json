@@ -1,0 +1,31 @@
+{
+ "project": "pfr",
+ "kernel": {
+  "n_decls": 1304,
+  "direct_sorry": 5,
+  "direct_kinds": {
+   "theorem": 5
+  },
+  "tainted": 9,
+  "frac_tainted": 0.007,
+  "direct_names": [
+   "PFR_projection",
+   "PFR_projection'",
+   "app_ent_PFR",
+   "torsion_dist_shrinking",
+   "torsion_free_doubling"
+  ],
+  "top_tainted_hubs": []
+ },
+ "blueprint": {
+  "n_nodes": 218,
+  "proof_done": 188,
+  "stmt_only": 30,
+  "unstarted": 0,
+  "frac_done": 0.862,
+  "edges_within_finished": 383,
+  "edges_within_unfinished": 17,
+  "finished_citing_unfinished": 96,
+  "unfinished_citing_finished": 1
+ }
+}

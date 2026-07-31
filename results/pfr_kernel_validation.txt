@@ -1,11 +1,11 @@
 external (mathlib/core) dep references from project decls: 88790
 {"graph": "kernel-grain", "N": 1304, "E": 5607, "N_lwcc": 1106, "mean_out": 4.83, "max_out": 257, "alpha": 2.457, "alpha_sigma": 0.233, "fit": {"xmin": 28, "ntail": 39, "ks": 0.069006336854324}, "Q": 0.549}
-{"graph": "textual-grain", "N": 1011, "E": 2690, "N_lwcc": 921, "mean_out": 2.91, "max_out": 149, "alpha": 2.265, "alpha_sigma": 0.22, "fit": {"xmin": 11, "ntail": 33, "ks": 0.07962228594850668}, "Q": 0.594}
-decl-name overlap: 973 shared (kernel 1304, textual 1005)
-edges on shared nodes: kernel 4047, textual 2399, both 2147
-textual recall of kernel edges: 0.531
-textual precision: 0.895
-missed kernel edges realized as textual paths <=3 hops: 457/1900
+{"graph": "textual-grain", "N": 1013, "E": 2427, "N_lwcc": 916, "mean_out": 2.64, "max_out": 149, "alpha": 2.523, "alpha_sigma": 0.278, "fit": {"xmin": 11, "ntail": 30, "ks": 0.06886505435288093}, "Q": 0.645}
+decl-name overlap: 981 shared (kernel 1304, textual 1013)
+edges on shared nodes: kernel 4073, textual 2305, both 2126
+textual recall of kernel edges: 0.522
+textual precision: 0.922
+missed kernel edges realized as textual paths <=3 hops: 436/1947
 --- tracking (kernel grain) ---
 {
  "project": "pfr-kernel",

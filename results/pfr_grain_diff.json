@@ -1,24 +1,24 @@
 {
  "project": "pfr",
- "shared_decls": 973,
- "kernel_edges": 4047,
- "textual_edges": 2399,
- "both": 2147,
- "recall": 0.531,
- "precision": 0.895,
+ "shared_decls": 981,
+ "kernel_edges": 4073,
+ "textual_edges": 2305,
+ "both": 2126,
+ "recall": 0.522,
+ "precision": 0.922,
  "missed_by_dep_kind": {
-  "def": 1287,
-  "theorem": 482,
+  "def": 1298,
+  "theorem": 518,
   "inductive": 131
  },
- "missed_checked": 1900,
- "missed_invisible_in_source": 478,
- "frac_missed_invisible": 0.252,
- "textual_only_edges": 252,
+ "missed_checked": 1947,
+ "missed_invisible_in_source": 481,
+ "frac_missed_invisible": 0.247,
+ "textual_only_edges": 179,
  "top10_kernel_hubs": [
   [
    "ProbabilityTheory.entropy",
-   225
+   226
   ],
   [
    "FiniteRange",
@@ -26,11 +26,11 @@
   ],
   [
    "rdist",
-   173
+   176
   ],
   [
    "prod",
-   128
+   129
   ],
   [
    "ProbabilityTheory.Kernel.entropy",
@@ -42,7 +42,7 @@
   ],
   [
    "ProbabilityTheory.condEntropy",
-   81
+   82
   ],
   [
    "ProbabilityTheory.FiniteSupport",
@@ -54,7 +54,7 @@
   ],
   [
    "ProbabilityTheory.condMutualInfo",
-   60
+   61
   ]
  ],
  "top10_textual_hubs": [
@@ -71,10 +71,6 @@
    61
   ],
   [
-   "prod",
-   56
-  ],
-  [
    "ProbabilityTheory.IsUniform",
    51
   ],
@@ -83,12 +79,8 @@
    30
   ],
   [
-   "ProbabilityTheory.Kernel.FiniteKernelSupport.comap",
-   29
-  ],
-  [
-   "ProbabilityTheory.IsUniform.comp",
-   28
+   "prod",
+   26
   ],
   [
    "FiniteRange.toFinset",
@@ -97,6 +89,14 @@
   [
    "ProbabilityTheory.Kernel.FiniteKernelSupport",
    24
+  ],
+  [
+   "ProbabilityTheory.entropy_comp_of_injective",
+   22
+  ],
+  [
+   "FiniteRange.range",
+   20
   ]
  ],
  "n_distinct_external": 3855,

@@ -1,0 +1,303 @@
+analyzing pfr_blueprint: 218 nodes ...
+{
+ "name": "pfr_blueprint",
+ "N_total": 218,
+ "E_total": 497,
+ "N_lwcc": 217,
+ "E_lwcc": 497,
+ "mean_in": 2.2903225806451615,
+ "mean_out": 2.2903225806451615,
+ "max_out": 14,
+ "alpha": 3.4268661690020408,
+ "alpha_sigma": 0.5426637726183056,
+ "alpha_fit": {
+  "xmin": 6,
+  "ntail": 20,
+  "ks": 0.14720633924000198
+ },
+ "dag_depth": 22,
+ "n_modules": 7,
+ "modularity_Q": 0.5940613499912959,
+ "DeltaL1": 5.579170363000732,
+ "DeltaL1_nmods": 6,
+ "f2_eps01": 0.9904761904761905
+}
+analyzing flt_blueprint: 265 nodes ...
+{
+ "name": "flt_blueprint",
+ "N_total": 265,
+ "E_total": 320,
+ "N_lwcc": 72,
+ "E_lwcc": 78,
+ "mean_in": 1.0833333333333333,
+ "mean_out": 1.0833333333333333,
+ "max_out": 4,
+ "alpha": 3.282636966925421,
+ "alpha_sigma": 0.7218331886782767,
+ "alpha_fit": {
+  "xmin": 2,
+  "ntail": 10,
+  "ks": 0.3814266177182344
+ },
+ "dag_depth": 8,
+ "n_modules": 8,
+ "modularity_Q": 0.7493425378040762,
+ "DeltaL1": 2.7654545454545456,
+ "DeltaL1_nmods": 2,
+ "f2_eps01": 0.9047619047619048
+}
+analyzing sphere_blueprint: 139 nodes ...
+{
+ "name": "sphere_blueprint",
+ "N_total": 139,
+ "E_total": 241,
+ "N_lwcc": 139,
+ "E_lwcc": 241,
+ "mean_in": 1.7338129496402879,
+ "mean_out": 1.7338129496402879,
+ "max_out": 8,
+ "alpha": 4.644955220690308,
+ "alpha_sigma": 1.1526360466703065,
+ "alpha_fit": {
+  "xmin": 5,
+  "ntail": 10,
+  "ks": 0.21889197718509443
+ },
+ "dag_depth": 17,
+ "n_modules": 9,
+ "modularity_Q": 0.6704085673456036,
+ "DeltaL1": 3.8522724726254136,
+ "DeltaL1_nmods": 8,
+ "f2_eps01": 0.9714285714285714
+}
+analyzing et_blueprint: 206 nodes ...
+{
+ "name": "et_blueprint",
+ "N_total": 206,
+ "E_total": 192,
+ "N_lwcc": 115,
+ "E_lwcc": 157,
+ "mean_in": 1.3652173913043477,
+ "mean_out": 1.3652173913043477,
+ "max_out": 57,
+ "alpha": 2.4091464699857887,
+ "alpha_sigma": 0.307500969713795,
+ "alpha_fit": {
+  "xmin": 2,
+  "ntail": 21,
+  "ks": 0.28576690861408127
+ },
+ "dag_depth": 9,
+ "n_modules": 13,
+ "modularity_Q": 0.5949734269138708,
+ "DeltaL1": 3.062457495089074,
+ "DeltaL1_nmods": 3,
+ "f2_eps01": 0.8476190476190476
+}
+analyzing pfr_lean: 1013 nodes ...
+{
+ "name": "pfr_lean",
+ "N_total": 1013,
+ "E_total": 2427,
+ "N_lwcc": 916,
+ "E_lwcc": 2419,
+ "mean_in": 2.640829694323144,
+ "mean_out": 2.640829694323144,
+ "max_out": 149,
+ "alpha": 2.5226445594746827,
+ "alpha_sigma": 0.2779955907622667,
+ "alpha_fit": {
+  "xmin": 11,
+  "ntail": 30,
+  "ks": 0.06886505435288093
+ },
+ "dag_depth": 32,
+ "n_modules": 12,
+ "modularity_Q": 0.6451029904669883,
+ "DeltaL1": 6.475908585156212,
+ "DeltaL1_nmods": 9,
+ "f2_eps01": 1.0
+}
+analyzing sphere_lean: 1373 nodes ...
+{
+ "name": "sphere_lean",
+ "N_total": 1373,
+ "E_total": 2515,
+ "N_lwcc": 1062,
+ "E_lwcc": 2360,
+ "mean_in": 2.2222222222222223,
+ "mean_out": 2.2222222222222223,
+ "max_out": 55,
+ "alpha": 2.968961626869765,
+ "alpha_sigma": 0.4019126090792641,
+ "alpha_fit": {
+  "xmin": 14,
+  "ntail": 24,
+  "ks": 0.06293271428786507
+ },
+ "dag_depth": 28,
+ "n_modules": 21,
+ "modularity_Q": 0.7509675739729963,
+ "DeltaL1": 6.466476156458923,
+ "DeltaL1_nmods": 15,
+ "f2_eps01": 1.0
+}
+analyzing flt_lean: 3140 nodes ...
+{
+ "name": "flt_lean",
+ "N_total": 3140,
+ "E_total": 6272,
+ "N_lwcc": 2753,
+ "E_lwcc": 6205,
+ "mean_in": 2.2539048310933527,
+ "mean_out": 2.2539048310933527,
+ "max_out": 204,
+ "alpha": 2.4683532114501716,
+ "alpha_sigma": 0.21888917305218042,
+ "alpha_fit": {
+  "xmin": 15,
+  "ntail": 45,
+  "ks": 0.06791718988946625
+ },
+ "dag_depth": null,
+ "n_modules": 32,
+ "modularity_Q": 0.8099899063475546,
+ "DeltaL1": 6.648624931020179,
+ "DeltaL1_nmods": 24,
+ "f2_eps01": 0.9333333333333332
+}
+analyzing et_lean: 16380 nodes ...
+{
+ "name": "et_lean",
+ "N_total": 16380,
+ "E_total": 22062,
+ "N_lwcc": 15552,
+ "E_lwcc": 21931,
+ "mean_in": 1.4101723251028806,
+ "mean_out": 1.4101723251028806,
+ "max_out": 13725,
+ "alpha": 2.1418004809395015,
+ "alpha_sigma": 0.0982705388304513,
+ "alpha_fit": {
+  "xmin": 8,
+  "ntail": 135,
+  "ks": 0.07682384704303996
+ },
+ "dag_depth": null,
+ "n_modules": 89,
+ "modularity_Q": 0.5285066632425218,
+ "DeltaL1": 3.4757737859561577,
+ "DeltaL1_nmods": 32,
+ "f2_eps01": 0.8476190476190476
+}
+saved results_all.json
+human decls: 2853, generated decls: 13527
+edges human->human 4991, gen->gen 2323, human->gen 14713, gen->human 35
+{
+ "name": "ET_human",
+ "N": 2853,
+ "E": 4991,
+ "N_lwcc": 2276,
+ "frac_in_lwcc": 0.798,
+ "n_wcc": 470,
+ "mean_out": 2.1274165202108963,
+ "max_out": 616,
+ "alpha": 2.5230853368972346,
+ "alpha_sigma": 0.16923170409969274,
+ "fit": {
+  "xmin": 10,
+  "ntail": 81,
+  "ks": 0.06649231495890429
+ },
+ "modularity_Q": 0.792,
+ "n_modules": 25,
+ "DeltaL1": 7.127713893027317,
+ "DeltaL1_nmods": 19
+}
+{
+ "name": "ET_generated",
+ "N": 13527,
+ "E": 2323,
+ "N_lwcc": 656,
+ "frac_in_lwcc": 0.048,
+ "n_wcc": 12298,
+ "mean_out": 2.323170731707317,
+ "max_out": 168,
+ "alpha": 2.1422865317345794,
+ "alpha_sigma": 0.170282022316066,
+ "fit": {
+  "xmin": 4,
+  "ntail": 45,
+  "ks": 0.16249104494446065
+ },
+ "modularity_Q": 0.653,
+ "n_modules": 16,
+ "DeltaL1": 8.324508496851106,
+ "DeltaL1_nmods": 15
+}
+
+per-method decl counts and internal edge density:
+  SimpleRewrites                      N=  6305 E_int=     0 mean_out=0.00
+  All4x4Tables                        N=  1880 E_int=     0 mean_out=0.00
+  VampireProven                       N=  1529 E_int=     0 mean_out=0.00
+  TrivialBruteforce                   N=  1497 E_int=     0 mean_out=0.00
+  MagmaEgg                            N=   838 E_int=   829 mean_out=0.99
+  Greedy                              N=   460 E_int=   228 mean_out=0.50
+  EquationSearch                      N=   266 E_int=    53 mean_out=0.20
+  FinitePoly                          N=   264 E_int=     0 mean_out=0.00
+  InvariantMetatheoremNonimplications N=   222 E_int=     0 mean_out=0.00
+  Singleton                           N=   106 E_int=     0 mean_out=0.00
+  FiniteImplicationSearch             N=    79 E_int=     0 mean_out=0.00
+  Equation1                           N=    57 E_int=     0 mean_out=0.00
+{
+ "project": "PFR",
+ "bp_nodes": 218,
+ "bp_edges": 497,
+ "lean_decls": 1013,
+ "resolution_ratio": 4.65,
+ "bp_nodes_with_lean_tag": 200,
+ "tag_coverage": 0.917,
+ "testable_edges": 434,
+ "direct_realized": 0.498,
+ "path3_realized": 0.721,
+ "path6_realized": 0.733
+}
+{
+ "project": "SpherePacking(human)",
+ "bp_nodes": 139,
+ "bp_edges": 241,
+ "lean_decls": 1373,
+ "resolution_ratio": 9.88,
+ "bp_nodes_with_lean_tag": 72,
+ "tag_coverage": 0.518,
+ "testable_edges": 90,
+ "direct_realized": 0.344,
+ "path3_realized": 0.522,
+ "path6_realized": 0.544
+}
+{
+ "project": "FLT",
+ "bp_nodes": 265,
+ "bp_edges": 320,
+ "lean_decls": 3140,
+ "resolution_ratio": 11.85,
+ "bp_nodes_with_lean_tag": 139,
+ "tag_coverage": 0.525,
+ "testable_edges": 149,
+ "direct_realized": 0.376,
+ "path3_realized": 0.463,
+ "path6_realized": 0.47
+}
+{
+ "project": "EquationalTheories",
+ "bp_nodes": 206,
+ "bp_edges": 192,
+ "lean_decls": 16380,
+ "resolution_ratio": 79.51,
+ "bp_nodes_with_lean_tag": 83,
+ "tag_coverage": 0.403,
+ "testable_edges": 43,
+ "direct_realized": 0.372,
+ "path3_realized": 0.419,
+ "path6_realized": 0.419
+}

@@ -1,0 +1,42 @@
+{
+ "project": "flt",
+ "kernel": {
+  "n_decls": 4723,
+  "direct_sorry": 50,
+  "direct_kinds": {
+   "theorem": 37,
+   "def": 13
+  },
+  "tainted": 67,
+  "frac_tainted": 0.014,
+  "direct_names": [
+   "AddGroup.subsingleton_of_nsmul_prime_eq_zero",
+   "AutomorphicForm.GLn.Weight.IsTrivial",
+   "AutomorphicForm.GLn.actionTensorCAlg",
+   "AutomorphicForm.GLn.actionTensorCAlg'3",
+   "AutomorphicForm.GLn.classification",
+   "AutomorphicForm.GLn.instModuleComplexContMDiffMapRealModelWithCornersSelfSomeENatTop_fLT",
+   "AutomorphicForm.GLn.ofComplex",
+   "Deformation.flatFunctor",
+   "Deformation.isCorepresentable_deformationFunctor",
+   "Deformation.isCorepresentable_narrowSLiftFunctor",
+   "Dickson.classification_tame",
+   "Dickson.classification_wild",
+   "FLT.Bosses.B4_proof",
+   "FreyCurve.torsion_isHardlyRamified",
+   "FreyCurve.torsion_not_isIrreducible"
+  ],
+  "top_tainted_hubs": []
+ },
+ "blueprint": {
+  "n_nodes": 265,
+  "proof_done": 103,
+  "stmt_only": 64,
+  "unstarted": 98,
+  "frac_done": 0.389,
+  "edges_within_finished": 78,
+  "edges_within_unfinished": 162,
+  "finished_citing_unfinished": 56,
+  "unfinished_citing_finished": 24
+ }
+}

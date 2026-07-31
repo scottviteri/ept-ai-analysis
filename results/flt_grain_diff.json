@@ -1,20 +1,20 @@
 {
  "project": "flt",
- "shared_decls": 2653,
- "kernel_edges": 7032,
- "textual_edges": 5006,
- "both": 3826,
- "recall": 0.544,
- "precision": 0.764,
+ "shared_decls": 2809,
+ "kernel_edges": 7834,
+ "textual_edges": 5253,
+ "both": 4048,
+ "recall": 0.517,
+ "precision": 0.771,
  "missed_by_dep_kind": {
-  "def": 2206,
-  "inductive": 662,
-  "theorem": 338
+  "def": 2616,
+  "inductive": 749,
+  "theorem": 421
  },
- "missed_checked": 3206,
- "missed_invisible_in_source": 434,
- "frac_missed_invisible": 0.135,
- "textual_only_edges": 1180,
+ "missed_checked": 3786,
+ "missed_invisible_in_source": 468,
+ "frac_missed_invisible": 0.124,
+ "textual_only_edges": 1205,
  "top10_kernel_hubs": [
   [
    "Dickson.K",
@@ -26,7 +26,7 @@
   ],
   [
    "IsQuaternionAlgebra.NumberField.WithRigidification",
-   132
+   146
   ],
   [
    "Dickson.ProjectiveLine",
@@ -34,27 +34,27 @@
   ],
   [
    "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm",
-   107
+   110
   ],
   [
    "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.addCommGroup",
-   89
+   92
   ],
   [
    "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.module",
-   83
+   86
   ],
   [
    "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.LevelStruct.form",
-   82
+   84
+  ],
+  [
+   "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.LevelStruct",
+   77
   ],
   [
    "Hurwitz",
-   76
-  ],
-  [
-   "SemialgHom",
-   60
+   77
   ]
  ],
  "top10_textual_hubs": [
@@ -64,39 +64,39 @@
   ],
   [
    "SemialgHom.comp",
-   110
+   102
   ],
   [
    "AbstractHeckeOperator.heckeOperator.toFun",
-   99
+   102
   ],
   [
    "Hurwitz.ring",
-   82
+   94
   ],
   [
    "IsDedekindDomain.FiniteAdeleRing.ComapFiberwiseSMul.map_smul'",
-   58
+   61
   ],
   [
    "Dickson.infinity",
    52
   ],
   [
-   "SemialgHom.map_smul",
-   44
-  ],
-  [
-   "Dickson.ProjectiveLine",
-   40
+   "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.LevelStruct",
+   48
   ],
   [
    "GaloisRep",
    40
   ],
   [
-   "TotallyDefiniteQuaternionAlgebra.WeightTwoAutomorphicForm.LevelStruct",
-   38
+   "Dickson.ProjectiveLine",
+   40
+  ],
+  [
+   "ZHat",
+   39
   ]
  ],
  "n_distinct_external": 10244,

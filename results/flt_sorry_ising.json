@@ -1,0 +1,40 @@
+{
+ "project": "flt",
+ "N": 4723,
+ "n_direct": 50,
+ "n_downstream": 17,
+ "eps_0.01": {
+  "clean": {
+   "baseline": 0.947,
+   "clamped": 0.939,
+   "delta": -0.008
+  },
+  "downstream": {
+   "baseline": 0.965,
+   "clamped": 0.716,
+   "delta": -0.249
+  },
+  "direct": {
+   "baseline": 0.917,
+   "clamped": 0.0,
+   "delta": -0.917
+  }
+ },
+ "eps_0.2": {
+  "clean": {
+   "baseline": 0.902,
+   "clamped": 0.895,
+   "delta": -0.007
+  },
+  "downstream": {
+   "baseline": 0.913,
+   "clamped": 0.674,
+   "delta": -0.239
+  },
+  "direct": {
+   "baseline": 0.837,
+   "clamped": 0.0,
+   "delta": -0.837
+  }
+ }
+}

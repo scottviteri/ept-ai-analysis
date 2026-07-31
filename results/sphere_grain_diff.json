@@ -1,102 +1,102 @@
 {
  "project": "sphere",
- "shared_decls": 626,
- "kernel_edges": 1267,
- "textual_edges": 1260,
- "both": 813,
- "recall": 0.642,
- "precision": 0.645,
+ "shared_decls": 1161,
+ "kernel_edges": 3402,
+ "textual_edges": 2056,
+ "both": 1894,
+ "recall": 0.557,
+ "precision": 0.921,
  "missed_by_dep_kind": {
-  "theorem": 217,
-  "def": 198,
+  "def": 1083,
+  "theorem": 386,
   "inductive": 39
  },
- "missed_checked": 454,
- "missed_invisible_in_source": 111,
- "frac_missed_invisible": 0.244,
- "textual_only_edges": 447,
+ "missed_checked": 1508,
+ "missed_invisible_in_source": 182,
+ "frac_missed_invisible": 0.121,
+ "textual_only_edges": 162,
  "top10_kernel_hubs": [
   [
+   "H\u2084",
+   90
+  ],
+  [
+   "H\u2082",
+   86
+  ],
+  [
    "Function.resToImagAxis",
-   63
+   80
+  ],
+  [
+   "D",
+   74
+  ],
+  [
+   "E\u2082",
+   65
+  ],
+  [
+   "serre_D",
+   61
   ],
   [
    "PeriodicSpherePacking",
    60
   ],
   [
-   "D",
-   47
-  ],
-  [
    "ResToImagAxis.Real",
-   43
+   59
   ],
   [
-   "PeriodicSpherePacking.instLatticeDiscrete",
-   32
+   "E\u2084",
+   58
   ],
   [
-   "PeriodicSpherePacking.instIsZLattice",
-   31
-  ],
-  [
-   "SpherePacking",
-   24
-  ],
-  [
-   "serre_D",
-   23
-  ],
-  [
-   "E8Matrix",
-   21
-  ],
-  [
-   "F",
-   18
+   "H\u2083",
+   45
   ]
  ],
  "top10_textual_hubs": [
   [
-   "F",
-   96
+   "serre_D",
+   53
   ],
   [
-   "h",
-   94
-  ],
-  [
-   "D",
-   63
-  ],
-  [
-   "g",
-   59
-  ],
-  [
-   "E",
-   45
-  ],
-  [
-   "G",
-   36
-  ],
-  [
-   "Function.resToImagAxis",
-   35
+   "ResToImagAxis.Real",
+   41
   ],
   [
    "ResToImagAxis",
-   34
+   40
+  ],
+  [
+   "Function.resToImagAxis",
+   39
+  ],
+  [
+   "\u03c6\u2080''",
+   31
   ],
   [
    "PeriodicSpherePacking",
    31
   ],
   [
-   "ResToImagAxis.Real",
-   30
+   "D",
+   31
+  ],
+  [
+   "f\u2084",
+   21
+  ],
+  [
+   "ResToImagAxis.Pos",
+   21
+  ],
+  [
+   "f\u2082",
+   20
   ]
  ],
  "n_distinct_external": 3774,

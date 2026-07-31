@@ -1,0 +1,40 @@
+{
+ "project": "sphere",
+ "N": 1483,
+ "n_direct": 53,
+ "n_downstream": 83,
+ "eps_0.01": {
+  "clean": {
+   "baseline": 0.934,
+   "clamped": 0.917,
+   "delta": -0.017
+  },
+  "downstream": {
+   "baseline": 0.993,
+   "clamped": 0.986,
+   "delta": -0.007
+  },
+  "direct": {
+   "baseline": 0.955,
+   "clamped": 0.0,
+   "delta": -0.955
+  }
+ },
+ "eps_0.2": {
+  "clean": {
+   "baseline": 0.906,
+   "clamped": 0.899,
+   "delta": -0.007
+  },
+  "downstream": {
+   "baseline": 0.992,
+   "clamped": 0.984,
+   "delta": -0.008
+  },
+  "direct": {
+   "baseline": 0.889,
+   "clamped": 0.0,
+   "delta": -0.889
+  }
+ }
+}

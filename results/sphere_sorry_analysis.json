@@ -1,0 +1,83 @@
+{
+ "project": "sphere",
+ "kernel": {
+  "n_decls": 1483,
+  "direct_sorry": 53,
+  "direct_kinds": {
+   "theorem": 52,
+   "def": 1
+  },
+  "tainted": 136,
+  "frac_tainted": 0.092,
+  "direct_names": [
+   "Complex.integral_boundary_open_rect_eq_zero_of_differentiable_on_off_countable_of_integrable_on'",
+   "FReal_Differentiable",
+   "GReal_Differentiable",
+   "MagicFunction.PolyFourierCoeffBound.norm_\u03c6\u2080_le",
+   "MagicFunction.a.Fourier.perm_I\u2081_I\u2082",
+   "MagicFunction.a.Fourier.perm_I\u2085",
+   "MagicFunction.a.Integrability.\u03a6\u2081_integrableOn",
+   "MagicFunction.a.Integrability.\u03a6\u2082_integrableOn",
+   "MagicFunction.a.Integrability.\u03a6\u2083_integrableOn",
+   "MagicFunction.a.Integrability.\u03a6\u2084_integrableOn",
+   "MagicFunction.a.Integrability.\u03a6\u2085_integrableOn",
+   "MagicFunction.a.Integrability.\u03a6\u2086_integrableOn",
+   "MagicFunction.a.IntegralEstimates.I\u2082.decay'",
+   "MagicFunction.a.IntegralEstimates.I\u2082.decay'\u2080",
+   "MagicFunction.a.IntegralEstimates.I\u2084.decay'"
+  ],
+  "top_tainted_hubs": [
+   [
+    "MagicFunction.FourierEigenfunctions.a",
+    10
+   ],
+   [
+    "MagicFunction.FourierEigenfunctions.b",
+    10
+   ],
+   [
+    "MagicFunction.a.SchwartzIntegrals.I\u2085'",
+    8
+   ],
+   [
+    "MagicFunction.a.SchwartzIntegrals.I\u2082'",
+    8
+   ],
+   [
+    "MagicFunction.a.SchwartzIntegrals.I\u2081'",
+    8
+   ],
+   [
+    "MagicFunction.b.SchwartzIntegrals.J\u2086'",
+    8
+   ],
+   [
+    "MagicFunction.b.SchwartzIntegrals.J\u2082'",
+    8
+   ],
+   [
+    "MagicFunction.b.SchwartzIntegrals.J\u2081'",
+    8
+   ],
+   [
+    "MagicFunction.a.SchwartzIntegrals.I\u2086'",
+    6
+   ],
+   [
+    "MagicFunction.a.SchwartzIntegrals.I\u2084'",
+    6
+   ]
+  ]
+ },
+ "blueprint": {
+  "n_nodes": 139,
+  "proof_done": 49,
+  "stmt_only": 44,
+  "unstarted": 46,
+  "frac_done": 0.353,
+  "edges_within_finished": 31,
+  "edges_within_unfinished": 124,
+  "finished_citing_unfinished": 45,
+  "unfinished_citing_finished": 41
+ }
+}

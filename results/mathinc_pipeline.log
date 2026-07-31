@@ -1,0 +1,33 @@
+=== [mathinc] cache get + build (15:54) ===
+No files to download
+Already decompressed 8010 file(s)
+✔ [4559/4561] Built SpherePacking.Dim24.MainTheorem (1.7s)
+✔ [4560/4561] Built SpherePacking (5.4s)
+Build completed successfully (4561 jobs).
+=== [mathinc] extract kernel graph ===
+using extract_deps_legacy.lean (829 modules, 828 with private parts)
+wrote 5452 declarations
+=== [mathinc] compare vs textual + tracking ===
+external (mathlib/core) dep references from project decls: 370435
+{"graph": "kernel-grain", "N": 5452, "E": 20739, "N_lwcc": 5174, "mean_out": 3.97, "max_out": 245, "alpha": 2.561, "alpha_sigma": 0.117, "fit": {"xmin": 22, "ntail": 177, "ks": 0.05634821265170553}, "Q": 0.753}
+{"graph": "textual-grain", "N": 3258, "E": 5124, "N_lwcc": 2568, "mean_out": 1.9, "max_out": 607, "alpha": 1.936, "alpha_sigma": 0.121, "fit": {"xmin": 7, "ntail": 60, "ks": 0.08320179577678066}, "Q": 0.786}
+decl-name overlap: 28 shared (kernel 5452, textual 2969)
+edges on shared nodes: kernel 6, textual 25, both 6
+textual recall of kernel edges: 1.000
+textual precision: 0.240
+--- tracking (kernel grain) ---
+{
+ "project": "mathinc-kernel",
+ "bp_nodes": 139,
+ "bp_edges": 241,
+ "lean_decls": 5452,
+ "resolution_ratio": 39.22,
+ "bp_nodes_with_lean_tag": 67,
+ "tag_coverage": 0.482,
+ "testable_edges": 78,
+ "direct_realized": 0.526,
+ "path3_realized": 0.564,
+ "path6_realized": 0.564
+}
+=== [mathinc] done; saved results/mathinc_kernel_deps.jsonl, graphs/mathinc_kernel.json, results/mathinc_kernel_validation.txt ===
+/dev/nvme0n1p3  400G  295G   86G  78% /

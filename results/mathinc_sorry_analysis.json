@@ -1,0 +1,12 @@
+{
+ "project": "mathinc",
+ "kernel": {
+  "n_decls": 5452,
+  "direct_sorry": 0,
+  "direct_kinds": {},
+  "tainted": 0,
+  "frac_tainted": 0.0,
+  "direct_names": [],
+  "top_tainted_hubs": []
+ }
+}
