@@ -1,0 +1,51 @@
+{
+ "human Facts (counterexamples)": {
+  "n": 34,
+  "median": 33,
+  "mean": 29.3,
+  "p90": 50,
+  "max": 53
+ },
+ "human hard impl (ManuallyProved)": {
+  "n": 13,
+  "median": 1,
+  "mean": 4.4,
+  "p90": 20,
+  "max": 25
+ },
+ "human other impl": {
+  "n": 213,
+  "median": 1,
+  "mean": 1.0,
+  "p90": 2,
+  "max": 11
+ },
+ "machine Facts": {
+  "n": 1078,
+  "median": 1,
+  "mean": 1.1,
+  "p90": 2,
+  "max": 2
+ },
+ "machine framework-instantiated impl": {
+  "n": 2196,
+  "median": 1,
+  "mean": 2.2,
+  "p90": 6,
+  "max": 31
+ },
+ "machine other impl": {
+  "n": 407,
+  "median": 0,
+  "mean": 0.4,
+  "p90": 1,
+  "max": 1
+ },
+ "machine-search impl": {
+  "n": 18618,
+  "median": 1,
+  "mean": 0.5,
+  "p90": 1,
+  "max": 2
+ }
+}

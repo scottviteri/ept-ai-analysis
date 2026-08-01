@@ -143,9 +143,13 @@ all reproduce the heavy-tailed out-degree law found from Euclid to Coq — and t
 ground truth agrees (PFR 2.46, FLT 2.99, Sphere 2.49, Gauss 2.56).</li>
 <li><b>It dies wherever proofs are <i>found by search</i>.</b> The Equational Theories machine stratum
 (13,527 declarations from Vampire, brute force, rewriting) shatters into 12,298 disconnected
-components — the four largest generation methods (11,211 declarations) have <i>zero</i> internal
-edges. Only 4.8% of machine declarations connect to anything at all: certificate dust with no
-re-use and no hubs.</li>
+components — the four largest generation methods have <i>zero</i> internal edges. A controlled
+comparison shows the precise reading: the task's easy mass is flat for <i>everyone</i> (human
+ordinary implications carry a median of 1 construction-specific supporting declaration, same as
+machine certificates), but the deep instances of the <i>same task</i> — the counterexample
+towers, median 33 supporting constructions — were reached only by constructed mathematics.
+Search doesn't destroy structure; it operates exactly where dust suffices, and the deep residue
+is left to constructors.</li>
 <li><b>Dependency between strata is one-way.</b> 14,713 edges flow human → machine (certificates consume
 the human framework); 35 flow back — a 420:1 asymmetry. In network terms the machine stratum is an epistemic downstream
 that nothing upstream relies upon.</li>
@@ -273,6 +277,21 @@ across seeds</b> (FLT downstream −0.25 ± 0.09; Sphere −0.07 ± 0.10) though
 was seed luck. <b>(7) All 37 machine→human edges were read:</b> they are genuine (the Sheffer
 development and the Tarski543 proof, which chains nine machine certificates) — so "nothing flows
 back" should read "0.15% of certificates have ever been reused by humans."</p>
+
+<p class="note"><b>The parallel-task confound (audit, fourth round).</b> An objection worth
+taking seriously: the magma-implication problem was <i>chosen</i> for parallelizability — maybe
+certificate dust reflects the task, not search. Two controlled tests
+(<code>results/et_depth_split.json</code>). First, human-authored implications of the same
+ordinary type are exactly as flat as machine ones (median construction-specific support 1 for
+both; even at kernel grain, 46% vs 54% cite any intermediate at all) — so the dust of the easy
+mass is indeed the task's doing, and the raw human-vs-machine strata comparison overstated the
+generator's role. Second, holding the task fixed, depth splits by <i>method</i>: the 34 human
+counterexample results carry median 33 (max 53) supporting constructions; the 1,078 machine Facts
+carry uniformly ≤ 2 (a stamped template); the Greedy method — a human-designed framework
+machine-instantiated per equation — sits between (tail to 31). The refined claim: search operated
+precisely on the stratum of instances where no intermediate structure is needed, and every deep
+instance that got solved was solved by construction. The α ≈ 2 economy is not something search
+<i>lacks</i>; it is something deep problems <i>demand</i>, from whoever solves them.</p>
 
 <h3 id="live-net">Interactive: the object itself</h3>
 <p>Below is the actual network the statistics in this report are computed on — the largest connected
