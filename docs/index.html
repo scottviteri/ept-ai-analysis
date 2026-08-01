@@ -315,6 +315,27 @@ conclusion of the previous note survives its cleanest test so far: on the same g
 theorems, search finds valid but structurally different proofs — shorter, scattered, avoiding the
 canonical toolbox that human proofs concentrate on.</p>
 
+<p class="note"><b>Below the naming grain (sixth round): the 2019 term-sharing analysis, rebuilt
+in Lean.</b> The 2022 paper's Coq networks were hash-consed proof-term DAGs — reuse measured at
+<i>subterm</i> grain, below named declarations (code: ManipulateProofTrees). We rebuilt that
+algorithm over compiled Lean kernel terms (de Bruijn indices give exact α-equivalence; child
+order and multiplicity preserved) and ran it on all 47,940 ET proof terms
+(<code>analysis/subterm_stats.lean</code>, <code>results/et_subterm_summary.json</code>). The
+naive expectation — dust all the way down — is wrong. Machine certificates have real internal
+sharing: at matched term size (100–3,000 distinct subterms), machine and human proofs compress
+identically (10<sup>0.87</sup> vs 10<sup>0.88</sup> tree-to-DAG), and the machine's most-repeated
+subterm is referenced <i>more</i> (median max-refcount 39 vs 24). The difference is in character
+and in fate. Human deep constructions achieve extreme, diverse compression — the Facts
+counterexample towers median 10<sup>2.0</sup>, and <code>full_spectrum_Equation1682</code> packs
+an expanded tree of ~10<sup>10.8</sup> nodes into a 124,638-node DAG (one subterm used 3,101
+times). Machine sharing is concentrated hammering: a heavier subterm-refcount tail (α 3.2 vs 4.1
+size-matched) — the same expressions recurring down a rewrite chain. And crucially, the machine's
+shared subterms stay <i>inline</i>: they are never factored into named declarations, so their
+reuse dies at the term boundary. This localizes the dust result precisely: machine proofs are not
+structureless — they are <i>unfactored</i>. What search lacks is not repetition but the act of
+naming repeated structure into citable units, and that act is exactly what the α ≈ 2 economy,
+the belief dynamics, and the refutation firewalls all run on.</p>
+
 <h3 id="live-net">Interactive: the object itself</h3>
 <p>Below is the actual network the statistics in this report are computed on — the largest connected
 component of <b>PFR at kernel grain</b>: 1,106 compiled declarations (nodes, sized by how often they

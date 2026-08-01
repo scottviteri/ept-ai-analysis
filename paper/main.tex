@@ -291,6 +291,27 @@ ATP (Vampire/E) & 5.1 & 1{,}789 & $3.18 \pm 0.38$ & 0.567 & $29\%$ \\
 \label{tab:mizar}
 \end{table}
 
+\subsection{Below the naming grain: term sharing}
+\label{sec:subterm}
+
+The 2022 paper's machine-proof networks were built at \emph{subterm} grain: proof terms
+hash-consed into maximally-shared DAGs~\cite{mpt}. We rebuilt that algorithm over compiled Lean
+kernel terms (de Bruijn indices give exact $\alpha$-equivalence; child order and multiplicity are
+preserved, correcting two quirks of the original) and ran it on all 47{,}940 ET proof terms. The
+naive extension of the dust result---no structure all the way down---is wrong. At matched term
+size (100--3{,}000 distinct subterms), machine certificates and human proofs compress identically
+(tree-to-DAG ratio $10^{0.87}$ vs.\ $10^{0.88}$), and the machine's most-repeated subterm is
+referenced \emph{more} (median max-refcount 39 vs.\ 24). What differs is character and fate.
+Human deep constructions achieve extreme, diverse compression (the counterexample towers: median
+$10^{2.0}$; one greedy-construction lemma packs an expanded tree of $\sim\!10^{10.8}$ nodes into
+a 124{,}638-node DAG). Machine sharing is concentrated repetition---a heavier subterm-refcount
+tail---the same expressions recurring down a rewrite chain. And the machine's shared subterms
+stay \emph{inline}: they are never factored into named declarations, so their reuse dies at the
+term boundary. This localizes the dust result: machine proofs are not structureless but
+\emph{unfactored}. What search lacks is not repetition but the act of naming repeated structure
+into citable units---and that act is what the reuse economy, the belief dynamics, and the
+refutation firewalls all run on.
+
 \section{Belief dynamics: what causes what}
 \label{sec:ising}
 
@@ -517,6 +538,9 @@ Ising model on networks with an arbitrary distribution of connections.
 
 \bibitem{lakatos1976} I.~Lakatos.
 \emph{Proofs and Refutations}. Cambridge University Press, 1976.
+
+\bibitem{mpt} S.~Viteri. ManipulateProofTrees: analyze tree structure of Coq proof
+objects. \url{https://github.com/scottviteri/ManipulateProofTrees}, 2019.
 
 \bibitem{galam2010} S.~Galam and B.~Walliser.
 Ising model versus normal form game.
