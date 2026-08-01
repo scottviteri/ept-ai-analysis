@@ -2,8 +2,10 @@
 
 Extends Viteri & DeDeo, *Epistemic phase transitions in mathematical proofs*
 (Cognition 225:105120, 2022) to AI-assisted mathematics (2023–2026). Companion
-report: `report/report.html` (also published as a Claude artifact,
-"Proofs after AlephZero").
+report — with an interactive proof-network + live Ising belief animation — at
+**<https://scottviteri.github.io/ept-ai-analysis/>** (source: `report/report.html`).
+
+![PFR kernel-grain dependency network](figs/pfr_network.png)
 
 Analysis date: **2026-07-31**. All inputs are public GitHub repositories,
 pinned to the commits listed in `fetch_repos.sh`.
