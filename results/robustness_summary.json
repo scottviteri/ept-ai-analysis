@@ -1,0 +1,140 @@
+{
+ "alpha_shape": {
+  "verdict": "heavy tail robust; strict power law NOT certified except ET",
+  "vuong_R_pl_vs_lognormal": {
+   "pfr": -0.92,
+   "flt": -0.69,
+   "sphere": -1.48,
+   "mathinc": -1.43,
+   "et": 3.59
+  },
+  "note": "|R|<1.96 = indistinguishable; only ET (ntail=665) favors power law",
+  "alpha_at_fixed_xmin8": {
+   "pfr": 2.06,
+   "flt": 2.12,
+   "sphere": 2.65,
+   "mathinc": 2.27,
+   "et": 2.4
+  },
+  "jackknife_by_module": {
+   "pfr": [
+    2.02,
+    4.25
+   ],
+   "flt": [
+    2.77,
+    3.69
+   ],
+   "sphere": [
+    2.23,
+    2.88
+   ],
+   "mathinc": [
+    2.55,
+    2.66
+   ],
+   "et": [
+    2.04,
+    3.07
+   ]
+  },
+  "caveat": "PFR tail partly carried by the entropy toolbox module; theorem-only subgraphs too sparse to fit (ntail 11-36); kernel hubs are mostly definitions"
+ },
+ "wiles_signature_grain_control": {
+  "verdict": "survives \u2014 not a resolution artifact",
+  "file_level_alpha": {
+   "pfr": 2.49,
+   "flt": 2.11,
+   "sphere": 3.04
+  },
+  "blueprint_alpha": {
+   "pfr": 3.43,
+   "flt": 3.28,
+   "sphere": 4.64
+  },
+  "note": "Lean graphs contracted to file level (N matched to blueprints) keep hubs; sphere weakest contrast"
+ },
+ "tracking_base_rate_control": {
+  "verdict": "tracking measures correspondence, not graph density",
+  "measured_path6": {
+   "pfr": 0.86,
+   "flt": 0.79,
+   "sphere": 0.66,
+   "et": 0.44
+  },
+  "random_pair_base_rate": {
+   "pfr": 0.11,
+   "flt": 0.022,
+   "sphere": 0.025,
+   "et": 0.02
+  },
+  "note": "ET base rate equals FLT's, so ET's low tracking is a real correspondence gap"
+ },
+ "null_models_flt_replication": {
+  "verdict": "replicates PFR pattern",
+  "eps_c": {
+   "real": 0.313,
+   "module": 0.317,
+   "config": 0.315,
+   "dag": 0.316,
+   "er": 0.365
+  },
+  "DeltaL1": {
+   "real": 13.7,
+   "module": 13.6,
+   "config": 4.4,
+   "dag": 12.5,
+   "er": 5.2
+  },
+  "refinement": "ER slope penalty strong on PFR (0.67 vs 1.32), mild on FLT (1.2 vs 1.48); robust ER signatures = shifted eps_c + near-absent disordered phase + firewall collapse"
+ },
+ "seed_stability": {
+  "eps_c_real_pfr": [
+   0.338,
+   0.334,
+   0.341
+  ],
+  "slope_real_pfr": [
+   1.32,
+   1.25,
+   1.27
+  ],
+  "eps_c_er_pfr": [
+   0.366,
+   0.367,
+   0.366
+  ],
+  "slope_er_pfr": [
+   0.67,
+   0.7,
+   0.63
+  ]
+ },
+ "asymmetry_with_prior_field": {
+  "verdict": "qualitative shape robust to anchoring",
+  "eps005_belief_all_by_wdep": {
+   "0.0": 0.863,
+   "0.5": 0.996,
+   "1.0": 0.999,
+   "1.5": 0.994,
+   "2.0": 0.841
+  },
+  "note": "with h0=0.55 field extremes degrade rather than collapse; mixed coupling still optimal; final theorem still favors forward weight"
+ },
+ "sorry_clamping_seeds": {
+  "sphere_downstream_delta": [
+   -0.065,
+   0.099
+  ],
+  "flt_downstream_delta": [
+   -0.253,
+   0.094
+  ],
+  "note": "8 seeds, mean\u00b1sd; contrast robust, but sphere's earlier -0.007 was seed luck \u2014 honest value -0.07\u00b10.10"
+ },
+ "reverse_edges_inspected": {
+  "verdict": "all 37 gen->human kernel edges are real",
+  "breakdown": "25 Sheffer-algebra certificates used by human Sheffer development; 10 machine implications chained in human Tarski543 proof; 2 Facts references in Equation854",
+  "refinement": "claim 'nothing flows back' should read '0.15% of certificates ever get reused by humans'"
+ }
+}

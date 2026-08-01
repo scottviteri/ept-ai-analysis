@@ -32,7 +32,7 @@ from analyze import glauber_run, adjacency_lists, firewall_delta, powerlaw_alpha
 
 EPS_LIST = [0.4, 0.35, 0.3, 0.25, 0.2, 0.15, 0.1, 0.07, 0.05, 0.03, 0.02, 0.01]
 REPS = 3
-FINAL = "PFR_conjecture'"
+FINAL = "PFR_conjecture'"  # overridden by argv[3]
 
 def load_lwcc(path):
     d = json.load(open(path))
@@ -174,6 +174,8 @@ def asymmetry_sweep(H, final_idx, eps_grid=(0.05, 0.15, 0.25)):
 if __name__ == "__main__":
     gpath = sys.argv[1] if len(sys.argv) > 1 else "graphs/pfr_kernel.json"
     opath = sys.argv[2] if len(sys.argv) > 2 else "results/null_models.json"
+    if len(sys.argv) > 3:
+        globals()["FINAL"] = sys.argv[3]
     H, label, final_idx = load_lwcc(gpath)
     print(f"real: N={H.number_of_nodes()} E={H.number_of_edges()} final={label.get(final_idx)}", flush=True)
 

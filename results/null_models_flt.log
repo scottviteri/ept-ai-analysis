@@ -1,0 +1,37 @@
+real: N=3069 E=12486 final=FermatLastTheorem.of_p_ge_5
+module-preserving rewire: 16073 swaps
+global rewire: 233515 swaps
+{"name": "real", "N": 3069, "E": 12486, "alpha": 2.9884794174059692, "alpha_sigma": 0.2870122817293417, "Q": 0.799, "DeltaL1": 13.71, "dag_depth": 64, "eps_c": 0.3133, "max_slope": 1.48, "belief_range": [0.767, 0.979]}
+{"name": "module", "N": 3069, "E": 12486, "alpha": 2.9884794174059692, "alpha_sigma": 0.2870122817293417, "Q": 0.794, "DeltaL1": 13.64, "dag_depth": null, "eps_c": 0.317, "max_slope": 1.46, "belief_range": [0.788, 0.991]}
+{"name": "config", "N": 3069, "E": 12486, "alpha": 2.9884794174059692, "alpha_sigma": 0.2870122817293417, "Q": 0.311, "DeltaL1": 4.37, "dag_depth": null, "eps_c": 0.315, "max_slope": 1.3, "belief_range": [0.815, 0.997]}
+{"name": "dag", "N": 3069, "E": 11672, "alpha": 3.0588495244009763, "alpha_sigma": 0.29716933178345917, "Q": 0.846, "DeltaL1": 12.46, "dag_depth": 183, "eps_c": 0.3157, "max_slope": 1.33, "belief_range": [0.812, 0.996]}
+{"name": "er", "N": 3069, "E": 12486, "alpha": 3.4777768558235502, "alpha_sigma": 0.05904491667111525, "Q": 0.315, "DeltaL1": 5.15, "dag_depth": null, "eps_c": 0.3652, "max_slope": 1.2, "belief_range": [0.916, 1.0]}
+asymmetry sweep on real graph...
+{'eps': 0.05, 'w_dep': 0.0, 'beta_dep': 0.0, 'beta_imp': 2.944, 'belief_all': 0.595, 'belief_final': 0.286}
+{'eps': 0.05, 'w_dep': 0.25, 'beta_dep': 0.368, 'beta_imp': 2.576, 'belief_all': 0.915, 'belief_final': 0.333}
+{'eps': 0.05, 'w_dep': 0.5, 'beta_dep': 0.736, 'beta_imp': 2.208, 'belief_all': 0.953, 'belief_final': 0.19}
+{'eps': 0.05, 'w_dep': 0.75, 'beta_dep': 1.104, 'beta_imp': 1.84, 'belief_all': 0.961, 'belief_final': 0.667}
+{'eps': 0.05, 'w_dep': 1.0, 'beta_dep': 1.472, 'beta_imp': 1.472, 'belief_all': 0.967, 'belief_final': 0.81}
+{'eps': 0.05, 'w_dep': 1.25, 'beta_dep': 1.84, 'beta_imp': 1.104, 'belief_all': 0.964, 'belief_final': 0.667}
+{'eps': 0.05, 'w_dep': 1.5, 'beta_dep': 2.208, 'beta_imp': 0.736, 'belief_all': 0.956, 'belief_final': 0.619}
+{'eps': 0.05, 'w_dep': 1.75, 'beta_dep': 2.576, 'beta_imp': 0.368, 'belief_all': 0.913, 'belief_final': 0.524}
+{'eps': 0.05, 'w_dep': 2.0, 'beta_dep': 2.944, 'beta_imp': 0.0, 'belief_all': 0.482, 'belief_final': 0.476}
+{'eps': 0.15, 'w_dep': 0.0, 'beta_dep': 0.0, 'beta_imp': 1.735, 'belief_all': 0.574, 'belief_final': 0.286}
+{'eps': 0.15, 'w_dep': 0.25, 'beta_dep': 0.217, 'beta_imp': 1.518, 'belief_all': 0.871, 'belief_final': 0.238}
+{'eps': 0.15, 'w_dep': 0.5, 'beta_dep': 0.434, 'beta_imp': 1.301, 'belief_all': 0.921, 'belief_final': 0.429}
+{'eps': 0.15, 'w_dep': 0.75, 'beta_dep': 0.65, 'beta_imp': 1.084, 'belief_all': 0.94, 'belief_final': 0.381}
+{'eps': 0.15, 'w_dep': 1.0, 'beta_dep': 0.867, 'beta_imp': 0.867, 'belief_all': 0.949, 'belief_final': 0.762}
+{'eps': 0.15, 'w_dep': 1.25, 'beta_dep': 1.084, 'beta_imp': 0.65, 'belief_all': 0.946, 'belief_final': 0.619}
+{'eps': 0.15, 'w_dep': 1.5, 'beta_dep': 1.301, 'beta_imp': 0.434, 'belief_all': 0.931, 'belief_final': 0.571}
+{'eps': 0.15, 'w_dep': 1.75, 'beta_dep': 1.518, 'beta_imp': 0.217, 'belief_all': 0.885, 'belief_final': 0.571}
+{'eps': 0.15, 'w_dep': 2.0, 'beta_dep': 1.735, 'beta_imp': 0.0, 'belief_all': 0.478, 'belief_final': 0.476}
+{'eps': 0.25, 'w_dep': 0.0, 'beta_dep': 0.0, 'beta_imp': 1.099, 'belief_all': 0.528, 'belief_final': 0.19}
+{'eps': 0.25, 'w_dep': 0.25, 'beta_dep': 0.137, 'beta_imp': 0.961, 'belief_all': 0.825, 'belief_final': 0.19}
+{'eps': 0.25, 'w_dep': 0.5, 'beta_dep': 0.275, 'beta_imp': 0.824, 'belief_all': 0.879, 'belief_final': 0.286}
+{'eps': 0.25, 'w_dep': 0.75, 'beta_dep': 0.412, 'beta_imp': 0.687, 'belief_all': 0.905, 'belief_final': 0.524}
+{'eps': 0.25, 'w_dep': 1.0, 'beta_dep': 0.549, 'beta_imp': 0.549, 'belief_all': 0.911, 'belief_final': 0.714}
+{'eps': 0.25, 'w_dep': 1.25, 'beta_dep': 0.687, 'beta_imp': 0.412, 'belief_all': 0.908, 'belief_final': 0.571}
+{'eps': 0.25, 'w_dep': 1.5, 'beta_dep': 0.824, 'beta_imp': 0.275, 'belief_all': 0.893, 'belief_final': 0.571}
+{'eps': 0.25, 'w_dep': 1.75, 'beta_dep': 0.961, 'beta_imp': 0.137, 'belief_all': 0.848, 'belief_final': 0.571}
+{'eps': 0.25, 'w_dep': 2.0, 'beta_dep': 1.099, 'beta_imp': 0.0, 'belief_all': 0.482, 'belief_final': 0.524}
+saved results/null_models_flt.json
