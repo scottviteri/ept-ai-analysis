@@ -1,0 +1,39 @@
+{
+ "gof": {
+  "pfr": {
+   "gof_p": 0.6,
+   "alpha": 2.46,
+   "xmin": 28,
+   "ntail": 39,
+   "B": 100
+  },
+  "flt": {
+   "gof_p": 0.85,
+   "alpha": 2.99,
+   "xmin": 45,
+   "ntail": 48,
+   "B": 100
+  },
+  "sphere": {
+   "gof_p": 0.26,
+   "alpha": 2.49,
+   "xmin": 11,
+   "ntail": 60,
+   "B": 100
+  },
+  "mathinc": {
+   "gof_p": 0.15,
+   "alpha": 2.56,
+   "xmin": 22,
+   "ntail": 177,
+   "B": 100
+  },
+  "et": {
+   "gof_p": 0.0,
+   "alpha": 2.88,
+   "xmin": 68,
+   "ntail": 665,
+   "B": 50
+  }
+ }
+}

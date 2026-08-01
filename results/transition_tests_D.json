@@ -1,0 +1,70 @@
+{
+ "alpha_knob": [
+  {
+   "alpha": "1.8",
+   "N_lwcc": 1104,
+   "k2_over_k": 70.8,
+   "eps_c": 0.431,
+   "eps_chi_peak": 0.47,
+   "m_range": [
+    0.231,
+    0.989
+   ]
+  },
+  {
+   "alpha": "2.2",
+   "N_lwcc": 1106,
+   "k2_over_k": 12.8,
+   "eps_c": 0.384,
+   "eps_chi_peak": 0.45,
+   "m_range": [
+    -0.006,
+    0.958
+   ]
+  },
+  {
+   "alpha": "2.6",
+   "N_lwcc": 1106,
+   "k2_over_k": 5.1,
+   "eps_c": 0.316,
+   "eps_chi_peak": 0.32,
+   "m_range": [
+    -0.008,
+    0.848
+   ]
+  },
+  {
+   "alpha": "3.2",
+   "N_lwcc": 1105,
+   "k2_over_k": 3.2,
+   "eps_c": 0.255,
+   "eps_chi_peak": 0.29,
+   "m_range": [
+    -0.009,
+    0.565
+   ]
+  },
+  {
+   "alpha": "4.0",
+   "N_lwcc": 1105,
+   "k2_over_k": 2.7,
+   "eps_c": 0.235,
+   "eps_chi_peak": 0.26,
+   "m_range": [
+    -0.004,
+    0.403
+   ]
+  },
+  {
+   "alpha": "poisson",
+   "N_lwcc": 1106,
+   "k2_over_k": 10.6,
+   "eps_c": 0.438,
+   "eps_chi_peak": 0.45,
+   "m_range": [
+    -0.002,
+    0.999
+   ]
+  }
+ ]
+}

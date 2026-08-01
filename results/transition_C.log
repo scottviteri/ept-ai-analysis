@@ -1,0 +1,4 @@
+C N=225: max_slope=2.99 chi_peak=2.4
+C N=819: max_slope=3.33 chi_peak=17.7
+C N=22977: max_slope=5.1 chi_peak=1.1
+saved results/transition_tests_C.json

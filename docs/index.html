@@ -259,11 +259,14 @@ the blueprints' 3.3–4.6 — the hub deficit is a property of communication, no
 <b>(3) Tracking is not a density artifact:</b> random pairs of the same blueprint-tagged nodes
 connect within 6 hops only 2–11% of the time, versus 44–86% measured — and ET's base rate equals
 FLT's, so its correspondence gap is real. <b>(4) The null-model decomposition replicates on FLT</b>
-(degree-keeping controls: ε<sub>c</sub> = 0.313–0.317, firewall +12.5 to +13.7; destroyed:
-ε<sub>c</sub> = 0.365, firewall +4.4 to +5.2), with one refinement: ER's sharpness penalty is
-strong on PFR but mild on FLT — the robust Erdős–Rényi signatures are the shifted transition, the
-near-absent disordered phase, and the firewall collapse. Seed variation moves ε<sub>c</sub> by
-&lt; 0.01. <b>(5) The asymmetry result is not an anchoring artifact:</b> adding a persistent prior
+(degree-keeping controls reproduce the real curve and firewall +12.5 to +13.7; modularity-destroyed
+controls collapse to +4.4/+5.2), and a later grid extension corrected the ER reading: the ER
+transition is sharp but sits at ε ≈ 0.44, outside the original grid — see "Is it actually a phase
+transition?" above. Seed variation moves crossover estimates by &lt; 0.01. A CSN goodness-of-fit
+bootstrap adds: the power-law form is not rejected for PFR/FLT/Sphere/Gauss tails
+(p = 0.15–0.85) and is rejected for ET (p &lt; 0.01, ntail = 665) — heavy-tailed and
+approximately power-law, with the strict form failing exactly where the data has power to test
+it. <b>(5) The asymmetry result is not an anchoring artifact:</b> adding a persistent prior
 field softens the pure-forward collapse (0.50 → 0.84) but the shape survives — mixed coupling still
 wins, forward weight still favors the final theorem. <b>(6) The sorry-clamping contrast holds
 across seeds</b> (FLT downstream −0.25 ± 0.09; Sphere −0.07 ± 0.10) though Sphere's earlier −0.007
@@ -569,19 +572,57 @@ sustain internal dissent cheaply but dissent cannot spread — doubt is quaranti
 <tr><td>Within-module rewire — scrambles wiring <i>inside</i> each module</td><td>real (α = 2.46)</td><td class="num">0.60</td><td class="num">0.33</td><td class="num">1.22</td><td class="num">+11.7</td></tr>
 <tr><td>Global rewire — scrambles all wiring, keeps only degrees</td><td>real (α = 2.46)</td><td class="num">0.27</td><td class="num">0.33</td><td class="num">1.16</td><td class="num">+6.0</td></tr>
 <tr><td>DAG-respecting rematch — random rewiring constrained to stay acyclic</td><td>≈real (α = 2.20)</td><td class="num">0.75</td><td class="num">0.33</td><td class="num">1.15</td><td class="num">+12.3</td></tr>
-<tr><td>Erdős–Rényi — same node and edge counts, uniform random placement</td><td>Poisson (no hubs, no α)</td><td class="num">0.28</td><td class="num">0.37</td><td class="num">0.67</td><td class="num">+5.5</td></tr>
+<tr><td>Erdős–Rényi — same node and edge counts, uniform random placement</td><td>Poisson (no hubs, no α)</td><td class="num">0.28</td><td class="num">0.44</td><td class="num">(sharp step)</td><td class="num">+5.5</td></tr>
 </table></div>
-<p>The decomposition is clean. <b>The phase transition is a degree-sequence phenomenon:</b> every
-control that keeps the real degrees reproduces the EPT's location (ε<sub>c</sub> = 0.33) and most
-of its sharpness, whether or not modularity or acyclicity survive. The Erdős–Rényi graph — same
-size, same density, no hubs — is the only one that fails: its transition is half as sharp and its
-disordered phase barely exists. The mechanism is visible in the live animation above: a real proof
-network has a sparse periphery (most declarations are cited once or twice) that disorders first,
-and a densely wired hub core that then flips the whole system collectively. Uniform connectivity
-has no periphery and no core, so belief degrades gradually instead of transitioning.
+<p>The decomposition is clean, with one correction found by extending the ε grid past 0.40
+(an earlier version of this section, computed on ε ≤ 0.40, misread the Erdős–Rényi control — its
+transition sits just outside that window). <b>The belief curve is a degree-sequence phenomenon:</b>
+every control that keeps the real degrees reproduces the real curve exactly, whether or not
+modularity or acyclicity survive. The Erdős–Rényi graph behaves qualitatively differently — but
+not by blurring the transition. It has a <i>sharper</i>, classic collective transition at
+ε ≈ 0.44: fully uncertain above it (m ≈ 0.01 at ε = 0.46), then everything orders at once. The
+real network instead orders <i>in stages</i>: at ε = 0.46, where the ER graph is still noise, the
+real network's hub core has already reached m = 0.32, and mean belief then climbs gradually as the
+sparse periphery melts in over a wide ε band. Heavy tails do not sharpen the transition — they
+move the <i>onset</i> of certainty to far higher error rates and stage the ordering, hubs first.
 <b>The firewall is a modularity phenomenon:</b> ΔL₁ sits at +11 to +12 in every graph that retains
 community structure and collapses to +6 in both graphs that lose it, independent of everything
 else. Acyclicity, notably, is needed for neither.</p>
+<h3>Is it actually a phase transition? (and is α actually the knob?)</h3>
+<p>Three sharper tests, replacing the eyeball criteria of ε<sub>c</sub>-and-slope
+(<code>results/transition_tests_*.json</code>):</p>
+<p><b>Susceptibility and hysteresis (PFR kernel).</b> The susceptibility
+χ(ε) = N·Var(m) shows <i>no interior peak</i> in ε ∈ [0.10, 0.46] — it rises monotonically toward
+ε = 0.5 — so the smooth belief curve reported above is a finite-size crossover, not a critical
+singularity sitting at "ε<sub>c</sub> = 0.33"; that number is a crossover midpoint and should be
+read as such. What <i>is</i> sharply present is bistability: initialized all-believing vs
+all-doubting, the network reaches different locked states at every tested ε up to 0.46
+(hysteresis gap 0.66 even there, 1.9 at ε = 0.1). The genuinely transition-like structure in a
+real proof network at realistic error rates is this memory — belief and disbelief are both
+self-sustaining phases, and the prior decides which basin you land in. On subsampled networks of
+growing size the maximum slope of the belief curve grows (3.0 → 3.3 → 5.1 from N = 225 to 23k),
+consistent with a true singular transition emerging in the large-N limit, though subsampling
+distorts degree structure enough that we treat this as suggestive.</p>
+<p><b>The causal arm: dialing α directly.</b> The null models above hold the degree sequence fixed
+and vary everything else; the converse experiment generates synthetic directed graphs at matched
+size and density with the out-degree tail dialed through α = 1.8 → 4.0 (plus a Poisson control).
+The crossover location moves monotonically with tail weight, tracking the mean-field prediction
+that the critical coupling scales as ⟨k⟩/⟨k²⟩:</p>
+<div class="tblwrap"><table>
+<tr><th>Out-degree tail</th><th class="num">⟨k²⟩/⟨k⟩</th><th class="num">belief onset ε<sub>c</sub></th></tr>
+<tr><td>α = 1.8 (heaviest)</td><td class="num">70.8</td><td class="num">0.43</td></tr>
+<tr><td>α = 2.2</td><td class="num">12.8</td><td class="num">0.38</td></tr>
+<tr><td>α = 2.6</td><td class="num">5.1</td><td class="num">0.32</td></tr>
+<tr><td>α = 3.2</td><td class="num">3.2</td><td class="num">0.26</td></tr>
+<tr><td>α = 4.0 (lightest)</td><td class="num">2.7</td><td class="num">0.24</td></tr>
+<tr><td>Poisson (no tail)</td><td class="num">10.6</td><td class="num">0.44</td></tr>
+</table></div>
+<p>So α causally sets where collective belief becomes possible — heavier-tailed reuse lets
+certainty form at higher error rates — and the Poisson control falling on the same ⟨k²⟩/⟨k⟩ curve
+shows the mechanism is the degree fluctuations themselves, exactly as mean-field theory predicts.
+The refined headline: heavy-tailed reuse does not make the transition <i>sharper</i>; it moves
+the onset of certainty earlier (higher ε), stages the ordering hub-core-first, and makes the
+believing core bistable-robust across essentially the whole error range.</p>
 <p>A coupling-asymmetry sweep on the real graph completes the picture. Here the total coupling
 strength is held fixed while its split varies between β<sub>dep</sub> (forward: a claim aligns with
 its <i>premises</i>) and β<sub>imp</sub> (backward: a claim aligns with the results that
