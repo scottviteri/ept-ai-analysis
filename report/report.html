@@ -593,6 +593,22 @@ Mean belief peaks near the symmetric split, while belief in the <i>final theorem
 with forward weight (reaching 1.00 at roughly β<sub>dep</sub>:β<sub>imp</sub> = 3:1 at ε = 0.05).
 The model's reading: evidence flows forward, but foundations are stabilized by what they support —
 belief in the axioms is partly sustained by the coherence of their consequences.</p>
+<p><b>The paper's asymmetric model, taken seriously in 2D</b>
+(<code>results/asymmetric_2d.json</code>). The 2022 paper's published curves set
+β<sub>dep</sub> = β<sub>imp</sub> "for simplicity" and introduced the asymmetric model for one
+mechanism: strong abduction should let disbelief in a consequence overwhelm the deductive evidence
+for its premises. Sweeping the full (β<sub>dep</sub>, β<sub>imp</sub>) plane on the PFR kernel
+network shows, first, that the simplification is harmless: an epistemic phase transition exists at
+every ratio from 1:4 to 4:1, with ε<sub>c</sub> drifting only from 0.32 to 0.35, and the 2D plane
+is a wide plateau — belief organizes whenever both directions are nonzero and fails on both axes.
+Second, the refutation mechanism is real but <i>gated by redundancy</i>: clamping the network's
+most-reused node to false moves its premises by exactly nothing at any ratio — a premise's
+abductive support sums over all its consequences, and one refuted child among hundreds of believed
+ones is outvoted. Through <i>fragile</i> links (premise with only 1–2 consequences; 712 such links
+in PFR), doubt does propagate backward, but only once abduction dominates: mean premise drop 0.21
+(max 0.79) at β<sub>imp</sub>:β<sub>dep</sub> = 4:1, versus 0.02 at the symmetric point. In
+Lakatos's terms: monsters can be barred wherever a lemma is load-bearing for many results; only
+claims with a single consequence are hostage to it.</p>
 <h2><span class="secno">5</span>Result: three generations of AI proof style</h2>
 <p>Same three theorems (IMO 2024 P1, P2, P6), machine and human, plus the 2026 research corpus:</p>
 </div>

@@ -1,0 +1,566 @@
+{
+ "ept_by_ratio": {
+  "0.0": {
+   "eps_c": 0.265,
+   "belief_range": [
+    0.402,
+    0.485
+   ],
+   "curve": [
+    {
+     "eps": 0.4,
+     "all": 0.485,
+     "final": 0.286,
+     "axioms": 0.5
+    },
+    {
+     "eps": 0.35,
+     "all": 0.477,
+     "final": 0.333,
+     "axioms": 0.5
+    },
+    {
+     "eps": 0.3,
+     "all": 0.463,
+     "final": 0.476,
+     "axioms": 0.5
+    },
+    {
+     "eps": 0.25,
+     "all": 0.435,
+     "final": 0.381,
+     "axioms": 0.5
+    },
+    {
+     "eps": 0.2,
+     "all": 0.42,
+     "final": 0.381,
+     "axioms": 0.5
+    },
+    {
+     "eps": 0.15,
+     "all": 0.412,
+     "final": 0.524,
+     "axioms": 0.5
+    },
+    {
+     "eps": 0.1,
+     "all": 0.403,
+     "final": 0.476,
+     "axioms": 0.5
+    },
+    {
+     "eps": 0.05,
+     "all": 0.409,
+     "final": 0.333,
+     "axioms": 0.5
+    },
+    {
+     "eps": 0.02,
+     "all": 0.402,
+     "final": 0.333,
+     "axioms": 0.5
+    },
+    {
+     "eps": 0.01,
+     "all": 0.402,
+     "final": 0.333,
+     "axioms": 0.5
+    }
+   ]
+  },
+  "0.25": {
+   "eps_c": 0.317,
+   "belief_range": [
+    0.759,
+    0.97
+   ],
+   "curve": [
+    {
+     "eps": 0.4,
+     "all": 0.759,
+     "final": 0.286,
+     "axioms": 0.573
+    },
+    {
+     "eps": 0.35,
+     "all": 0.831,
+     "final": 0.429,
+     "axioms": 0.603
+    },
+    {
+     "eps": 0.3,
+     "all": 0.882,
+     "final": 0.619,
+     "axioms": 0.645
+    },
+    {
+     "eps": 0.25,
+     "all": 0.91,
+     "final": 0.619,
+     "axioms": 0.674
+    },
+    {
+     "eps": 0.2,
+     "all": 0.928,
+     "final": 0.714,
+     "axioms": 0.707
+    },
+    {
+     "eps": 0.15,
+     "all": 0.945,
+     "final": 0.857,
+     "axioms": 0.739
+    },
+    {
+     "eps": 0.1,
+     "all": 0.954,
+     "final": 0.952,
+     "axioms": 0.768
+    },
+    {
+     "eps": 0.05,
+     "all": 0.962,
+     "final": 1.0,
+     "axioms": 0.8
+    },
+    {
+     "eps": 0.02,
+     "all": 0.966,
+     "final": 1.0,
+     "axioms": 0.827
+    },
+    {
+     "eps": 0.01,
+     "all": 0.97,
+     "final": 1.0,
+     "axioms": 0.848
+    }
+   ]
+  },
+  "0.5": {
+   "eps_c": 0.326,
+   "belief_range": [
+    0.8,
+    0.99
+   ],
+   "curve": [
+    {
+     "eps": 0.4,
+     "all": 0.8,
+     "final": 0.381,
+     "axioms": 0.625
+    },
+    {
+     "eps": 0.35,
+     "all": 0.875,
+     "final": 0.476,
+     "axioms": 0.683
+    },
+    {
+     "eps": 0.3,
+     "all": 0.916,
+     "final": 0.619,
+     "axioms": 0.729
+    },
+    {
+     "eps": 0.25,
+     "all": 0.94,
+     "final": 0.714,
+     "axioms": 0.768
+    },
+    {
+     "eps": 0.2,
+     "all": 0.955,
+     "final": 0.714,
+     "axioms": 0.8
+    },
+    {
+     "eps": 0.15,
+     "all": 0.966,
+     "final": 0.857,
+     "axioms": 0.837
+    },
+    {
+     "eps": 0.1,
+     "all": 0.974,
+     "final": 0.952,
+     "axioms": 0.865
+    },
+    {
+     "eps": 0.05,
+     "all": 0.982,
+     "final": 1.0,
+     "axioms": 0.904
+    },
+    {
+     "eps": 0.02,
+     "all": 0.988,
+     "final": 1.0,
+     "axioms": 0.933
+    },
+    {
+     "eps": 0.01,
+     "all": 0.99,
+     "final": 1.0,
+     "axioms": 0.945
+    }
+   ]
+  },
+  "1.0": {
+   "eps_c": 0.332,
+   "belief_range": [
+    0.851,
+    0.998
+   ],
+   "curve": [
+    {
+     "eps": 0.4,
+     "all": 0.851,
+     "final": 0.429,
+     "axioms": 0.712
+    },
+    {
+     "eps": 0.35,
+     "all": 0.912,
+     "final": 0.476,
+     "axioms": 0.776
+    },
+    {
+     "eps": 0.3,
+     "all": 0.946,
+     "final": 0.619,
+     "axioms": 0.83
+    },
+    {
+     "eps": 0.25,
+     "all": 0.965,
+     "final": 0.714,
+     "axioms": 0.87
+    },
+    {
+     "eps": 0.2,
+     "all": 0.975,
+     "final": 0.714,
+     "axioms": 0.902
+    },
+    {
+     "eps": 0.15,
+     "all": 0.984,
+     "final": 0.857,
+     "axioms": 0.931
+    },
+    {
+     "eps": 0.1,
+     "all": 0.989,
+     "final": 0.952,
+     "axioms": 0.95
+    },
+    {
+     "eps": 0.05,
+     "all": 0.994,
+     "final": 1.0,
+     "axioms": 0.975
+    },
+    {
+     "eps": 0.02,
+     "all": 0.997,
+     "final": 1.0,
+     "axioms": 0.987
+    },
+    {
+     "eps": 0.01,
+     "all": 0.998,
+     "final": 1.0,
+     "axioms": 0.99
+    }
+   ]
+  },
+  "2.0": {
+   "eps_c": 0.35,
+   "belief_range": [
+    0.893,
+    0.996
+   ],
+   "curve": [
+    {
+     "eps": 0.4,
+     "all": 0.893,
+     "final": 0.429,
+     "axioms": 0.807
+    },
+    {
+     "eps": 0.35,
+     "all": 0.945,
+     "final": 0.476,
+     "axioms": 0.88
+    },
+    {
+     "eps": 0.3,
+     "all": 0.969,
+     "final": 0.619,
+     "axioms": 0.931
+    },
+    {
+     "eps": 0.25,
+     "all": 0.979,
+     "final": 0.619,
+     "axioms": 0.954
+    },
+    {
+     "eps": 0.2,
+     "all": 0.987,
+     "final": 0.714,
+     "axioms": 0.974
+    },
+    {
+     "eps": 0.15,
+     "all": 0.991,
+     "final": 0.857,
+     "axioms": 0.984
+    },
+    {
+     "eps": 0.1,
+     "all": 0.993,
+     "final": 0.952,
+     "axioms": 0.988
+    },
+    {
+     "eps": 0.05,
+     "all": 0.994,
+     "final": 1.0,
+     "axioms": 0.991
+    },
+    {
+     "eps": 0.02,
+     "all": 0.995,
+     "final": 1.0,
+     "axioms": 0.993
+    },
+    {
+     "eps": 0.01,
+     "all": 0.996,
+     "final": 1.0,
+     "axioms": 0.993
+    }
+   ]
+  },
+  "4.0": {
+   "eps_c": 0.351,
+   "belief_range": [
+    0.928,
+    0.993
+   ],
+   "curve": [
+    {
+     "eps": 0.4,
+     "all": 0.928,
+     "final": 0.429,
+     "axioms": 0.91
+    },
+    {
+     "eps": 0.35,
+     "all": 0.961,
+     "final": 0.476,
+     "axioms": 0.955
+    },
+    {
+     "eps": 0.3,
+     "all": 0.977,
+     "final": 0.619,
+     "axioms": 0.978
+    },
+    {
+     "eps": 0.25,
+     "all": 0.983,
+     "final": 0.619,
+     "axioms": 0.985
+    },
+    {
+     "eps": 0.2,
+     "all": 0.987,
+     "final": 0.619,
+     "axioms": 0.99
+    },
+    {
+     "eps": 0.15,
+     "all": 0.991,
+     "final": 0.857,
+     "axioms": 0.994
+    },
+    {
+     "eps": 0.1,
+     "all": 0.992,
+     "final": 0.952,
+     "axioms": 0.991
+    },
+    {
+     "eps": 0.05,
+     "all": 0.991,
+     "final": 1.0,
+     "axioms": 0.985
+    },
+    {
+     "eps": 0.02,
+     "all": 0.992,
+     "final": 1.0,
+     "axioms": 0.988
+    },
+    {
+     "eps": 0.01,
+     "all": 0.993,
+     "final": 1.0,
+     "axioms": 0.988
+    }
+   ]
+  }
+ },
+ "phase_plane": {
+  "grid": [
+   0.0,
+   0.15,
+   0.3,
+   0.5,
+   0.75,
+   1.0,
+   1.5,
+   2.0
+  ],
+  "belief_all": [
+   [
+    0.502,
+    0.499,
+    0.501,
+    0.521,
+    0.565,
+    0.613,
+    0.55,
+    0.571
+   ],
+   [
+    0.494,
+    0.797,
+    0.847,
+    0.884,
+    0.905,
+    0.917,
+    0.925,
+    0.926
+   ],
+   [
+    0.485,
+    0.872,
+    0.903,
+    0.932,
+    0.945,
+    0.955,
+    0.963,
+    0.964
+   ],
+   [
+    0.505,
+    0.905,
+    0.931,
+    0.955,
+    0.969,
+    0.976,
+    0.981,
+    0.982
+   ],
+   [
+    0.525,
+    0.922,
+    0.945,
+    0.966,
+    0.976,
+    0.984,
+    0.987,
+    0.989
+   ],
+   [
+    0.545,
+    0.93,
+    0.952,
+    0.971,
+    0.98,
+    0.988,
+    0.991,
+    0.993
+   ],
+   [
+    0.523,
+    0.929,
+    0.953,
+    0.972,
+    0.982,
+    0.987,
+    0.995,
+    0.997
+   ],
+   [
+    0.534,
+    0.933,
+    0.95,
+    0.966,
+    0.981,
+    0.987,
+    0.996,
+    0.997
+   ]
+  ]
+ },
+ "refutation": {
+  "target": "ProbabilityTheory.entropy",
+  "n_premises": 1,
+  "by_ratio": {
+   "0.25": {
+    "premises_1hop": {
+     "base": 1.0,
+     "clamped": 1.0
+    },
+    "premises_2hop": null,
+    "network": {
+     "base": 0.96,
+     "clamped": 0.952
+    }
+   },
+   "1.0": {
+    "premises_1hop": {
+     "base": 1.0,
+     "clamped": 1.0
+    },
+    "premises_2hop": null,
+    "network": {
+     "base": 0.993,
+     "clamped": 0.983
+    }
+   },
+   "4.0": {
+    "premises_1hop": {
+     "base": 1.0,
+     "clamped": 1.0
+    },
+    "premises_2hop": null,
+    "network": {
+     "base": 0.977,
+     "clamped": 0.969
+    }
+   }
+  }
+ },
+ "refutation_fragile_links": {
+  "setup": "40-sample of 712 (premise p, consequence c) links with p having 1-2 consequences; clamp c false at eps=0.05, fixed total coupling",
+  "mean_premise_drop_by_ratio": {
+   "0.25": 0.071,
+   "1.0": 0.018,
+   "4.0": 0.214
+  },
+  "max_premise_drop_by_ratio": {
+   "0.25": 0.571,
+   "1.0": 0.143,
+   "4.0": 0.786
+  },
+  "hub_refutation": "clamping the highest-out-degree node moves its premises 0.000 at every ratio - outvoted by its other believed consequences",
+  "conclusion": "the paper's backward-refutation mechanism operates only through low-redundancy links and requires beta_imp > beta_dep; reuse hubs are refutation-proof at any ratio"
+ }
+}
