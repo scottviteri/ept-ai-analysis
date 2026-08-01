@@ -1,0 +1,50 @@
+{
+ "matched_theorems": 1274,
+ "background_removed": 18,
+ "human": {
+  "mean_deps": 16.5,
+  "n_premises": 2065,
+  "alpha": 2.36,
+  "alpha_sigma": 0.09,
+  "ntail": 248,
+  "gini": 0.74,
+  "top10": [
+   "idempotence_k3_xboole_0",
+   "commutativity_k3_xboole_0",
+   "dt_k3_xboole_0",
+   "dt_l1_pre_topc",
+   "existence_l1_pre_topc",
+   "dt_k2_xboole_0",
+   "idempotence_k2_xboole_0",
+   "commutativity_k2_xboole_0",
+   "t2_boole",
+   "dt_k4_tarski"
+  ]
+ },
+ "atp": {
+  "mean_deps": 5.1,
+  "n_premises": 1789,
+  "alpha": 3.18,
+  "alpha_sigma": 0.38,
+  "ntail": 33,
+  "gini": 0.567,
+  "top10": [
+   "d3_tarski",
+   "cc1_relset_1",
+   "dt_l1_pre_topc",
+   "fc2_struct_0",
+   "dt_m1_pre_topc",
+   "commutativity_k3_xboole_0",
+   "cc2_relset_1",
+   "d4_xboole_0",
+   "d10_xboole_0",
+   "reflexivity_r1_tarski"
+  ]
+ },
+ "atp_premise_containment_in_human": 0.294,
+ "top50_hub_overlap": 22,
+ "human_size_matched_gini": [
+  0.669,
+  0.002
+ ]
+}

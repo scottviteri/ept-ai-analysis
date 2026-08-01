@@ -293,6 +293,28 @@ precisely on the stratum of instances where no intermediate structure is needed,
 instance that got solved was solved by construction. The α ≈ 2 economy is not something search
 <i>lacks</i>; it is something deep problems <i>demand</i>, from whoever solves them.</p>
 
+<p class="note"><b>The missing experiment, run (audit, fifth round).</b> The confound above
+demanded a corpus of search-generated proofs on mathematics <i>not</i> selected for
+parallelizability. It exists: the Mizar40 experiments (Kaliszyk &amp; Urban) had Vampire/E re-prove
+32,524 theorems of the general Mizar Mathematical Library, recording the premises each minimized
+ATP proof used, and the MPTP2078 benchmark encodes the <i>human</i> Mizar proof dependencies for
+2,078 theorems on the track to Bolzano–Weierstrass. The intersection gives 1,274 theorems of
+ordinary mathematics — topology, analysis, set theory — each with both a human and a
+search-found proof (<code>analysis/mizar_atp_compare.py</code>,
+<code>results/mizar_atp_compare.json</code>). Results, after removing MPTP background axioms:
+ATP proofs are 3× leaner (5.1 vs 16.5 premises) and heavily <i>rerouted</i> — only 29% of the
+premises an ATP uses appear in the human proof's dependency set. And the reuse economy differs in
+the predicted direction: human premise reuse is hub-concentrated (α = 2.36 ± 0.09 on a
+248-premise tail, Gini 0.740) while ATP reuse is flatter and hub-deficient (α = 3.18 ± 0.38 on a
+33-premise tail, Gini 0.567); a size-matched control (human dependency lists subsampled to ATP
+proof sizes, 20 reps) leaves human Gini at 0.669 ± 0.002, still well above the ATP — the gap is
+not a proof-length artifact. Two caveats cut in opposite directions: Mizar40's premise selection
+was kNN-trained on human proofs, biasing the ATP <i>toward</i> human routes (unbiased search would
+diverge further), while ATP proof minimization may prune some genuinely-used context. The refined
+conclusion of the previous note survives its cleanest test so far: on the same general-library
+theorems, search finds valid but structurally different proofs — shorter, scattered, avoiding the
+canonical toolbox that human proofs concentrate on.</p>
+
 <h3 id="live-net">Interactive: the object itself</h3>
 <p>Below is the actual network the statistics in this report are computed on — the largest connected
 component of <b>PFR at kernel grain</b>: 1,106 compiled declarations (nodes, sized by how often they
