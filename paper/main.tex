@@ -196,7 +196,11 @@ common fixed $x_{\min} = 8$ all five corpora sit tightly in $\alpha = 2.1$--$2.6
 state the finding as: \emph{heavy-tailed, approximately power-law reuse with hubs}, robust
 across corpora and grains---with the strict power-law form failing exactly where the data can
 test it. Module-jackknife shows PFR's tail leans on its entropy library (drop-one-module range
-$[2.0, 4.3]$); the Gauss corpus is the most homogeneous ($[2.55, 2.66]$).
+$[2.0, 4.3]$); the Gauss corpus is the most homogeneous ($[2.55, 2.66]$). One grain caveat when
+comparing to the 2022 baselines: the original paper's Coq networks were built at \emph{subterm}
+grain (hash-consed proof-term DAGs; see the ManipulateProofTrees pipeline), its human networks at
+named-citation grain, and ours at declaration grain---so the concordance of exponents across all
+three is a cross-grain robustness result, not a like-for-like replication.
 
 \paragraph{The Wiles signature is a communication-grain property.} Within the same projects,
 the blueprint networks show $\alpha = 3.43 \pm 0.54$ (PFR), $3.28 \pm 0.72$ (FLT),
