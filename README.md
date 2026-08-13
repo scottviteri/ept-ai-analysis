@@ -12,6 +12,13 @@ Analysis date: **2026-07-31**. All inputs are public repositories pinned in
 `fetch_repos.sh`. All headline numbers below are **post-audit** (five audit
 rounds; see "Audit trail").
 
+**Picking this project up?** Start with
+[`handoff/handoff.pdf`](handoff/handoff.pdf) — a 5-page briefing on the current
+state of the evidence, the repo map, changed infrastructure assumptions (disk is
+no longer scarce; keep builds), and the prioritized next experiments, led by the
+full-unfolding subterm test (does dissolving the naming grain change the
+human-vs-machine comparison?).
+
 ## What we found
 
 1. **Heavy-tailed reuse (α ≈ 2–3) is the signature of *constructed* mathematics,

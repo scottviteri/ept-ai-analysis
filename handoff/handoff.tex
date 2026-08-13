@@ -1,0 +1,257 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small, breaklines=true, columns=fullflexible}
+\newcommand{\code}[1]{\texttt{#1}}
+
+\title{EPT $\to$ AI-era mathematics: project handoff\\
+\large Current state and prioritized next moves}
+\author{}
+\date{August 12, 2026}
+
+\begin{document}
+\maketitle
+
+\noindent This document is a self-contained briefing for whoever (human or model) picks up the
+project next. It records what has been established, where every result lives in the repository,
+what infrastructure assumptions have \emph{changed} (disk is no longer scarce; cloud instances are
+available), and a prioritized experiment queue --- led by the full-unfolding subterm experiment,
+which tests whether the current results depend on treating the named-lemma library as fixed.
+
+\section{Project in one paragraph}
+
+Viteri \& DeDeo (\emph{Cognition} 2022) modeled mathematical proofs as dependency networks,
+found heavy-tailed premise reuse ($\alpha\approx 2$ power laws), and showed that an asymmetric
+Ising (Glauber) belief dynamic on these networks exhibits epistemic phase transitions (EPTs):
+abrupt collective transitions to certainty, with modular ``firewalls'' containing local doubt.
+This project asks whether those structural signatures survive in AI-era mathematics, using
+Lean~4 megaprojects (PFR, FLT, Sphere Packing, equational\_theories) that mix human-written,
+AI-assisted, and pure-search-generated proofs, plus Mizar human-vs-ATP paired proofs and
+AlphaProof-era corpora. Everything is extracted at up to four grains: blueprint (informal
+\LaTeX{} \code{\textbackslash uses}), textual Lean (regex), kernel (compiled environment,
+\code{Expr.getUsedConstants}), and subterm (hash-consed proof-term DAGs, the 2022 paper's
+original Coq grain, reimplemented in Lean from the 2019 \code{ManipulateProofTrees} algorithm).
+
+\section{State of the evidence (post-audit)}
+
+All numbers below survived a user-prompted audit round that fixed four extractor bugs
+(Unicode names, the Lean \code{public} modifier, string-literal phantoms, short-name capture)
+and retracted two early claims (``ER blurs the transition'' --- it does not, ER is sharp at
+$\varepsilon\approx0.44$; sphere sorry-clamping $-0.007$ was seed luck, honest value
+$-0.07\pm0.10$). Sources: \code{README.md} (findings list), \code{paper/main.tex} (11-page
+draft), \code{results/*.json}.
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=2pt]
+\item \textbf{Two-grain law.} Within the same projects, informal blueprints show the ``Wiles
+  signature'' ($\alpha\approx3.3$--$4.6$) while their Lean formalizations sit at
+  $\alpha\approx2$. Kernel-grain ground truth: PFR 2.46, FLT 2.99, Sphere 2.49, Gauss
+  (math-inc) 2.56, ET 2.88.
+\item \textbf{Heavy tails are real but ``power law'' is corpus-specific.} Semiparametric
+  bootstrap GOF: power law not rejected for PFR/FLT/Sphere/math-inc ($p=.15$--$.85$),
+  rejected for ET ($p<.01$). Vuong vs.\ lognormal is decisive only for ET. Honest phrasing:
+  ``approximately power-law heavy tails.''
+\item \textbf{The machine stratum is one-way and unreused.} ET generated certificates:
+  200{,}614 human$\to$machine edges vs.\ 37 back; 0.15\% of certificates ever reused.
+\item \textbf{The dust is task-sorted, not agent-sorted.} Human proofs of \emph{ordinary} ET
+  implications are exactly as flat as machine ones (median construction-specific support 1
+  for both); only deep instances (counterexample \code{Facts}: median 33 supporting
+  constructions) show the tower economy, and machines never reach those. Refined claim:
+  \emph{search operates exactly where dust suffices}.
+\item \textbf{The general-task control agrees.} Mizar: 1{,}274 matched theorems, human
+  premises $\alpha\,2.36$/Gini $0.740$ vs.\ ATP $\alpha\,3.18$/Gini $0.567$
+  ($0.669$ size-matched); only 29\% of ATP premises lie in the human dependency set.
+  Caveat: Mizar40 premise selection was kNN-trained on human proofs.
+\item \textbf{Mechanism decomposition of the EPT.} The belief curve is a degree-sequence
+  phenomenon (configuration model reproduces it); the firewall $\Delta L_1$ is a modularity
+  phenomenon. There is no susceptibility peak --- the real transition-like structure is
+  \emph{bistability} (hysteresis at every $\varepsilon\le0.46$). Causal arm: synthetic
+  $\alpha\in[1.8,4.0]$ sweep shows onset $\varepsilon_c$ tracks
+  $\langle k^2\rangle/\langle k\rangle$ ($0.43\to0.24$); heavy tails buy \emph{early onset,
+  staged hub-first ordering, and core robustness}, not sharpness.
+\item \textbf{Asymmetric couplings are a plateau.} EPT exists at every
+  $\beta_{\mathrm{dep}}{:}\beta_{\mathrm{imp}}$ ratio from 1:4 to 4:1. Refutation propagates
+  only through fragile 1--2-consequence links and only when $\beta_{\mathrm{imp}}>
+  \beta_{\mathrm{dep}}$; reuse hubs are refutation-proof (Lakatos, quantified).
+\item \textbf{Correspondence (tracking) degrades with machine mass.} Informal edges realized
+  as formal paths, kernel grain: PFR 86\% $>$ FLT 79\% $>$ Sphere 66\% $>$ ET 43\%
+  (random-pair base rates 2--11\%).
+\item \textbf{Below the naming grain, machine proofs are unfactored, not structureless.}
+  Subterm analysis of all 47{,}940 ET proof terms: size-matched internal compression is
+  identical (human $10^{0.88}$ vs.\ machine $10^{0.87}$) and machine \code{maxref} is
+  \emph{higher} (39 vs.\ 24). But the character differs: human towers achieve diverse deep
+  compression (\code{Facts} median $10^{2}$; one term's $10^{10.8}$-node tree collapses to a
+  124{,}638-node DAG), machine sharing is concentrated repetition that never gets factored
+  into named declarations. \emph{What search lacks is naming, not repetition.}
+\item \textbf{Unfinished proofs.} Blueprints do cover unproved parts (FLT 39\% proof-done,
+  Sphere 35\%, PFR 86\%); \code{sorryAx} taint is small (0.7--9.2\%). FLT sorries are
+  frontier targets (clamping them: downstream belief $-0.25\pm0.09$); Sphere sorries are
+  scaffolding shielded by redundant paths ($-0.07\pm0.10$).
+\end{enumerate}
+
+\section{Repository map}
+
+Repo: \url{https://github.com/scottviteri/ept-ai-analysis} (public; GitHub Pages serves
+\code{docs/index.html} at \url{https://scottviteri.com/ept-ai-analysis/}, an interactive
+report with a live Glauber animation on the PFR kernel network).
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Question} & \textbf{Script} & \textbf{Results} \\
+\midrule
+CSN degree stats, $\alpha$ fits & \code{analysis/analyze.py} & \code{results/results\_all.json} \\
+Textual Lean extraction & \code{analysis/extract\_lean.py} & \code{graphs/} \\
+Kernel extraction (per-project) & \code{analysis/extract\_deps\{,\_legacy\}.lean} & \code{results/*\_kernel\_deps.jsonl} \\
+\quad orchestration & \code{analysis/kernel\_pipeline.sh} & \code{results/*\_kernel\_validation.txt} \\
+Blueprint extraction & \code{analysis/extract\_blueprint.py} & \code{graphs/} \\
+Tracking fidelity & \code{analysis/track.py} & \code{results/tracking\_results.json} \\
+Null models + asymmetry & \code{analysis/null\_models.py} & \code{results/null\_models\{,\_flt\}.json} \\
+2D $(\beta_{\mathrm{dep}},\beta_{\mathrm{imp}})$ plane & \code{analysis/asymmetric\_2d.py} & \code{results/asymmetric\_2d.json} \\
+Transition existence (GOF, $\chi$, hysteresis, $\alpha$ sweep) & \code{analysis/transition\_tests.py} & \code{results/transition\_tests\_\{A..D\}.json} \\
+Robustness (Vuong, jackknife, \dots) & \code{analysis/robustness.py} & \code{results/robustness\_summary.json} \\
+ET depth split (dust confound) & \code{analysis/et\_depth\_split.py} & \code{results/et\_depth\_split.json} \\
+Mizar human vs.\ ATP & \code{analysis/mizar\_atp\_compare.py} & \code{results/mizar\_atp\_compare.json} \\
+Sorry taint + clamping & \code{analysis/sorry\_\{analysis,ising\}.py} & \code{results/*\_sorry\_*.json} \\
+Subterm hash-consing (Lean) & \code{analysis/subterm\_stats.lean} & \code{results/et\_subterm\_stats.jsonl.gz} \\
+Subterm strata comparison & \code{analysis/subterm\_analysis.py} & \code{results/et\_subterm\_summary.json} \\
+Figures & \code{analysis/gen\_figures.py} & \code{figs/} \\
+Paper draft (11pp) & \code{paper/main.tex} & \code{paper/main.pdf} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{What is saved vs.\ what needs a rebuild.} The
+\code{results/*\_kernel\_deps.jsonl} files store \emph{constant-name} dependencies only ---
+enough for every graph-level analysis without any Lean toolchain. Proof-term \emph{Exprs} are
+not saved (they are the multi-GB \code{.olean} payload); any new subterm-grain question needs
+the compiled environment. ET's per-declaration subterm statistics are saved
+(\code{et\_subterm\_stats.jsonl.gz}), so re-analysis at that grain needs no rebuild; new
+per-term quantities (e.g.\ unfolding, \S\ref{sec:unfold}) do.
+
+\section{Next moves, prioritized}
+
+\subsection{P1: Full unfolding --- does dissolving the naming grain change the results?}
+\label{sec:unfold}
+
+\textbf{Question.} Every current subterm result holds the library factoring fixed: each
+declaration's proof term is analyzed with cited lemmas left as opaque \code{Expr.const}
+leaves. The 2019/2022 pipeline instead \emph{substituted} definitions in (to axioms) and
+hash-consed across lemma boundaries. Does the human-vs-machine comparison change when names
+are dissolved --- i.e.\ when we measure the proof's \emph{total} structure down to term-level
+constants rather than its structure \emph{given} the named library?
+
+\textbf{Why it matters.} The headline claim of \S2.9 is ``what search lacks is naming, not
+repetition.'' If, after unfolding, human and machine terms become statistically
+indistinguishable, that claim sharpens: the entire human--machine gap lives in the naming
+economy. If human terms still show more diverse cross-lemma sharing after names are
+dissolved, the gap is deeper than naming and the claim must weaken. Either outcome is
+informative, and this is the main untested degree of freedom left in the subterm analysis.
+It is also the exact bridge to the 2022 baseline, whose Coq networks were built from fully
+expanded terms.
+
+\textbf{Implementation sketch} (extend \code{analysis/subterm\_stats.lean}; no serialization,
+so no exponential blowup --- this is the same trick that made the current version cheap):
+\begin{enumerate}[leftmargin=1.4em, itemsep=1pt]
+\item Maintain a \emph{global} memo table keyed by \code{(Name, List Level)}: a constant's
+  unfolded statistics depend on its universe instantiation, so key on both, and instantiate
+  with \code{ConstantInfo.instantiateValueLevelParams} before walking. Measure the number of
+  distinct instantiations per constant first --- if it explodes, fall back to keying on
+  \code{Name} alone and note the approximation.
+\item During the walk of a term, when hitting \code{Expr.const n ls} where \code{n} is
+  \emph{project-internal} and has a value, do not treat it as a leaf: recurse into the
+  (memoized) unfolded stats of \code{(n, ls)}. Keep mathlib/core constants opaque in regime
+  A; unfold them too (to axioms) in regime B if regime A is affordable.
+\item Everything composes arithmetically under memoization:
+  $\mathrm{tree}(c) = $ tree size with each project-const leaf replaced by the target's
+  unfolded tree size (Float, as now); the unfolded DAG size of a theorem is the size of the
+  union of the reachable per-constant node sets (computable by unioning hash sets of node
+  keys, or by summing per-constant DAG sizes minus shared boundary terms --- start with the
+  union, it is exact). Reference counts aggregate the same way.
+\item Emit, per theorem: \code{fulldag}, \code{log10fulltree}, \code{fullshared},
+  \code{fullmaxref}, plus \code{named\_frac} = fraction of the full DAG contributed by
+  subterms inside named-declaration boundaries vs.\ crossing them.
+\item Analysis (extend \code{subterm\_analysis.py}): redo the strata comparison and
+  size-matching on full-unfolded quantities; the key statistic is whether the
+  human-vs-machine gap in \emph{diversity} of deep compression survives unfolding.
+\end{enumerate}
+\textbf{Cost.} One ET rebuild ($\sim$35 min; \code{lake exe cache get} then \code{lake
+build}), then one pass over the environment. Memory is the risk (global memo over 48k
+constants $\times$ instantiations); if it does not fit, process in topological order and
+retain only aggregate stats per \code{(Name, ls)}, dropping node sets once refcounts are
+folded in. Run the same smoke test as before: one \code{Generated} module + one human module
+before the full corpus.
+
+\subsection{P2: Subterm grain on the other corpora}
+PFR, FLT, Sphere (human + math-inc) have never been measured below the kernel grain. Now
+that disk is not scarce, rebuild each ($\sim$30--60 min apiece, $\sim$8--10 GB each,
+\emph{keep the builds}) and run \code{subterm\_stats.lean} + \code{subterm\_analysis.py}
+(the \code{stratum()} function needs a per-project rewrite --- it is currently
+ET-specific). This turns \S2.9 from an ET fact into a cross-corpus law (or not). Also the
+cheapest place to compare human vs.\ \emph{AI-assisted} (math-inc Gauss) below naming.
+
+\subsection{P3: Queue (in rough order of value)}
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+\item \textbf{Dynamic EPT on git histories}: blueprints and Lean sources are in git;
+  replaying the network's growth commit-by-commit tests whether projects \emph{pass
+  through} the transition (the 2022 paper's dynamics were static).
+\item \textbf{Mizar caveat}: the ATP premise selector was trained on human proofs, biasing
+  toward human routes; rerun with an untrained selector or a different ATP corpus to bound
+  the bias (it currently makes the observed 29\% containment an \emph{over}estimate of
+  independent-search overlap, which strengthens the claim, but this should be stated with a
+  measurement, not an argument).
+\item \textbf{Nexus 2026 corpus at kernel grain}: the 0\%$\to$97\% naming-density shift
+  (AlphaProof$\to$Nexus) is currently textual-grain only.
+\item \textbf{Bistability battery on all corpora}: hysteresis/$\chi$ tests (transition tests
+  B) ran on PFR only.
+\item \textbf{Paper}: fold P1/P2 outcomes into \S4.4, then the draft is submittable as a
+  workshop paper; the Simon-facing story is in \code{README.md}.
+\end{itemize}
+
+\section{Infrastructure notes (changed assumptions)}
+
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+\item \textbf{Do not clear builds anymore.} Earlier rounds deleted \code{repos/*/.lake}
+  after each extraction because the disk was nearly full. That constraint is gone
+  ($\sim$123 GB free as of this writing), and remote Ubuntu instances are available for
+  bigger runs. Keep \code{.lake} directories; a warm build makes every new Lean-side
+  question a minutes-scale iteration instead of an hour-scale one.
+\item \textbf{Rebuild recipe} (per project, from repo root):
+\begin{lstlisting}
+cd repos/<proj> && lake exe cache get && nohup lake build > build.log 2>&1 &
+\end{lstlisting}
+  Source repos are already on disk (\code{fetch\_repos.sh} re-fetches all 11 if needed).
+  Launch long builds detached with a done-marker file and poll; do not block a session on
+  them.
+\item \textbf{Cloud recipe}: Ubuntu $\to$ install \code{elan} (which provides the pinned
+  toolchain per \code{lean-toolchain}), \code{git clone} this repo, run
+  \code{fetch\_repos.sh}, then the recipe above; Python side needs only
+  \code{numpy scipy networkx matplotlib python-louvain}.
+\item \textbf{Lean gotchas} (all hit in this project): private imports need
+  \code{importAll := true} per module; theorem proof terms need
+  \code{value? (allowOpaque := true)}; pre-module-system toolchains (4.28--4.31) need
+  \code{extract\_deps\_legacy.lean}; the \code{public} modifier and the ET
+  \code{equation} macro are textual-grain blind spots (kernel grain is ground truth);
+  community detection on $>$5000 nodes must use Louvain, not
+  \code{greedy\_modularity}.
+\item \textbf{Model parameters} (for reproducing any Ising number): asymmetric Glauber,
+  $\varepsilon = 1/(1+e^{2\beta})$, prior field $p=0.75$, 10 sweeps, seeds averaged where
+  error bars are shown.
+\end{itemize}
+
+\section{Pointers}
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+\item Repo: \url{https://github.com/scottviteri/ept-ai-analysis}
+\item Interactive report: \url{https://scottviteri.com/ept-ai-analysis/}
+\item Paper draft: \code{paper/main.pdf} (``Proofs after AlephZero'', 11 pp)
+\item 2022 baseline: Viteri \& DeDeo, \emph{Epistemic phase transitions in mathematical
+  proofs}, Cognition 2022 (its Coq networks are at the \emph{subterm} grain --- see
+  \code{ept\_appendix.pdf})
+\item 2019 hash-consing original: \url{https://github.com/scottviteri/ManipulateProofTrees}
+\end{itemize}
+
+\end{document}
