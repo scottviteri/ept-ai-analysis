@@ -6,6 +6,17 @@ report — with an interactive proof-network + live Ising belief animation — a
 **<https://scottviteri.github.io/ept-ai-analysis/>** (source: `report/report.html`,
 served from `docs/`).
 
+> **Status: active, audited research.** The committed graphs, derived data,
+> analysis outputs, and live report reproduce the current findings after five
+> adversarial audit rounds. Follow-up work—beginning with the full-unfolding
+> subterm experiment—is still in progress, so the interpretation may continue
+> to sharpen even though the current artifact is reproducible.
+
+> **Licensing status:** the analysis code and report are original work, while
+> the committed graphs and results are derived from independently licensed
+> public proof corpora. No blanket repository-wide reuse license has yet been
+> assigned; the source projects and pinned inputs are identified below.
+
 ![PFR kernel-grain dependency network](figs/pfr_network.png)
 
 Analysis date: **2026-07-31**. All inputs are public repositories pinned in
