@@ -94,7 +94,8 @@ human-vs-machine comparison?).
 ## Layout
 
 ```
-fetch_repos.sh        clone the 11 source corpora into repos/ (not committed)
+fetch_repos.sh        verify the 11 source snapshots in repos/ (not committed)
+sources.lock.tsv      canonical URLs and exact commits for those snapshots
 analysis/             the pipeline (Python + two Lean extractors)
 graphs/               extracted dependency networks (JSON) — the derived dataset
 results/              computed metrics, kernel data, experiment outputs
@@ -164,6 +165,13 @@ The committed `graphs/*.json` and `results/*_kernel_deps.jsonl` are the exact
 extractions behind every number, so downstream results reproduce without
 building anything.
 
+`fetch_repos.sh` reads `sources.lock.tsv`, fetches each full 40-character
+commit directly, checks it out detached, and verifies the resulting `HEAD`.
+It never follows a repository's moving default branch. Set `EPT_REPOS_DIR` to
+materialize the snapshots somewhere other than `repos/`. The pinned
+`JUrban/deepmath` checkout is exposed at `repos/mizar40` for compatibility with
+the Mizar comparison script.
+
 ## Kernel-grain validation (all five corpora)
 
 | project | kernel N / E | kernel α | textual α | textual precision / recall | tracking kernel (textual) |
@@ -204,8 +212,8 @@ audit rounds, documented in the report's notes and
 
 ## Source corpora
 
-`fetch_repos.sh` pins: teorth/pfr, teorth/equational_theories,
+`sources.lock.tsv` pins: teorth/pfr, teorth/equational_theories,
 ImperialCollegeLondon/FLT, thefundamentaltheor3m/Sphere-Packing-Lean,
-math-inc/spherepacking, AlphaProof IMO-2024 mirror,
+math-inc/Sphere-Packing-Lean, AlphaProof IMO-2024 mirror,
 google-deepmind/alphaproof-nexus-results, dwrensha/compfiles (human IMO
 baseline), JUrban/MPTP2078 + JUrban/deepmath mizar40 (human vs ATP proofs).
