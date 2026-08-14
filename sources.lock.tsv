@@ -1,0 +1,12 @@
+# directory	url	commit
+pfr	https://github.com/teorth/pfr.git	68730da4cb35f07c6928e3b5b32e177b7ab97c36
+equational_theories	https://github.com/teorth/equational_theories.git	7e276a2d05e84e3eef02432abfd0718e78f7abfa
+FLT	https://github.com/ImperialCollegeLondon/FLT.git	bf70705a77242545d931db4923f2975cf7c9177d
+Sphere-Packing-Lean	https://github.com/thefundamentaltheor3m/Sphere-Packing-Lean.git	8e1d993cb1f0d0dfd4a026ca9dfdfec9d25ba9a8
+mathinc-sphere	https://github.com/math-inc/Sphere-Packing-Lean.git	1e98fb493088948ca7bbf47d7faed49cc5b39fc4
+alphaproof-outputs-mirror	https://github.com/James-Oswald/alphaproof-outputs-mirror.git	f8770a79402b45054f313927b2ed84a6d5c2cc23
+alphaproof-nexus-results	https://github.com/google-deepmind/alphaproof-nexus-results.git	0647711a71183c1ea492ad60860776617ce1ea88
+compfiles	https://github.com/dwrensha/compfiles.git	ea08008e5eeda1f51273160ce8b18cb9bdd8c824
+IMO_2024	https://github.com/Lean-zh/IMO_2024.git	f6b98d178ac5ea8c665dc2d6f9ba4b0754fe697e
+MPTP2078	https://github.com/JUrban/MPTP2078.git	9bb6fd1d66f22f78a6b90bcaaf1e203ec30aa23c
+deepmath	https://github.com/JUrban/deepmath.git	edc772cf72901faf8b824885bf37252cc3fae035
